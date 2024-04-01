@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".SubNumericalDiscussionActivity">
+
+    <ImageView
+        android:id="@+id/textToSpeechButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/numericalAbilityTextView"
+        android:src="@drawable/ic_speaker" /> <!-- Replace ic_speaker with your speaker icon drawable -->
+
+    <TextView
+        android:id="@+id/numericalAbilityTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/black"
+        android:text="Numerical Ability"
+        android:layout_toStartOf="@id/textToSpeechButton"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numericalAbilityTextView">
+
+        <TextView
+            android:id="@+id/discussionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="The Numerical Ability section assesses the candidate's proficiency in mathematical skills required for higher-level government positions. Topics covered include arithmetic, algebra, geometry, and data interpretation. This section evaluates the candidate's ability to solve mathematical problems accurately and efficiently."
+            android:padding="8dp" />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/takeQuestionnaireButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Take Questionnaire" />
+
+</RelativeLayout>

@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/question1Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1. Find the average 8, 12, 7, 8, 10 = _____"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <!-- RadioGroup for choices -->
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton1A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 10"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton1B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 20"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton1C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 9"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton1D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 5"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question2Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2. Find the average  25, 14, 37, 22, 28, 30, 17 = _____"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <!-- RadioGroup for choices -->
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton2A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 24.71"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton2B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 26.94"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton2C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 25.71"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton2D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 27.71"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question3Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3. Find the average 487, 445, 463, 422, 477, 454 = _____"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton3A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 458"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton3B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 452"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton3C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 439"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton3D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 468"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question4Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4. Find the average 126, 180, 145, 198, 150 = ______"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton4A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 159.2"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton4B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 159.5"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton4C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 159.8"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton4D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 159.3"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question5Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5. Find the average 615, 459, 703, 916, 206 = ______"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton5A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 570.8"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton5B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 559.8"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton5C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 579.8"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton5D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 578.9"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question6Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="6. What is the result of 25 + 68?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton6A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 83"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton6B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 92"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton6C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 93"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton6D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 101"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question7Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7. If ¾ of a number is 36, what is the number?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton7A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 24"
+                android:textSize="17sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton7B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 36"
+                android:textSize="17sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton7C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 48"
+                android:textSize="17sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton7D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 54"
+                android:textSize="17sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question8Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="8. What is the value of 5^3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton8A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 125"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton8B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 150"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton8C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 175"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton8D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 200"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question9Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9. If √(81) = 9, what is √(121)?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton9A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 9"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton9B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 10"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton9C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 11"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton9D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 12"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question10Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10. Solve for x: 3x - 7 = 20"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton10A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 9"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton10B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 10"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton10C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 11"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton10D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 12"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question11Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="11. If a rectangle has a length of 8 cm and a width of 6 cm, what is its area?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton11A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 24 cm²"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton11B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 32 cm²"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton11C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 40 cm²"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton11D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 48 cm²"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question12Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="12. What is the next number in the sequence: 2, 4, 6, 8, _____?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton12A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 10"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton12B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 12"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton12C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 14"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton12D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 16"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question13Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="13. If a circle has a diameter of 10 cm, what is its circumference?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton13A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 20π cm"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton13B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 25π cm"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton13C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 30π cm"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton13D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 35π cm"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question14Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="14. What is the perimeter of a square with sides of length 7 cm?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton14A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 21 cm"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton14B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 28 cm"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton14C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 35 cm"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton14D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 42 cm"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question15Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="15. If 20% of a number is 40, what is 50% of the same number?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton15A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 50"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton15B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 60"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton15C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 70"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton15D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 80"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question16Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="16. If ⅖ of a number is 16, what is the number?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton16A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 30"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton16B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 35"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton16C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 40"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton16D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 45"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question17Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView17"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="17. What is ⅓ of 64?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton17A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 15"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton17B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 18"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton17C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 21"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton17D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 24"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question18Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="18. Solve for x: 2x + 5 = 17"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton18A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. x = 6"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton18B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. x = 7"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton18C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. x = 8"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton18D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. x = 9"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question19Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView19"
+                android:text="19. If ⅓ of a number is 12, what is ⅔ of the same number?"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton19A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 20"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton19B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 24"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton19C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 28"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton19D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 32"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question20Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="20. What is the value of 4^2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton20A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. 8"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton20B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. 12"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton20C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. 16"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton20D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. 20"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Submit" />
+
+    </LinearLayout>
+
+</ScrollView>

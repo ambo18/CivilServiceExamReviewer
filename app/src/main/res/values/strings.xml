@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CS Exam Reviewer</string>
+    <string name="verbal_discussion_text">The Verbal Ability section evaluates the candidate\'s language proficiency, including grammar, vocabulary, and comprehension skills. Candidates are tested on their ability to understand and analyze written passages, identify grammatical errors, and use appropriate vocabulary in context.</string>
+    <string name="numerical_discussion_text">The Numerical Ability section assesses the candidate\'s proficiency in mathematical skills required for higher-level government positions. Topics covered include arithmetic, algebra, geometry, and data interpretation. This section evaluates the candidate\'s ability to solve mathematical problems accurately and efficiently.</string>
+    <string name="analytical_discussion_text">Analytical Ability focuses on candidates\' problem-solving skills, logical reasoning, and critical thinking abilities. It assesses their capacity to analyze complex situations, identify patterns, and draw logical conclusions.</string>
+    <string name="clerical_discussion_text">Clerical Ability assesses candidates\' proficiency in performing clerical tasks, including spelling, punctuation, typing, filing, and basic office procedures. It tests their ability to organize information, follow instructions accurately, and maintain accuracy and attention to detail.</string>
+    <string name="gen_info_discussion_text">The General Information section assesses the candidate\'s knowledge of various topics such as history, geography, science, current events, and government policies. Questions in this section may cover a wide range of subjects, testing the candidate\'s awareness and understanding of relevant information.</string>
+</resources>

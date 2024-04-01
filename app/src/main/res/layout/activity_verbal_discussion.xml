@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".VerbalDiscussionActivity">
+
+    <ImageView
+        android:id="@+id/textToSpeechButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/verbalAbilityTextView"
+        android:src="@drawable/ic_speaker" /> <!-- Replace ic_speaker with your speaker icon drawable -->
+
+    <TextView
+        android:id="@+id/verbalAbilityTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/black"
+        android:text="Verbal Ability"
+        android:layout_toStartOf="@id/textToSpeechButton"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verbalAbilityTextView">
+
+        <TextView
+            android:id="@+id/discussionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="The Verbal Ability section evaluates the candidate's language proficiency, including grammar, vocabulary, and comprehension skills. Candidates are tested on their ability to understand and analyze written passages, identify grammatical errors, and use appropriate vocabulary in context."
+            android:padding="8dp" />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/takeQuestionnaireButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Take Questionnaire" />
+
+</RelativeLayout>

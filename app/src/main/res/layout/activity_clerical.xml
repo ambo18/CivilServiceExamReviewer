@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/question1Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1. What is the capital city of France?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <!-- RadioGroup for choices -->
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton1A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Berlin"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton1B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. London"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton1C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Paris"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton1D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Rome"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question2Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2. Who is the current President of the United States?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <!-- RadioGroup for choices -->
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton2A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Donald Trump"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton2B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Joe Biden"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton2C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Barack Obama"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton2D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. George W. Bush"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question3Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3. What is the chemical symbol for water?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton3A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. H2O"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton3B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. CO2"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton3C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. NaCl"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton3D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. O2"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question4Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4. Which planet is known as the 'Red Planet'?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton4A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Mars"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton4B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Venus"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton4C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Jupiter"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton4D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Saturn"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question5Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5. Who wrote the play 'Romeo and Juliet'?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton5A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. William Shakespeare"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton5B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Charles Dickens"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton5C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Jane Austen"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton5D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Mark Twain"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question6Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="6. Which sentence is grammatically incorrect?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton6A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. She sings beautifully."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton6B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. He writes good."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton6C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. They speak English fluently."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton6D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. We run fast."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question7Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7. Identify the correct form of the verb:"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton7A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Go"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton7B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Goes"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton7C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Going"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton7D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Gone"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question8Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="8. What is the plural form of 'child'?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton8A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Childs"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton8B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Childs'"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton8C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Childrens"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton8D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Children"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question9Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9. Choose the correct word to complete the sentence: The teacher asked _____ to be quiet."
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton9A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. We"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton9B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Us"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton9C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Our"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton9D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Ours"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question10Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10. Identify the correct meaning of the word 'eccentric':"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton10A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Normal"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton10B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Strange"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton10C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Boring"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton10D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Common"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question11Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="11. Which sentence is grammatically correct?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton11A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. They're going to there house."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton11B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Their going to their house."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton11C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. They're going to their house."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton11D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. There going to they're house."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question12Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="12. Choose the synonym of 'honest':"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton12A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Deceitful"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton12B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Dishonest"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton12C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Sincere"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton12D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Fraudulent"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question13Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="13. Identify the correct usage:"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton13A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. I will lay down for a nap."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton13B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. He will lie down for a nap."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton13C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. I will lie down for a nap."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton13D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. He will lay down for a nap."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question14Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="14. What is the opposite of 'fascinating'?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton14A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Boring"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton14B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Interesting"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton14C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Captivating"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton14D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Engaging"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question15Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="15. Choose the correct word to complete the sentence: The book is _____ the table."
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton15A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. On"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton15B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. In"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton15C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. At"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton15D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Over"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question16Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="16. Identify the correct form of the verb: She _____ the bus to work every day."
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton16A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Take"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton16B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Takes"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton16C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Taking"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton16D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Took"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question17Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView17"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="17. Which sentence is grammatically incorrect?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton17A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. He drinks a cup of coffee every morning."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton17B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. She never drinks no coffee."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton17C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. They have been drinking coffee all day."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton17D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. We are going to drink coffee after lunch."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question18Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="18. Choose the synonym of 'vivid':"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton18A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Dull"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton18B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Clear"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton18C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Faint"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton18D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Hazy"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question19Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView19"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="19. Identify the correct usage:"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton19A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Its raining outside."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton19B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. It's raining outside."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton19C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Its' raining outside."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton19D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Its rain outside."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question20Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="20. What is the plural form of 'ox'?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton20A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Oxen"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton20B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Oxes"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton20C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Oxs"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton20D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Oxons"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Submit" />
+
+    </LinearLayout>
+
+</ScrollView>
