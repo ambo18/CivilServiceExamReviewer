@@ -15,7 +15,7 @@ The Civil Service Exam Reviewer App is a mobile application designed to help ind
 
 To install the app on your Android device, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/yourusername/civil-service-exam-reviewer.git`
+1. Clone the repository: `git clone https://github.com/ambo18/CivilServiceExamReviewer.git`
 2. Open the project in Android Studio.
 3. Build and run the app on an emulator or physical device.
 
