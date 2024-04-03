@@ -162,11 +162,11 @@ public class SubNumericalQuestionnaireActivity extends AppCompatActivity impleme
     
         StringBuilder correctAnswersText = new StringBuilder();
     
-        if (checkAnswer(choiceRadioGroup1, R.id.choiceRadioButton1C)) {
+        if (checkAnswer(choiceRadioGroup1, R.id.choiceRadioButton1A)) {
             correctAnswers++;
-            correctAnswersText.append("1. C\n");
+            correctAnswersText.append("1. A\n");
         } else {
-            correctAnswersText.append("1. (Correct Answer: C)\n");
+            correctAnswersText.append("1. (Correct Answer: A)\n");
         }
     
         if (checkAnswer(choiceRadioGroup2, R.id.choiceRadioButton2C)) {
@@ -176,32 +176,32 @@ public class SubNumericalQuestionnaireActivity extends AppCompatActivity impleme
             correctAnswersText.append("2. (Correct Answer:C)\n");
         }
     
-        if (checkAnswer(choiceRadioGroup3, R.id.choiceRadioButton3D)) {
+        if (checkAnswer(choiceRadioGroup3, R.id.choiceRadioButton3B)) {
             correctAnswers++;
-            correctAnswersText.append("3. D\n");
+            correctAnswersText.append("3. B\n");
         } else {
-            correctAnswersText.append("3. (Correct Answer: D)\n");
+            correctAnswersText.append("3. (Correct Answer: B)\n");
         }
     
-        if (checkAnswer(choiceRadioGroup4, R.id.choiceRadioButton4D)) {
+        if (checkAnswer(choiceRadioGroup4, R.id.choiceRadioButton4B)) {
             correctAnswers++;
-            correctAnswersText.append("4. D\n");
+            correctAnswersText.append("4. B\n");
         } else {
-            correctAnswersText.append("4. (Correct Answer: D)\n");
+            correctAnswersText.append("4. (Correct Answer: B)\n");
         }
     
-        if (checkAnswer(choiceRadioGroup5, R.id.choiceRadioButton5A)) {
+        if (checkAnswer(choiceRadioGroup5, R.id.choiceRadioButton5C)) {
             correctAnswers++;
-            correctAnswersText.append("5. A\n");
+            correctAnswersText.append("5. C\n");
         } else {
-            correctAnswersText.append("5. (Correct Answer: A)\n");
+            correctAnswersText.append("5. (Correct Answer: C)\n");
         }
 
-        if (checkAnswer(choiceRadioGroup6, R.id.choiceRadioButton6B)) {
+        if (checkAnswer(choiceRadioGroup6, R.id.choiceRadioButton6C)) {
             correctAnswers++;
-            correctAnswersText.append("6. B\n");
+            correctAnswersText.append("6. C\n");
         } else {
-            correctAnswersText.append("6. (Correct Answer: B)\n");
+            correctAnswersText.append("6. (Correct Answer: C)\n");
         }
     
         if (checkAnswer(choiceRadioGroup7, R.id.choiceRadioButton7B)) {
@@ -211,32 +211,32 @@ public class SubNumericalQuestionnaireActivity extends AppCompatActivity impleme
             correctAnswersText.append("7. (Correct Answer: B)\n");
         }
     
-        if (checkAnswer(choiceRadioGroup8, R.id.choiceRadioButton8D)) {
+        if (checkAnswer(choiceRadioGroup8, R.id.choiceRadioButton8A)) {
             correctAnswers++;
-            correctAnswersText.append("8. D\n");
+            correctAnswersText.append("8. A\n");
         } else {
-            correctAnswersText.append("8. (Correct Answer: D)\n");
+            correctAnswersText.append("8. (Correct Answer: A)\n");
         }
     
-        if (checkAnswer(choiceRadioGroup9, R.id.choiceRadioButton9B)) {
+        if (checkAnswer(choiceRadioGroup9, R.id.choiceRadioButton9D)) {
             correctAnswers++;
-            correctAnswersText.append("9. B\n");
+            correctAnswersText.append("9. D\n");
         } else {
-            correctAnswersText.append("9. (Correct Answer: B)\n");
+            correctAnswersText.append("9. (Correct Answer: D)\n");
         }
     
-        if (checkAnswer(choiceRadioGroup10, R.id.choiceRadioButton10B)) {
+        if (checkAnswer(choiceRadioGroup10, R.id.choiceRadioButton10D)) {
             correctAnswers++;
-            correctAnswersText.append("10. B\n");
+            correctAnswersText.append("10. D\n");
         } else {
-            correctAnswersText.append("10. (Correct Answer: B)\n");
+            correctAnswersText.append("10. (Correct Answer: D)\n");
         }
 
-        if (checkAnswer(choiceRadioGroup11, R.id.choiceRadioButton11C)) {
+        if (checkAnswer(choiceRadioGroup11, R.id.choiceRadioButton11D)) {
             correctAnswers++;
-            correctAnswersText.append("11. C\n");
+            correctAnswersText.append("11. D\n");
         } else {
-            correctAnswersText.append("11. (Correct Answer: C)\n");
+            correctAnswersText.append("11. (Correct Answer: D)\n");
         }
         
         if (checkAnswer(choiceRadioGroup12, R.id.choiceRadioButton12C)) {
@@ -253,11 +253,11 @@ public class SubNumericalQuestionnaireActivity extends AppCompatActivity impleme
             correctAnswersText.append("13. (Correct Answer: C)\n");
         }
         
-        if (checkAnswer(choiceRadioGroup14, R.id.choiceRadioButton14A)) {
+        if (checkAnswer(choiceRadioGroup14, R.id.choiceRadioButton14C)) {
             correctAnswers++;
-            correctAnswersText.append("14. A\n");
+            correctAnswersText.append("14. C\n");
         } else {
-            correctAnswersText.append("14. (Correct Answer: A)\n");
+            correctAnswersText.append("14. (Correct Answer: C)\n");
         }
         
         if (checkAnswer(choiceRadioGroup15, R.id.choiceRadioButton15A)) {
@@ -274,18 +274,18 @@ public class SubNumericalQuestionnaireActivity extends AppCompatActivity impleme
             correctAnswersText.append("16. (Correct Answer: B)\n");
         }
         
-        if (checkAnswer(choiceRadioGroup17, R.id.choiceRadioButton17B)) {
+        if (checkAnswer(choiceRadioGroup17, R.id.choiceRadioButton17D)) {
             correctAnswers++;
-            correctAnswersText.append("17. B\n");
+            correctAnswersText.append("17. D\n");
         } else {
-            correctAnswersText.append("17. (Correct Answer: B)\n");
+            correctAnswersText.append("17. (Correct Answer: D)\n");
         }
         
-        if (checkAnswer(choiceRadioGroup18, R.id.choiceRadioButton18B)) {
+        if (checkAnswer(choiceRadioGroup18, R.id.choiceRadioButton18C)) {
             correctAnswers++;
-            correctAnswersText.append("18. B\n");
+            correctAnswersText.append("18. C\n");
         } else {
-            correctAnswersText.append("18. (Correct Answer: B)\n");
+            correctAnswersText.append("18. (Correct Answer: C)\n");
         }
         
         if (checkAnswer(choiceRadioGroup19, R.id.choiceRadioButton19B)) {
@@ -295,11 +295,11 @@ public class SubNumericalQuestionnaireActivity extends AppCompatActivity impleme
             correctAnswersText.append("19. (Correct Answer: B)\n");
         }
         
-        if (checkAnswer(choiceRadioGroup20, R.id.choiceRadioButton20A)) {
+        if (checkAnswer(choiceRadioGroup20, R.id.choiceRadioButton20C)) {
             correctAnswers++;
-            correctAnswersText.append("20. A\n");
+            correctAnswersText.append("20. CA\n");
         } else {
-            correctAnswersText.append("20. (Correct Answer: A)\n");
+            correctAnswersText.append("20. (Correct Answer: C)\n");
         }
     
         // Build the dialog message

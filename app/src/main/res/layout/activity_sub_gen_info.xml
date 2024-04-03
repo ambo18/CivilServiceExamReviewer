@@ -20,7 +20,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1. If all roses are flowers, and some flowers are red, which of the following statements must be true?"
+                android:text="Who is known as the national hero of the Philippines?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -45,7 +45,7 @@
                 android:id="@+id/choiceRadioButton1A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. All red flowers are roses"
+                android:text="A. Jose Rizal"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -53,7 +53,7 @@
                 android:id="@+id/choiceRadioButton1B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. All roses are red"
+                android:text="B. Andres Bonifacio"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -61,7 +61,7 @@
                 android:id="@+id/choiceRadioButton1C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Some roses are red"
+                android:text="C. Emilio Aguinaldo"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -69,7 +69,7 @@
                 android:id="@+id/choiceRadioButton1D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Some flowers are not roses"
+                android:text="D. Manuel L. Quezon"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -86,7 +86,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="2. A car travels 60 miles per hour. How many miles will it travel in 4 hours?"
+                android:text="2. What is the capital city of Japan?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -111,7 +111,7 @@
                 android:id="@+id/choiceRadioButton2A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. 180 miles"
+                android:text="A. shanghai"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -119,7 +119,7 @@
                 android:id="@+id/choiceRadioButton2B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. 200 miles"
+                android:text="B. Beijing"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -127,7 +127,7 @@
                 android:id="@+id/choiceRadioButton2C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. 240 miles"
+                android:text="C. Tokyo"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -135,7 +135,7 @@
                 android:id="@+id/choiceRadioButton2D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. 260"
+                android:text="D. Seoul"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -152,7 +152,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="3. Which number comes next in the sequence: 2, 4, 8, 16, _____?"
+                android:text="3. Which planet is known as the 'Red Planet'?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -176,7 +176,7 @@
                 android:id="@+id/choiceRadioButton3A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. 20"
+                android:text="A. Venus"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -184,7 +184,7 @@
                 android:id="@+id/choiceRadioButton3B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. 24"
+                android:text="B. Mars"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -192,7 +192,7 @@
                 android:id="@+id/choiceRadioButton3C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. 32"
+                android:text="C. Jupiter"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -200,7 +200,7 @@
                 android:id="@+id/choiceRadioButton3D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. 64"
+                android:text="D. Saturn"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -217,7 +217,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="4. If A is the brother of B, B is the sister of C, and C is the father of D, what is D to A?"
+                android:text="4. Who is the current President of the United States?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -241,7 +241,7 @@
                 android:id="@+id/choiceRadioButton4A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Son"
+                android:text="A. Joe Biden"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -249,7 +249,7 @@
                 android:id="@+id/choiceRadioButton4B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Daughter"
+                android:text="B. Donald Trump"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -257,7 +257,7 @@
                 android:id="@+id/choiceRadioButton4C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Niece"
+                android:text="C. Barack Obama"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -265,7 +265,7 @@
                 android:id="@+id/choiceRadioButton4D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Nephew"
+                android:text="D. George W. Bush"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -282,7 +282,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5. Which of the following shapes does not belong in the series?"
+                android:text="5. What is the largest ocean in the world?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -306,7 +306,7 @@
                 android:id="@+id/choiceRadioButton5A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Circle"
+                android:text="A. Atlantic Ocean"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -314,7 +314,7 @@
                 android:id="@+id/choiceRadioButton5B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Square"
+                android:text="B. Indian Ocean"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -322,7 +322,7 @@
                 android:id="@+id/choiceRadioButton5C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Triangle"
+                android:text="C. Arctic Ocean"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -330,7 +330,7 @@
                 android:id="@+id/choiceRadioButton5D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Rectangle"
+                android:text="D. Pacific Ocean"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -347,7 +347,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="6. Which sentence is grammatically incorrect?"
+                android:text="6. Who wrote the famous novel 'To Kill a Mockingbird'?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -371,7 +371,7 @@
                 android:id="@+id/choiceRadioButton6A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. She sings beautifully."
+                android:text="A. Harper Lee"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -379,7 +379,7 @@
                 android:id="@+id/choiceRadioButton6B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. He writes good."
+                android:text="B. Ernest Hemingway"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -387,7 +387,7 @@
                 android:id="@+id/choiceRadioButton6C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. They speak English fluently."
+                android:text="C. F. Scott Fitzgerald"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -395,7 +395,7 @@
                 android:id="@+id/choiceRadioButton6D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. We run fast."
+                android:text="D. Mark Twain"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -412,7 +412,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="7. Identify the correct form of the verb:"
+                android:text="7. In which year did the Titanic sink?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -436,7 +436,7 @@
                 android:id="@+id/choiceRadioButton7A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Go"
+                android:text="A. 1912"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -444,7 +444,7 @@
                 android:id="@+id/choiceRadioButton7B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Goes"
+                android:text="B. 1921"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -452,7 +452,7 @@
                 android:id="@+id/choiceRadioButton7C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Going"
+                android:text="C. 1907"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -460,7 +460,7 @@
                 android:id="@+id/choiceRadioButton7D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Gone"
+                android:text="D. 1916"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -477,7 +477,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="8. What is the plural form of 'child'?"
+                android:text="8. Which country is known as the 'Land of the Rising Sun'?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -501,7 +501,7 @@
                 android:id="@+id/choiceRadioButton8A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Childs"
+                android:text="A. China"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -509,7 +509,7 @@
                 android:id="@+id/choiceRadioButton8B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Childs'"
+                android:text="B. South Korea'"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -517,7 +517,7 @@
                 android:id="@+id/choiceRadioButton8C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Childrens"
+                android:text="C. Japan"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -525,7 +525,7 @@
                 android:id="@+id/choiceRadioButton8D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Children"
+                android:text="D. Vietnam"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -542,7 +542,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="9. Choose the correct word to complete the sentence: The teacher asked _____ to be quiet."
+                android:text="9. What is the currency of India?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -566,7 +566,7 @@
                 android:id="@+id/choiceRadioButton9A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. We"
+                android:text="A. Yen"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -574,7 +574,7 @@
                 android:id="@+id/choiceRadioButton9B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Us"
+                android:text="B. Rupe"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -582,7 +582,7 @@
                 android:id="@+id/choiceRadioButton9C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Our"
+                android:text="C. Bat"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -590,7 +590,7 @@
                 android:id="@+id/choiceRadioButton9D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Ours"
+                android:text="D. Peso"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -607,7 +607,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="10. Identify the correct meaning of the word 'eccentric':"
+                android:text="10. Who painted the Mona Lisa?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -631,7 +631,7 @@
                 android:id="@+id/choiceRadioButton10A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Normal"
+                android:text="A. Leonardo da Vinci"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -639,7 +639,7 @@
                 android:id="@+id/choiceRadioButton10B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Strange"
+                android:text="B. Vincent van Gogh"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -647,7 +647,7 @@
                 android:id="@+id/choiceRadioButton10C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Boring"
+                android:text="C. Pablo Picasso"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -655,7 +655,7 @@
                 android:id="@+id/choiceRadioButton10D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Common"
+                android:text="D. Michaelangelo"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -672,7 +672,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="11. Which sentence is grammatically correct?"
+                android:text="11. What is the tallest mountain in the world?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -696,7 +696,7 @@
                 android:id="@+id/choiceRadioButton11A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. They're going to there house."
+                android:text="A. Mount Everest"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -704,7 +704,7 @@
                 android:id="@+id/choiceRadioButton11B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Their going to their house."
+                android:text="B. Mount Kilimanjaro"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -712,7 +712,7 @@
                 android:id="@+id/choiceRadioButton11C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. They're going to their house."
+                android:text="C. Mount Fuji"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -720,7 +720,7 @@
                 android:id="@+id/choiceRadioButton11D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. There going to they're house."
+                android:text="D. Mount McKinley"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -737,7 +737,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="12. Choose the synonym of 'honest':"
+                android:text="12. Who is the author of the Harry Potter series?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -761,7 +761,7 @@
                 android:id="@+id/choiceRadioButton12A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Deceitful"
+                android:text="A. J.K. Rowling"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -769,7 +769,7 @@
                 android:id="@+id/choiceRadioButton12B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Dishonest"
+                android:text="B. Stephen King"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -777,7 +777,7 @@
                 android:id="@+id/choiceRadioButton12C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Sincere"
+                android:text="C. J.R.R. Tolkien"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -785,7 +785,7 @@
                 android:id="@+id/choiceRadioButton12D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Fraudulent"
+                android:text="D. George R.R. Martin"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -802,7 +802,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="13. Identify the correct usage:"
+                android:text="13. Which country is famous for the Great Wall?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -826,7 +826,7 @@
                 android:id="@+id/choiceRadioButton13A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. I will lay down for a nap."
+                android:text="A. India"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -834,7 +834,7 @@
                 android:id="@+id/choiceRadioButton13B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. He will lie down for a nap."
+                android:text="B. China"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -842,7 +842,7 @@
                 android:id="@+id/choiceRadioButton13C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. I will lie down for a nap."
+                android:text="C. Egypt"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -850,7 +850,7 @@
                 android:id="@+id/choiceRadioButton13D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. He will lay down for a nap."
+                android:text="D. Italy"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -867,7 +867,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="14. What is the opposite of 'fascinating'?"
+                android:text="14. What is the chemical symbol for water?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -891,7 +891,7 @@
                 android:id="@+id/choiceRadioButton14A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Boring"
+                android:text="A. H2O"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -899,7 +899,7 @@
                 android:id="@+id/choiceRadioButton14B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Interesting"
+                android:text="B. CO2"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -907,7 +907,7 @@
                 android:id="@+id/choiceRadioButton14C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Captivating"
+                android:text="C. NaCI"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -915,7 +915,7 @@
                 android:id="@+id/choiceRadioButton14D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Engaging"
+                android:text="D. O2"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -932,7 +932,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="15. Choose the correct word to complete the sentence: The book is _____ the table."
+                android:text="15. Who discovered penicillin?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -956,7 +956,7 @@
                 android:id="@+id/choiceRadioButton15A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. On"
+                android:text="A. Alexander Fleming"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -964,7 +964,7 @@
                 android:id="@+id/choiceRadioButton15B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. In"
+                android:text="B. Marie Curie"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -972,7 +972,7 @@
                 android:id="@+id/choiceRadioButton15C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. At"
+                android:text="C. Louis Pasteur"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -980,7 +980,7 @@
                 android:id="@+id/choiceRadioButton15D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Over"
+                android:text="D. Albert Einstein"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -997,7 +997,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="16. Identify the correct form of the verb: She _____ the bus to work every day."
+                android:text="16. What is the national flower of the Philippines?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -1021,7 +1021,7 @@
                 android:id="@+id/choiceRadioButton16A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Take"
+                android:text="A. Sampaguita"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1029,7 +1029,7 @@
                 android:id="@+id/choiceRadioButton16B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Takes"
+                android:text="B. Orchid"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1037,7 +1037,7 @@
                 android:id="@+id/choiceRadioButton16C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Taking"
+                android:text="C. Rose"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1045,7 +1045,7 @@
                 android:id="@+id/choiceRadioButton16D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Took"
+                android:text="D. Lutos"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1062,7 +1062,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="17. Which sentence is grammatically incorrect?"
+                android:text="17. Which city is known as the 'City of Love'?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -1086,7 +1086,7 @@
                 android:id="@+id/choiceRadioButton17A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. He drinks a cup of coffee every morning."
+                android:text="A. Parris"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1094,7 +1094,7 @@
                 android:id="@+id/choiceRadioButton17B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. She never drinks no coffee."
+                android:text="B. Vinice"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1102,7 +1102,7 @@
                 android:id="@+id/choiceRadioButton17C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. They have been drinking coffee all day."
+                android:text="C. Rome"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1110,7 +1110,7 @@
                 android:id="@+id/choiceRadioButton17D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. We are going to drink coffee after lunch."
+                android:text="D. Prague"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1127,7 +1127,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="18. Choose the synonym of 'vivid':"
+                android:text="18. What is the chemical symbol for gold?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -1151,7 +1151,7 @@
                 android:id="@+id/choiceRadioButton18A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Dull"
+                android:text="A. Au"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1159,7 +1159,7 @@
                 android:id="@+id/choiceRadioButton18B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Clear"
+                android:text="B. Ag"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1167,7 +1167,7 @@
                 android:id="@+id/choiceRadioButton18C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Faint"
+                android:text="C. Fe"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1175,7 +1175,7 @@
                 android:id="@+id/choiceRadioButton18D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Hazy"
+                android:text="D. Pb"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1192,7 +1192,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="19. Identify the correct usage:"
+                android:text="19. Who invented the telephone?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -1216,7 +1216,7 @@
                 android:id="@+id/choiceRadioButton19A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Its raining outside."
+                android:text="A. Alexander Graham Bell"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1224,7 +1224,7 @@
                 android:id="@+id/choiceRadioButton19B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. It's raining outside."
+                android:text="B. Thomas Edison"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1232,7 +1232,7 @@
                 android:id="@+id/choiceRadioButton19C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Its' raining outside."
+                android:text="C. Nikkola Tesla"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1240,7 +1240,7 @@
                 android:id="@+id/choiceRadioButton19D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Its rain outside."
+                android:text="D. Isaac Newton"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1257,7 +1257,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="20. What is the plural form of 'ox'?"
+                android:text="20. Which planet is known as the 'Morning Star' or 'Evening Star'?"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -1281,7 +1281,7 @@
                 android:id="@+id/choiceRadioButton20A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="A. Oxen"
+                android:text="A. Venus"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1289,7 +1289,7 @@
                 android:id="@+id/choiceRadioButton20B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="B. Oxes"
+                android:text="B. Mars"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1297,7 +1297,7 @@
                 android:id="@+id/choiceRadioButton20C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C. Oxs"
+                android:text="C. Jupiter"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -1305,7 +1305,7 @@
                 android:id="@+id/choiceRadioButton20D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="D. Oxons"
+                android:text="D. Saturn"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
