@@ -11,13 +11,6 @@ The Civil Service Exam Reviewer App is a mobile application designed to help ind
 - **Text-to-Speech**: The app provides a text-to-speech feature for users to listen to the questions and answers.
 - **Score Tracking**: After completing a practice test, users receive immediate feedback on their performance, including their total score.
 
-## Screenshots
-
-![Splash Screen](screenshots/splash_screen.png)
-![Category Selection](screenshots/category_selection.png)
-![Practice Test](screenshots/practice_test.png)
-![Score Screen](screenshots/score_screen.png)
-
 ## Installation
 
 To install the app on your Android device, follow these steps:
