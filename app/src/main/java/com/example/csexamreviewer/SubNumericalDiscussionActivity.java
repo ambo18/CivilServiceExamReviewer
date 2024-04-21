@@ -28,7 +28,7 @@ public class SubNumericalDiscussionActivity extends AppCompatActivity implements
         textToSpeech = new TextToSpeech(this, this);
 
         // Display discussion text
-        String discussionText = getString(R.string.verbal_discussion_text); // Fetch discussion text from resources
+        String discussionText = getString(R.string.numerical_discussion_text); // Fetch discussion text from resources
         discussionTextView.setText(discussionText);
 
         // Set click listener for the take questionnaire button

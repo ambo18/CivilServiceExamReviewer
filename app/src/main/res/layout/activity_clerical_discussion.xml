@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignBottom="@id/clericalAbilityTextView"
-        android:src="@drawable/ic_speaker" /> <!-- Replace ic_speaker with your speaker icon drawable -->
+        android:src="@drawable/ic_speaker" />
 
     <TextView
         android:id="@+id/clericalAbilityTextView"
@@ -21,7 +21,7 @@
         android:textSize="25sp"
         android:layout_marginBottom="16dp"
         android:textColor="@android:color/black"
-        android:text="Clerical Ability"
+        android:text="General Information"
         android:layout_toStartOf="@id/textToSpeechButton"/>
 
     <ScrollView
@@ -36,7 +36,8 @@
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:text="Clerical Ability assesses candidates' proficiency in performing clerical tasks, including spelling, punctuation, typing, filing, and basic office procedures. It tests their ability to organize information, follow instructions accurately, and maintain accuracy and attention to detail."
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:gravity="start" />
 
     </ScrollView>
 

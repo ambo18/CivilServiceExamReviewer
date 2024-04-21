@@ -36,7 +36,8 @@
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:text="Analytical Ability focuses on candidates' problem-solving skills, logical reasoning, and critical thinking abilities. It assesses their capacity to analyze complex situations, identify patterns, and draw logical conclusions."
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:gravity="start" />
 
     </ScrollView>
 

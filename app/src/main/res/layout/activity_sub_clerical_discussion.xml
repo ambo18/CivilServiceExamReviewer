@@ -36,7 +36,8 @@
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:text="Clerical Ability assesses candidates' proficiency in performing clerical tasks, including spelling, punctuation, typing, filing, and basic office procedures. It tests their ability to organize information, follow instructions accurately, and maintain accuracy and attention to detail."
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:gravity="start" />
 
     </ScrollView>
 

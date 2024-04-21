@@ -36,7 +36,8 @@
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:text="The Numerical Ability section assesses the candidate's proficiency in mathematical skills required for higher-level government positions. Topics covered include arithmetic, algebra, geometry, and data interpretation. This section evaluates the candidate's ability to solve mathematical problems accurately and efficiently."
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:gravity="start" />
 
     </ScrollView>
 
