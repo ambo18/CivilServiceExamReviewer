@@ -4,7 +4,6 @@ The Civil Service Exam Reviewer App is a mobile application designed to help ind
 
 ## Features
 
-- **Splash Screen**: Upon opening the app, users are greeted with a splash screen displaying the app logo.
 - **Subject Selection**: Users can choose between the Professional and Sub-Professional levels.
 - **Category Selection**: After selecting the level, users can choose from different categories such as Numerical Ability, Analytical Ability, Verbal Ability, General Information, and Clerical Ability.
 - **Practice Tests**: Each category offers practice tests consisting of multiple-choice questions. Users can test their knowledge and track their progress.
