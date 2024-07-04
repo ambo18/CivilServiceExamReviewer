@@ -13,23 +13,23 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Locale;
 
 public class VerbalQuestionnaireActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
     // Views
-    private TextView questionTextView1, questionTextView2, questionTextView3, questionTextView4, 
-    questionTextView5, questionTextView6, questionTextView7, questionTextView8, questionTextView9, 
-    questionTextView10, questionTextView11, questionTextView12, questionTextView13, questionTextView14, questionTextView15, 
-    questionTextView16, questionTextView17, questionTextView18, questionTextView19, questionTextView20;
-    private RadioGroup choiceRadioGroup1, choiceRadioGroup2, choiceRadioGroup3, choiceRadioGroup4, choiceRadioGroup5,
-    choiceRadioGroup6, choiceRadioGroup7, choiceRadioGroup8, choiceRadioGroup9, choiceRadioGroup10, choiceRadioGroup11,
-    choiceRadioGroup12, choiceRadioGroup13, choiceRadioGroup14, choiceRadioGroup15, choiceRadioGroup16, choiceRadioGroup17,
-    choiceRadioGroup18, choiceRadioGroup19, choiceRadioGroup20;
-    private ImageView textToSpeechButton1, textToSpeechButton2, textToSpeechButton3, textToSpeechButton4, textToSpeechButton5, 
-    textToSpeechButton6, textToSpeechButton7, textToSpeechButton8, textToSpeechButton9, textToSpeechButton10, textToSpeechButton11, textToSpeechButton12, textToSpeechButton13,
-    textToSpeechButton14, textToSpeechButton15, textToSpeechButton16, textToSpeechButton17, textToSpeechButton18, textToSpeechButton19, textToSpeechButton20;
+    private List<TextView> questionTextViews;
+    private List<RadioGroup> choiceRadioGroups;
+    private List<ImageView> textToSpeechButtons;
     private Button submitButton;
+
+    // Questions
+    private List<Question> questions;
+    private int currentQuestionIndex = 0;
+
     // Text-to-speech
     private TextToSpeech textToSpeech;
 
@@ -39,97 +39,209 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         setContentView(R.layout.activity_verbal);
 
         // Initialize views
-        questionTextView1 = findViewById(R.id.questionTextView1);
-        questionTextView2 = findViewById(R.id.questionTextView2);
-        questionTextView3 = findViewById(R.id.questionTextView3);
-        questionTextView4 = findViewById(R.id.questionTextView4);
-        questionTextView5 = findViewById(R.id.questionTextView5);
-        questionTextView6 = findViewById(R.id.questionTextView6);
-        questionTextView7 = findViewById(R.id.questionTextView7);
-        questionTextView8 = findViewById(R.id.questionTextView8);
-        questionTextView9 = findViewById(R.id.questionTextView9);
-        questionTextView10 = findViewById(R.id.questionTextView10);
-        questionTextView11 = findViewById(R.id.questionTextView11);
-        questionTextView12 = findViewById(R.id.questionTextView12);
-        questionTextView13 = findViewById(R.id.questionTextView13);
-        questionTextView14 = findViewById(R.id.questionTextView14);
-        questionTextView15 = findViewById(R.id.questionTextView15);
-        questionTextView16 = findViewById(R.id.questionTextView16);
-        questionTextView17 = findViewById(R.id.questionTextView17);
-        questionTextView18 = findViewById(R.id.questionTextView18);
-        questionTextView19 = findViewById(R.id.questionTextView19);
-        questionTextView20 = findViewById(R.id.questionTextView20);
+        initializeViews();
 
-        choiceRadioGroup1 = findViewById(R.id.choiceRadioGroup1);
-        choiceRadioGroup2 = findViewById(R.id.choiceRadioGroup2);
-        choiceRadioGroup3 = findViewById(R.id.choiceRadioGroup3);
-        choiceRadioGroup4 = findViewById(R.id.choiceRadioGroup4);
-        choiceRadioGroup5 = findViewById(R.id.choiceRadioGroup5);
-        choiceRadioGroup6 = findViewById(R.id.choiceRadioGroup6);
-        choiceRadioGroup7 = findViewById(R.id.choiceRadioGroup7);
-        choiceRadioGroup8 = findViewById(R.id.choiceRadioGroup8);
-        choiceRadioGroup9 = findViewById(R.id.choiceRadioGroup9);
-        choiceRadioGroup10 = findViewById(R.id.choiceRadioGroup10);
-        choiceRadioGroup11 = findViewById(R.id.choiceRadioGroup11);
-        choiceRadioGroup12 = findViewById(R.id.choiceRadioGroup12);
-        choiceRadioGroup13 = findViewById(R.id.choiceRadioGroup13);
-        choiceRadioGroup14 = findViewById(R.id.choiceRadioGroup14);
-        choiceRadioGroup15 = findViewById(R.id.choiceRadioGroup15);
-        choiceRadioGroup16 = findViewById(R.id.choiceRadioGroup16);
-        choiceRadioGroup17 = findViewById(R.id.choiceRadioGroup17);
-        choiceRadioGroup18 = findViewById(R.id.choiceRadioGroup18);
-        choiceRadioGroup19 = findViewById(R.id.choiceRadioGroup19);
-        choiceRadioGroup20 = findViewById(R.id.choiceRadioGroup20);
-
-        textToSpeechButton1 = findViewById(R.id.textToSpeechButton1);
-        textToSpeechButton2 = findViewById(R.id.textToSpeechButton2);
-        textToSpeechButton3 = findViewById(R.id.textToSpeechButton3);
-        textToSpeechButton4 = findViewById(R.id.textToSpeechButton4);
-        textToSpeechButton5 = findViewById(R.id.textToSpeechButton5);
-        textToSpeechButton6 = findViewById(R.id.textToSpeechButton6);
-        textToSpeechButton7 = findViewById(R.id.textToSpeechButton7);
-        textToSpeechButton8 = findViewById(R.id.textToSpeechButton8);
-        textToSpeechButton9 = findViewById(R.id.textToSpeechButton9);
-        textToSpeechButton10 = findViewById(R.id.textToSpeechButton10);
-        textToSpeechButton11 = findViewById(R.id.textToSpeechButton11);
-        textToSpeechButton12 = findViewById(R.id.textToSpeechButton12);
-        textToSpeechButton13 = findViewById(R.id.textToSpeechButton13);
-        textToSpeechButton14 = findViewById(R.id.textToSpeechButton14);
-        textToSpeechButton15 = findViewById(R.id.textToSpeechButton15);
-        textToSpeechButton16 = findViewById(R.id.textToSpeechButton16);
-        textToSpeechButton17 = findViewById(R.id.textToSpeechButton17);
-        textToSpeechButton18 = findViewById(R.id.textToSpeechButton18);
-        textToSpeechButton19 = findViewById(R.id.textToSpeechButton19);
-        textToSpeechButton20 = findViewById(R.id.textToSpeechButton20);
-
-        submitButton = findViewById(R.id.submitButton);
+        // Initialize questions
+        initializeQuestions();
 
         // Initialize text-to-speech engine
         textToSpeech = new TextToSpeech(this, this);
 
         // Set onClick listeners
-        textToSpeechButton1.setOnClickListener(view -> speakText(questionTextView1.getText().toString() + ". " + getChoicesText(choiceRadioGroup1)));
-        textToSpeechButton2.setOnClickListener(view -> speakText(questionTextView2.getText().toString() + ". " + getChoicesText(choiceRadioGroup2)));
-        textToSpeechButton3.setOnClickListener(view -> speakText(questionTextView3.getText().toString() + ". " + getChoicesText(choiceRadioGroup3)));
-        textToSpeechButton4.setOnClickListener(view -> speakText(questionTextView4.getText().toString() + ". " + getChoicesText(choiceRadioGroup4)));
-        textToSpeechButton5.setOnClickListener(view -> speakText(questionTextView5.getText().toString() + ". " + getChoicesText(choiceRadioGroup5)));
-        textToSpeechButton6.setOnClickListener(view -> speakText(questionTextView6.getText().toString() + ". " + getChoicesText(choiceRadioGroup6)));
-        textToSpeechButton7.setOnClickListener(view -> speakText(questionTextView7.getText().toString() + ". " + getChoicesText(choiceRadioGroup7)));
-        textToSpeechButton8.setOnClickListener(view -> speakText(questionTextView8.getText().toString() + ". " + getChoicesText(choiceRadioGroup8)));
-        textToSpeechButton9.setOnClickListener(view -> speakText(questionTextView9.getText().toString() + ". " + getChoicesText(choiceRadioGroup9)));
-        textToSpeechButton10.setOnClickListener(view -> speakText(questionTextView10.getText().toString() + ". " + getChoicesText(choiceRadioGroup10)));
-        textToSpeechButton11.setOnClickListener(view -> speakText(questionTextView11.getText().toString() + ". " + getChoicesText(choiceRadioGroup11)));
-        textToSpeechButton12.setOnClickListener(view -> speakText(questionTextView12.getText().toString() + ". " + getChoicesText(choiceRadioGroup12)));
-        textToSpeechButton13.setOnClickListener(view -> speakText(questionTextView13.getText().toString() + ". " + getChoicesText(choiceRadioGroup13)));
-        textToSpeechButton14.setOnClickListener(view -> speakText(questionTextView14.getText().toString() + ". " + getChoicesText(choiceRadioGroup14)));
-        textToSpeechButton15.setOnClickListener(view -> speakText(questionTextView15.getText().toString() + ". " + getChoicesText(choiceRadioGroup15)));
-        textToSpeechButton16.setOnClickListener(view -> speakText(questionTextView16.getText().toString() + ". " + getChoicesText(choiceRadioGroup16)));
-        textToSpeechButton17.setOnClickListener(view -> speakText(questionTextView17.getText().toString() + ". " + getChoicesText(choiceRadioGroup17)));
-        textToSpeechButton18.setOnClickListener(view -> speakText(questionTextView18.getText().toString() + ". " + getChoicesText(choiceRadioGroup18)));
-        textToSpeechButton19.setOnClickListener(view -> speakText(questionTextView19.getText().toString() + ". " + getChoicesText(choiceRadioGroup19)));
-        textToSpeechButton20.setOnClickListener(view -> speakText(questionTextView20.getText().toString() + ". " + getChoicesText(choiceRadioGroup20)));
+        setOnClickListeners();
+
+        // Shuffle questions initially
+        shuffleQuestions();
+    }
+
+    private void initializeViews() {
+        questionTextViews = new ArrayList<>();
+        questionTextViews.add(findViewById(R.id.questionTextView1));
+        questionTextViews.add(findViewById(R.id.questionTextView2));
+        questionTextViews.add(findViewById(R.id.questionTextView3));
+        questionTextViews.add(findViewById(R.id.questionTextView4));
+        questionTextViews.add(findViewById(R.id.questionTextView5));
+        questionTextViews.add(findViewById(R.id.questionTextView6));
+        questionTextViews.add(findViewById(R.id.questionTextView7));
+        questionTextViews.add(findViewById(R.id.questionTextView8));
+        questionTextViews.add(findViewById(R.id.questionTextView9));
+        questionTextViews.add(findViewById(R.id.questionTextView10));
+        questionTextViews.add(findViewById(R.id.questionTextView11));
+        questionTextViews.add(findViewById(R.id.questionTextView12));
+        questionTextViews.add(findViewById(R.id.questionTextView13));
+        questionTextViews.add(findViewById(R.id.questionTextView14));
+        questionTextViews.add(findViewById(R.id.questionTextView15));
+        questionTextViews.add(findViewById(R.id.questionTextView16));
+        questionTextViews.add(findViewById(R.id.questionTextView17));
+        questionTextViews.add(findViewById(R.id.questionTextView18));
+        questionTextViews.add(findViewById(R.id.questionTextView19));
+        questionTextViews.add(findViewById(R.id.questionTextView20));
+        questionTextViews.add(findViewById(R.id.questionTextView21));
+        questionTextViews.add(findViewById(R.id.questionTextView22));
+        questionTextViews.add(findViewById(R.id.questionTextView23));
+        // Add all questionTextViews similarly for all 23 questions
+
+        choiceRadioGroups = new ArrayList<>();
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup1));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup2));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup3));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup4));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup5));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup6));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup7));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup8));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup9));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup10));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup11));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup12));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup13));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup14));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup15));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup16));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup17));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup18));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup19));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup20));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup21));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup22));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup23));
+        // Add all choiceRadioGroups similarly for all 23 questions
+
+        textToSpeechButtons = new ArrayList<>();
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton1));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton2));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton3));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton4));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton5));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton6));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton7));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton8));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton9));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton10));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton11));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton12));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton13));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton14));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton15));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton16));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton17));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton18));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton19));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton20));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton21));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton22));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton23));
+        // Add all textToSpeechButtons similarly for all 23 questions
+
+        submitButton = findViewById(R.id.submitButton);
+    }
+
+    private void initializeQuestions() {
+        questions = new ArrayList<>();
+        questions.add(new Question("Question 1?", createChoices("A", "B", "C", "D"), 1));  
+        questions.add(new Question("Question 2?", createChoices("A", "B", "C", "D"), 1));  
+        questions.add(new Question("Question 3", createChoices("A", "B", "C", "D"), 0));   
+        questions.add(new Question("Question 4", createChoices("A", "B", "C", "D"), 2));   
+        questions.add(new Question("Question 5", createChoices("A", "B", "C", "D"), 1));   
+        questions.add(new Question("Question 6", createChoices("A", "B", "C", "D"), 1));   
+        questions.add(new Question("Question 7", createChoices("A", "B", "C", "D"), 0));   
+        questions.add(new Question("Question 8", createChoices("A", "B", "C", "D"), 3));   
+        questions.add(new Question("Question 9", createChoices("A", "B", "C", "D"), 0));   
+        questions.add(new Question("Question 10", createChoices("A", "B", "C", "D"), 1));  
+        questions.add(new Question("Question 11", createChoices("A", "B", "C", "D"), 2));  
+        questions.add(new Question("Question 12", createChoices("A", "B", "C", "D"), 2));  
+        questions.add(new Question("Question 13", createChoices("A", "B", "C", "D"), 2));  
+        questions.add(new Question("Question 14", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 15", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 16", createChoices("A", "B", "C", "D"), 1));  
+        questions.add(new Question("Question 17", createChoices("A", "B", "C", "D"), 1));  
+        questions.add(new Question("Question 18", createChoices("A", "B", "C", "D"), 1));  
+        questions.add(new Question("Question 19", createChoices("A", "B", "C", "D"), 1));  
+        questions.add(new Question("Question 20", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 21", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 22", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 23", createChoices("A", "B", "C", "D"), 0));  
+        // Add all 23 questions similarly
+    }    
+
+    private void setOnClickListeners() {
+        for (int i = 0; i < textToSpeechButtons.size(); i++) {
+            int finalI = i; // To access in lambda expression
+            textToSpeechButtons.get(i).setOnClickListener(view -> speakText(questions.get(finalI).getQuestionText() + ". " + getChoicesText(finalI)));
+        }
 
         submitButton.setOnClickListener(view -> showScoreDialog());
+    }
+
+    private void speakText(String text) {
+        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+    }
+
+    private String getChoicesText(int index) {
+        StringBuilder choicesText = new StringBuilder();
+        List<String> choices = questions.get(index).getChoices();
+        for (int i = 0; i < choices.size(); i++) {
+            choicesText.append(choices.get(i)).append(". ");
+        }
+        return choicesText.toString();
+    }
+
+    private void showScoreDialog() {
+        int correctAnswers = 0;
+        StringBuilder correctAnswersText = new StringBuilder();
+    
+        for (int i = 0; i < questions.size(); i++) {
+            if (checkAnswer(i)) {
+                correctAnswers++;
+                correctAnswersText.append(i + 1).append(". Correct\n");
+            } else {
+                correctAnswersText.append(i + 1).append(". (Correct Answer: ")
+                        .append(questions.get(i).getChoices().get(questions.get(i).getCorrectAnswerIndex())).append(")\n");
+            }
+        }
+    
+        // Build the dialog message
+        String dialogMessage = "Your score is " + correctAnswers + "/" + questions.size() + "\n\n";
+        dialogMessage += "Correct Answers:\n" + correctAnswersText.toString();
+    
+        // Create and show the dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(dialogMessage)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Finish the current activity to go back
+                        finish();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }    
+
+    private boolean checkAnswer(int index) {
+        int selectedId = choiceRadioGroups.get(index).getCheckedRadioButtonId();
+        RadioButton selectedRadioButton = findViewById(selectedId);
+        int selectedAnswerIndex = choiceRadioGroups.get(index).indexOfChild(selectedRadioButton);
+        int correctAnswerIndex = questions.get(index).getCorrectAnswerIndex();
+        return selectedAnswerIndex == correctAnswerIndex;
+    }
+    
+
+    private void shuffleQuestions() {
+        Collections.shuffle(questions);
+        currentQuestionIndex = 0; // Reset current question index
+
+        // Update UI with shuffled questions
+        for (int i = 0; i < questions.size(); i++) {
+            Question question = questions.get(i);
+            TextView textView = questionTextViews.get(i);
+            textView.setText(question.getQuestionText());
+
+            List<String> choices = question.getChoices();
+            for (int j = 0; j < choices.size(); j++) {
+                RadioButton radioButton = (RadioButton) choiceRadioGroups.get(i).getChildAt(j);
+                radioButton.setText(choices.get(j));
+            }
+        }
     }
 
     @Override
@@ -144,186 +256,6 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         }
     }
 
-    private void speakText(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
-    }
-
-    private String getChoicesText(RadioGroup radioGroup) {
-        StringBuilder choicesText = new StringBuilder();
-        for (int i = 0; i < radioGroup.getChildCount(); i++) {
-            RadioButton radioButton = (RadioButton) radioGroup.getChildAt(i);
-            choicesText.append(radioButton.getText()).append(". ");
-        }
-        return choicesText.toString();
-    }
-
-    private void showScoreDialog() {
-        int correctAnswers = 0;
-    
-        StringBuilder correctAnswersText = new StringBuilder();
-    
-        if (checkAnswer(choiceRadioGroup1, R.id.choiceRadioButton1B)) {
-            correctAnswers++;
-            correctAnswersText.append("1. B\n");
-        } else {
-            correctAnswersText.append("1. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup2, R.id.choiceRadioButton2B)) {
-            correctAnswers++;
-            correctAnswersText.append("2. B\n");
-        } else {
-            correctAnswersText.append("2. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup3, R.id.choiceRadioButton3A)) {
-            correctAnswers++;
-            correctAnswersText.append("3. A\n");
-        } else {
-            correctAnswersText.append("3. (Correct Answer: A)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup4, R.id.choiceRadioButton4C)) {
-            correctAnswers++;
-            correctAnswersText.append("4. C\n");
-        } else {
-            correctAnswersText.append("4. (Correct Answer: C)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup5, R.id.choiceRadioButton5B)) {
-            correctAnswers++;
-            correctAnswersText.append("5. B\n");
-        } else {
-            correctAnswersText.append("5. (Correct Answer: B)\n");
-        }
-
-        if (checkAnswer(choiceRadioGroup6, R.id.choiceRadioButton6B)) {
-            correctAnswers++;
-            correctAnswersText.append("6. B\n");
-        } else {
-            correctAnswersText.append("6. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup7, R.id.choiceRadioButton7B)) {
-            correctAnswers++;
-            correctAnswersText.append("7. B\n");
-        } else {
-            correctAnswersText.append("7. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup8, R.id.choiceRadioButton8D)) {
-            correctAnswers++;
-            correctAnswersText.append("8. D\n");
-        } else {
-            correctAnswersText.append("8. (Correct Answer: D)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup9, R.id.choiceRadioButton9B)) {
-            correctAnswers++;
-            correctAnswersText.append("9. B\n");
-        } else {
-            correctAnswersText.append("9. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup10, R.id.choiceRadioButton10B)) {
-            correctAnswers++;
-            correctAnswersText.append("10. B\n");
-        } else {
-            correctAnswersText.append("10. (Correct Answer: B)\n");
-        }
-
-        if (checkAnswer(choiceRadioGroup11, R.id.choiceRadioButton11C)) {
-            correctAnswers++;
-            correctAnswersText.append("11. C\n");
-        } else {
-            correctAnswersText.append("11. (Correct Answer: C)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup12, R.id.choiceRadioButton12C)) {
-            correctAnswers++;
-            correctAnswersText.append("12. C\n");
-        } else {
-            correctAnswersText.append("12. (Correct Answer: C)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup13, R.id.choiceRadioButton13C)) {
-            correctAnswers++;
-            correctAnswersText.append("13. C\n");
-        } else {
-            correctAnswersText.append("13. (Correct Answer: C)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup14, R.id.choiceRadioButton14A)) {
-            correctAnswers++;
-            correctAnswersText.append("14. A\n");
-        } else {
-            correctAnswersText.append("14. (Correct Answer: A)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup15, R.id.choiceRadioButton15A)) {
-            correctAnswers++;
-            correctAnswersText.append("15. A\n");
-        } else {
-            correctAnswersText.append("15. (Correct Answer: A)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup16, R.id.choiceRadioButton16B)) {
-            correctAnswers++;
-            correctAnswersText.append("16. B\n");
-        } else {
-            correctAnswersText.append("16. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup17, R.id.choiceRadioButton17B)) {
-            correctAnswers++;
-            correctAnswersText.append("17. B\n");
-        } else {
-            correctAnswersText.append("17. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup18, R.id.choiceRadioButton18B)) {
-            correctAnswers++;
-            correctAnswersText.append("18. B\n");
-        } else {
-            correctAnswersText.append("18. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup19, R.id.choiceRadioButton19B)) {
-            correctAnswers++;
-            correctAnswersText.append("19. B\n");
-        } else {
-            correctAnswersText.append("19. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup20, R.id.choiceRadioButton20A)) {
-            correctAnswers++;
-            correctAnswersText.append("20. A\n");
-        } else {
-            correctAnswersText.append("20. (Correct Answer: A)\n");
-        }
-    
-        // Build the dialog message
-        String dialogMessage = "Your score is " + correctAnswers + "/20\n\n";
-        dialogMessage += "Correct Answers:\n" + correctAnswersText.toString();
-    
-        // Create and show the dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(dialogMessage)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Return to previous activity
-                        finish();
-                    }
-                });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }    
-
-    private boolean checkAnswer(RadioGroup radioGroup, int correctChoiceId) {
-        int selectedId = radioGroup.getCheckedRadioButtonId();
-        return selectedId == correctChoiceId;
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -331,5 +263,11 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
             textToSpeech.stop();
             textToSpeech.shutdown();
         }
+    }
+
+    private List<String> createChoices(String... choices) {
+        List<String> choicesList = new ArrayList<>();
+        Collections.addAll(choicesList, choices);
+        return choicesList;
     }
 }
