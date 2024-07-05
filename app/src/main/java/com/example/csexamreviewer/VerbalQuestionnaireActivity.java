@@ -81,7 +81,6 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         questionTextViews.add(findViewById(R.id.questionTextView23));
         questionTextViews.add(findViewById(R.id.questionTextView24));
         questionTextViews.add(findViewById(R.id.questionTextView25));
-        // Add all questionTextViews similarly for all 23 questions
 
         choiceRadioGroups = new ArrayList<>();
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup1));
@@ -109,7 +108,6 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup23));
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup24));
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup25));
-        // Add all choiceRadioGroups similarly for all 23 questions
 
         textToSpeechButtons = new ArrayList<>();
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton1));
@@ -137,7 +135,6 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton23));
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton24));
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton25));
-        // Add all textToSpeechButtons similarly for all 23 questions
 
         submitButton = findViewById(R.id.submitButton);
     }
@@ -167,7 +164,8 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         questions.add(new Question("Question 21", createChoices("A", "B", "C", "D"), 0));  
         questions.add(new Question("Question 22", createChoices("A", "B", "C", "D"), 0));  
         questions.add(new Question("Question 23", createChoices("A", "B", "C", "D"), 0));  
-        // Add all 23 questions similarly
+        questions.add(new Question("Question 24", createChoices("A", "B", "C", "D"), 2));  
+        questions.add(new Question("Question 25", createChoices("A", "B", "C", "D"), 3));  
     }    
 
     private void setOnClickListeners() {
