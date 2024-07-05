@@ -135,6 +135,8 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton21));
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton22));
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton23));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton24));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton25));
         // Add all textToSpeechButtons similarly for all 23 questions
 
         submitButton = findViewById(R.id.submitButton);
