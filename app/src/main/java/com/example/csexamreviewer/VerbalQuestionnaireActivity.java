@@ -107,6 +107,8 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup21));
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup22));
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup23));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup24));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup25));
         // Add all choiceRadioGroups similarly for all 23 questions
 
         textToSpeechButtons = new ArrayList<>();
