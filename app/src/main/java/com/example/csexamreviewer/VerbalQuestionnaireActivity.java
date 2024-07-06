@@ -81,6 +81,11 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         questionTextViews.add(findViewById(R.id.questionTextView23));
         questionTextViews.add(findViewById(R.id.questionTextView24));
         questionTextViews.add(findViewById(R.id.questionTextView25));
+        questionTextViews.add(findViewById(R.id.questionTextView26));
+        questionTextViews.add(findViewById(R.id.questionTextView27));
+        questionTextViews.add(findViewById(R.id.questionTextView28));
+        questionTextViews.add(findViewById(R.id.questionTextView29));
+        questionTextViews.add(findViewById(R.id.questionTextView30));
 
         choiceRadioGroups = new ArrayList<>();
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup1));
