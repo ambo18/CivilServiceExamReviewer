@@ -180,7 +180,12 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         questions.add(new Question("Question 22", createChoices("A", "B", "C", "D"), 0));  
         questions.add(new Question("Question 23", createChoices("A", "B", "C", "D"), 0));  
         questions.add(new Question("Question 24", createChoices("A", "B", "C", "D"), 2));  
-        questions.add(new Question("Question 25", createChoices("A", "B", "C", "D"), 3));  
+        questions.add(new Question("Question 25", createChoices("A", "B", "C", "D"), 3));
+        questions.add(new Question("Question 26", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 27", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 28", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 29", createChoices("A", "B", "C", "D"), 2));  
+        questions.add(new Question("Question 30", createChoices("A", "B", "C", "D"), 3));    
     }    
 
     private void setOnClickListeners() {
