@@ -86,6 +86,11 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         questionTextViews.add(findViewById(R.id.questionTextView28));
         questionTextViews.add(findViewById(R.id.questionTextView29));
         questionTextViews.add(findViewById(R.id.questionTextView30));
+        questionTextViews.add(findViewById(R.id.questionTextView31));
+        questionTextViews.add(findViewById(R.id.questionTextView32));
+        questionTextViews.add(findViewById(R.id.questionTextView33));
+        questionTextViews.add(findViewById(R.id.questionTextView34));
+        questionTextViews.add(findViewById(R.id.questionTextView35));
 
         choiceRadioGroups = new ArrayList<>();
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup1));
@@ -118,6 +123,11 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup28));
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup29));
         choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup30));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup31));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup32));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup33));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup34));
+        choiceRadioGroups.add(findViewById(R.id.choiceRadioGroup35));
 
         textToSpeechButtons = new ArrayList<>();
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton1));
@@ -150,6 +160,11 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton28));
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton29));
         textToSpeechButtons.add(findViewById(R.id.textToSpeechButton30));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton31));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton32));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton33));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton34));
+        textToSpeechButtons.add(findViewById(R.id.textToSpeechButton35));
 
         submitButton = findViewById(R.id.submitButton);
     }
@@ -185,7 +200,12 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         questions.add(new Question("Question 27", createChoices("A", "B", "C", "D"), 0));  
         questions.add(new Question("Question 28", createChoices("A", "B", "C", "D"), 0));  
         questions.add(new Question("Question 29", createChoices("A", "B", "C", "D"), 2));  
-        questions.add(new Question("Question 30", createChoices("A", "B", "C", "D"), 3));    
+        questions.add(new Question("Question 30", createChoices("A", "B", "C", "D"), 3));
+        questions.add(new Question("Question 31", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 32", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 33", createChoices("A", "B", "C", "D"), 0));  
+        questions.add(new Question("Question 34", createChoices("A", "B", "C", "D"), 2));  
+        questions.add(new Question("Question 35", createChoices("A", "B", "C", "D"), 3));    
     }    
 
     private void setOnClickListeners() {
