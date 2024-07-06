@@ -1676,6 +1676,321 @@
 
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/question26Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView26"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="26. What is the plural form of 'ox'?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton26A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Oxen"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton26B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Oxes"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton26C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Oxs"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton26D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Oxons"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question27Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView27"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="27. What is the plural form of 'ox'?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup27"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton27A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Oxen"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton27B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Oxes"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton27C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Oxs"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton27D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Oxons"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question28Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView28"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="28. What is the plural form of 'ox'?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton28A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Oxen"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton28B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Oxes"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton28C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Oxs"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton28D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Oxons"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question29Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView29"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="29. What is the plural form of 'ox'?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup29"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton29A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Oxen"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton29B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Oxes"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton29C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Oxs"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton29D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Oxons"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/question30Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/questionTextView30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="30. What is the plural form of 'ox'?"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textToSpeechButton30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speaker"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/choiceRadioGroup30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for choices -->
+            <RadioButton
+                android:id="@+id/choiceRadioButton30A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A. Oxen"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton30B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="B. Oxes"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton30C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C. Oxs"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/choiceRadioButton30D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D. Oxons"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+        </RadioGroup>
+
         <Button
             android:id="@+id/submitButton"
             android:layout_width="wrap_content"
