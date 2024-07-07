@@ -75,11 +75,11 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
 
     private void initializeQuestions() {
         questions = new ArrayList<>();
-        questions.add(new Question("Question 1?", createChoices("A", "B", "C", "D"), 1));  
-        questions.add(new Question("Question 2?", createChoices("A", "B", "C", "D"), 1));  
-        questions.add(new Question("Question 3", createChoices("A", "B", "C", "D"), 0));   
-        questions.add(new Question("Question 4", createChoices("A", "B", "C", "D"), 2));   
-        questions.add(new Question("Question 5", createChoices("A", "B", "C", "D"), 1));   
+        questions.add(new Question("Fill in the blank:\n'The CEO's speech was __________ with inspirational quotes and strategic insights.'", createChoices("A) replete", "B) devoid", "C) sparse", "D) vacant"), 0));
+        questions.add(new Question("Antonym:\nSelect the word that is the opposite of 'diligent':", createChoices("A) lazy", "B) industrious", "C) hardworking", "D) dedicated"), 0));
+        questions.add(new Question("Analogies:\n'Editor is to manuscript as conductor is to __________.'", createChoices("A) orchestra", "B) music", "C) baton", "D) audience"), 0));
+        questions.add(new Question("Sentence Correction:\nWhich of the following sentences is grammatically correct?", createChoices("A) The project was completed by she and her team.", "B) He is the most smarter person in the group.", "C) The report needs to be reviewed by him and I.", "D) She is an expert in financial analysis."), 3));
+        questions.add(new Question("Synonyms:\nChoose the word that is most similar in meaning to 'proficient':", createChoices("A) adequate", "B) skilled", "C) amateur", "D) mediocre"), 1));
         questions.add(new Question("Question 6", createChoices("A", "B", "C", "D"), 1));   
         questions.add(new Question("Question 7", createChoices("A", "B", "C", "D"), 0));   
         questions.add(new Question("Question 8", createChoices("A", "B", "C", "D"), 3));   
