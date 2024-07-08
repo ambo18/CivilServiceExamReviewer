@@ -163,7 +163,18 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         questions.add(new Question("Fill in the blank: \"The successful candidate demonstrated exceptional __________ during the interview.\"", createChoices("A. Prowess", "B. Weakness", "C. Incompetence", "D. Inability"), 0));
         questions.add(new Question("Antonym: Select the word that is the opposite of \"beneficial\":", createChoices("A. Advantageous", "B. Favorable", "C. Detrimental", "D. Profitable"), 2));
         questions.add(new Question("Analogies: \"Teacher is to classroom as conductor is to __________.\"", createChoices("A. Music", "B. Orchestra", "C. Baton", "D. Audience"), 1));
-   
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The team have completed their tasks ahead of schedule.", "B. Him and his colleagues are attending the seminar.", "C. She is more talented than any other artist in the gallery.", "D. Each member of the committee has a specific role to play."), 3));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"proficient\":", createChoices("A. Adept", "B. Inept", "C. Mediocre", "D. Amateur"), 0));
+        questions.add(new Question("Fill in the blank: \"The team's collaborative effort led to the __________ completion of the project.\"", createChoices("A. Timely", "B. Delayed", "C. Hasty", "D. Rushed"), 0));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"innovative\":", createChoices("A. Creative", "B. Conventional", "C. Original", "D. Inventive"), 1));
+        questions.add(new Question("Analogies: \"Painter is to canvas as writer is to __________.\"", createChoices("A. Pen", "B. Paper", "C. Novel", "D. Ink"), 1));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The team's efforts have resulted in a successful completion of the project.", "B. Each members of the team have contributed to the project.", "C. The report needs to be reviewed by him and I.", "D. She is more smarter than her peers."), 0));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"precise\":", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0));
+        questions.add(new Question("Fill in the blank: \"The negotiation reached a __________ when both parties agreed to the terms.\"", createChoices("A. Stalemate", "B. Compromise", "C. Impasse", "D. Deadlock"), 1));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"obsolete\":", createChoices("A. Current", "B. Modern", "C. Outdated", "D. Ancient"), 0));
+        questions.add(new Question("Analogies: \"Chef is to kitchen as conductor is to __________.\"", createChoices("A. Train", "B. Symphony", "C. Music", "D. Orchestra"), 3));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The company's profits have significantly increased last quarter.", "B. Each member of the team have different responsibilities.", "C. Her presentation was more better than his.", "D. The project manager oversees all aspects of the project."), 3));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"precise\":", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0)); 
     }    
 
     private void setOnClickListeners() {
