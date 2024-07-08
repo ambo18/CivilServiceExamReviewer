@@ -84,6 +84,15 @@ public class VerbalQuestionnaireActivity extends AppCompatActivity implements Te
         questions.add(new Question("Word Jumble:\nRearrange the letters to form a meaningful word:\n'O C U M M N I A T I O N'\nHint: It's a term related to business dealings.", createChoices("A. Communication", "B. Accumulation", "C. Commutation", "D. Annunciation"), 0));
         questions.add(new Question("Reading Comprehension:\nRead the passage and answer the question:\n'The stock market experienced a sharp decline due to economic uncertainties. What caused the market downturn?'", createChoices("A. Stable economy", "B. Uncertainties", "C. Positive outlook", "D. Government intervention"), 1));
         questions.add(new Question("Sentence Ordering:\nArrange the following words to form a coherent sentence:\n'Strategies - innovative - company - the - implemented - to - stay - competitive.'", createChoices("A. The company implemented innovative strategies to stay competitive.", "B. To stay competitive, the company implemented innovative strategies.", "C. Implemented to stay competitive, the company innovative strategies.", "D. Innovative strategies to stay competitive the company implemented."), 0));
+        questions.add(new Question("Error Identification:\nIdentify the error in the following sentence:\n'The team is working hard to ensure their project meets it's deadline.'", createChoices("A. Their", "B. Meets", "C. It's", "D. Working"), 2));
+        questions.add(new Question("Fill in the blank:\n'The marketing campaign was a huge __________, resulting in a significant increase in sales.'", createChoices("A. Triumph", "B. Failure", "C. Setback", "D. Disappointment"), 0));
+        questions.add(new Question("Antonym:\nSelect the word that is the opposite of 'concur':", createChoices("A. Agree", "B. Dissent", "C. Approve", "D. Comply"), 1));
+        questions.add(new Question("Analogies:\n'Author is to book as sculptor is to __________.'", createChoices("A. Marble", "B. Paint", "C. Canvas", "D. Clay"), 3));
+        questions.add(new Question("Sentence Correction:\nWhich of the following sentences is grammatically correct?", createChoices("A. The team has been working diligently to achieve their goals.", "B. Him and his colleagues are attending the conference.", "C. Each member of the committee have submitted their reports.", "D. She is more smarter than her peers."), 0));
+        questions.add(new Question("Synonyms:\nChoose the word that is most similar in meaning to 'proficient':", createChoices("A. Adept", "B. Inept", "C. Mediocre", "D. Amateur"), 0));
+        questions.add(new Question("Fill in the blank:\n'The negotiation reached a __________ when both parties agreed to the terms.'", createChoices("A. Stalemate", "B. Compromise", "C. Impasse", "D. Deadlock"), 1));
+        questions.add(new Question("Antonym:\nSelect the word that is the opposite of 'obsolete':", createChoices("A. Current", "B. Modern", "C. Outdated", "D. Ancient"), 0));
+        questions.add(new Question("Analogies:\n'Chef is to kitchen as conductor is to __________.'", createChoices("A. Train", "B. Symphony", "C. Music", "D. Orchestra"), 3));
    
     }    
 
