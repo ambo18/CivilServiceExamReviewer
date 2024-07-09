@@ -13,123 +13,248 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Locale;
 
 public class NumericalQuestionnaireActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
     // Views
-    private TextView questionTextView1, questionTextView2, questionTextView3, questionTextView4, 
-    questionTextView5, questionTextView6, questionTextView7, questionTextView8, questionTextView9, 
-    questionTextView10, questionTextView11, questionTextView12, questionTextView13, questionTextView14, questionTextView15, 
-    questionTextView16, questionTextView17, questionTextView18, questionTextView19, questionTextView20;
-    private RadioGroup choiceRadioGroup1, choiceRadioGroup2, choiceRadioGroup3, choiceRadioGroup4, choiceRadioGroup5,
-    choiceRadioGroup6, choiceRadioGroup7, choiceRadioGroup8, choiceRadioGroup9, choiceRadioGroup10, choiceRadioGroup11,
-    choiceRadioGroup12, choiceRadioGroup13, choiceRadioGroup14, choiceRadioGroup15, choiceRadioGroup16, choiceRadioGroup17,
-    choiceRadioGroup18, choiceRadioGroup19, choiceRadioGroup20;
-    private ImageView textToSpeechButton1, textToSpeechButton2, textToSpeechButton3, textToSpeechButton4, textToSpeechButton5, 
-    textToSpeechButton6, textToSpeechButton7, textToSpeechButton8, textToSpeechButton9, textToSpeechButton10, textToSpeechButton11, textToSpeechButton12, textToSpeechButton13,
-    textToSpeechButton14, textToSpeechButton15, textToSpeechButton16, textToSpeechButton17, textToSpeechButton18, textToSpeechButton19, textToSpeechButton20;
+    private List<TextView> questionTextViews;
+    private List<RadioGroup> choiceRadioGroups;
+    private List<ImageView> textToSpeechButtons;
     private Button submitButton;
+
+    // Questions
+    private List<Question> questions;
+    private int currentQuestionIndex = 0;
+
     // Text-to-speech
     private TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numerical);
+        setContentView(R.layout.activity_verbal);
 
         // Initialize views
-        questionTextView1 = findViewById(R.id.questionTextView1);
-        questionTextView2 = findViewById(R.id.questionTextView2);
-        questionTextView3 = findViewById(R.id.questionTextView3);
-        questionTextView4 = findViewById(R.id.questionTextView4);
-        questionTextView5 = findViewById(R.id.questionTextView5);
-        questionTextView6 = findViewById(R.id.questionTextView6);
-        questionTextView7 = findViewById(R.id.questionTextView7);
-        questionTextView8 = findViewById(R.id.questionTextView8);
-        questionTextView9 = findViewById(R.id.questionTextView9);
-        questionTextView10 = findViewById(R.id.questionTextView10);
-        questionTextView11 = findViewById(R.id.questionTextView11);
-        questionTextView12 = findViewById(R.id.questionTextView12);
-        questionTextView13 = findViewById(R.id.questionTextView13);
-        questionTextView14 = findViewById(R.id.questionTextView14);
-        questionTextView15 = findViewById(R.id.questionTextView15);
-        questionTextView16 = findViewById(R.id.questionTextView16);
-        questionTextView17 = findViewById(R.id.questionTextView17);
-        questionTextView18 = findViewById(R.id.questionTextView18);
-        questionTextView19 = findViewById(R.id.questionTextView19);
-        questionTextView20 = findViewById(R.id.questionTextView20);
+        initializeViews();
 
-        choiceRadioGroup1 = findViewById(R.id.choiceRadioGroup1);
-        choiceRadioGroup2 = findViewById(R.id.choiceRadioGroup2);
-        choiceRadioGroup3 = findViewById(R.id.choiceRadioGroup3);
-        choiceRadioGroup4 = findViewById(R.id.choiceRadioGroup4);
-        choiceRadioGroup5 = findViewById(R.id.choiceRadioGroup5);
-        choiceRadioGroup6 = findViewById(R.id.choiceRadioGroup6);
-        choiceRadioGroup7 = findViewById(R.id.choiceRadioGroup7);
-        choiceRadioGroup8 = findViewById(R.id.choiceRadioGroup8);
-        choiceRadioGroup9 = findViewById(R.id.choiceRadioGroup9);
-        choiceRadioGroup10 = findViewById(R.id.choiceRadioGroup10);
-        choiceRadioGroup11 = findViewById(R.id.choiceRadioGroup11);
-        choiceRadioGroup12 = findViewById(R.id.choiceRadioGroup12);
-        choiceRadioGroup13 = findViewById(R.id.choiceRadioGroup13);
-        choiceRadioGroup14 = findViewById(R.id.choiceRadioGroup14);
-        choiceRadioGroup15 = findViewById(R.id.choiceRadioGroup15);
-        choiceRadioGroup16 = findViewById(R.id.choiceRadioGroup16);
-        choiceRadioGroup17 = findViewById(R.id.choiceRadioGroup17);
-        choiceRadioGroup18 = findViewById(R.id.choiceRadioGroup18);
-        choiceRadioGroup19 = findViewById(R.id.choiceRadioGroup19);
-        choiceRadioGroup20 = findViewById(R.id.choiceRadioGroup20);
-
-        textToSpeechButton1 = findViewById(R.id.textToSpeechButton1);
-        textToSpeechButton2 = findViewById(R.id.textToSpeechButton2);
-        textToSpeechButton3 = findViewById(R.id.textToSpeechButton3);
-        textToSpeechButton4 = findViewById(R.id.textToSpeechButton4);
-        textToSpeechButton5 = findViewById(R.id.textToSpeechButton5);
-        textToSpeechButton6 = findViewById(R.id.textToSpeechButton6);
-        textToSpeechButton7 = findViewById(R.id.textToSpeechButton7);
-        textToSpeechButton8 = findViewById(R.id.textToSpeechButton8);
-        textToSpeechButton9 = findViewById(R.id.textToSpeechButton9);
-        textToSpeechButton10 = findViewById(R.id.textToSpeechButton10);
-        textToSpeechButton11 = findViewById(R.id.textToSpeechButton11);
-        textToSpeechButton12 = findViewById(R.id.textToSpeechButton12);
-        textToSpeechButton13 = findViewById(R.id.textToSpeechButton13);
-        textToSpeechButton14 = findViewById(R.id.textToSpeechButton14);
-        textToSpeechButton15 = findViewById(R.id.textToSpeechButton15);
-        textToSpeechButton16 = findViewById(R.id.textToSpeechButton16);
-        textToSpeechButton17 = findViewById(R.id.textToSpeechButton17);
-        textToSpeechButton18 = findViewById(R.id.textToSpeechButton18);
-        textToSpeechButton19 = findViewById(R.id.textToSpeechButton19);
-        textToSpeechButton20 = findViewById(R.id.textToSpeechButton20);
-
-        submitButton = findViewById(R.id.submitButton);
+        // Initialize questions
+        initializeQuestions();
 
         // Initialize text-to-speech engine
         textToSpeech = new TextToSpeech(this, this);
 
         // Set onClick listeners
-        textToSpeechButton1.setOnClickListener(view -> speakText(questionTextView1.getText().toString() + ". " + getChoicesText(choiceRadioGroup1)));
-        textToSpeechButton2.setOnClickListener(view -> speakText(questionTextView2.getText().toString() + ". " + getChoicesText(choiceRadioGroup2)));
-        textToSpeechButton3.setOnClickListener(view -> speakText(questionTextView3.getText().toString() + ". " + getChoicesText(choiceRadioGroup3)));
-        textToSpeechButton4.setOnClickListener(view -> speakText(questionTextView4.getText().toString() + ". " + getChoicesText(choiceRadioGroup4)));
-        textToSpeechButton5.setOnClickListener(view -> speakText(questionTextView5.getText().toString() + ". " + getChoicesText(choiceRadioGroup5)));
-        textToSpeechButton6.setOnClickListener(view -> speakText(questionTextView6.getText().toString() + ". " + getChoicesText(choiceRadioGroup6)));
-        textToSpeechButton7.setOnClickListener(view -> speakText(questionTextView7.getText().toString() + ". " + getChoicesText(choiceRadioGroup7)));
-        textToSpeechButton8.setOnClickListener(view -> speakText(questionTextView8.getText().toString() + ". " + getChoicesText(choiceRadioGroup8)));
-        textToSpeechButton9.setOnClickListener(view -> speakText(questionTextView9.getText().toString() + ". " + getChoicesText(choiceRadioGroup9)));
-        textToSpeechButton10.setOnClickListener(view -> speakText(questionTextView10.getText().toString() + ". " + getChoicesText(choiceRadioGroup10)));
-        textToSpeechButton11.setOnClickListener(view -> speakText(questionTextView11.getText().toString() + ". " + getChoicesText(choiceRadioGroup11)));
-        textToSpeechButton12.setOnClickListener(view -> speakText(questionTextView12.getText().toString() + ". " + getChoicesText(choiceRadioGroup12)));
-        textToSpeechButton13.setOnClickListener(view -> speakText(questionTextView13.getText().toString() + ". " + getChoicesText(choiceRadioGroup13)));
-        textToSpeechButton14.setOnClickListener(view -> speakText(questionTextView14.getText().toString() + ". " + getChoicesText(choiceRadioGroup14)));
-        textToSpeechButton15.setOnClickListener(view -> speakText(questionTextView15.getText().toString() + ". " + getChoicesText(choiceRadioGroup15)));
-        textToSpeechButton16.setOnClickListener(view -> speakText(questionTextView16.getText().toString() + ". " + getChoicesText(choiceRadioGroup16)));
-        textToSpeechButton17.setOnClickListener(view -> speakText(questionTextView17.getText().toString() + ". " + getChoicesText(choiceRadioGroup17)));
-        textToSpeechButton18.setOnClickListener(view -> speakText(questionTextView18.getText().toString() + ". " + getChoicesText(choiceRadioGroup18)));
-        textToSpeechButton19.setOnClickListener(view -> speakText(questionTextView19.getText().toString() + ". " + getChoicesText(choiceRadioGroup19)));
-        textToSpeechButton20.setOnClickListener(view -> speakText(questionTextView20.getText().toString() + ". " + getChoicesText(choiceRadioGroup20)));
+        setOnClickListeners();
+
+        // Shuffle questions initially
+        shuffleQuestions();
+    }
+
+    private void initializeViews() {
+        questionTextViews = new ArrayList<>();
+        choiceRadioGroups = new ArrayList<>();
+        textToSpeechButtons = new ArrayList<>();
+
+        for (int i = 1; i <= 100; i++) {
+            int resID = getResources().getIdentifier("questionTextView" + i, "id", getPackageName());
+            questionTextViews.add(findViewById(resID));
+
+            int radioGroupResID = getResources().getIdentifier("choiceRadioGroup" + i, "id", getPackageName());
+            choiceRadioGroups.add(findViewById(radioGroupResID));
+
+            int textToSpeechButtonResID = getResources().getIdentifier("textToSpeechButton" + i, "id", getPackageName());
+            textToSpeechButtons.add(findViewById(textToSpeechButtonResID));
+        }
+
+        submitButton = findViewById(R.id.submitButton);
+    }
+
+    private void initializeQuestions() {
+        questions = new ArrayList<>();
+        questions.add(new Question("Fill in the blank:\n'The CEO's speech was __________ with inspirational quotes and strategic insights.'", createChoices("A. Replete", "B. Devoid", "C. Sparse", "D. Vacant"), 0));
+        questions.add(new Question("Antonym:\nSelect the word that is the opposite of 'diligent':", createChoices("A. Lazy", "B. Industrious", "C. Hardworking", "D. Dedicated"), 0));
+        questions.add(new Question("Analogies:\n'Editor is to manuscript as conductor is to __________.'", createChoices("A. Orchestra", "B. Music", "C. Baton", "D. Audience"), 0));
+        questions.add(new Question("Sentence Correction:\nWhich of the following sentences is grammatically correct?", createChoices("A. The project was completed by she and her team.", "B. He is the most smarter person in the group.", "C. The report needs to be reviewed by him and I.", "D. She is an expert in financial analysis."), 3));
+        questions.add(new Question("Synonyms:\nChoose the word that is most similar in meaning to 'proficient':", createChoices("A. Adequate", "B. Skilled", "C. Amateur", "D. Mediocre"), 1));
+        questions.add(new Question("Sentence Completion:\n'The negotiation process requires patience, flexibility, and __________ communication skills.'", createChoices("A. Articulate", "B. Ambiguous", "C. Verbose", "D. Concise"), 0));
+        questions.add(new Question("Word Jumble:\nRearrange the letters to form a meaningful word:\n'O C U M M N I A T I O N'\nHint: It's a term related to business dealings.", createChoices("A. Communication", "B. Accumulation", "C. Commutation", "D. Annunciation"), 0));
+        questions.add(new Question("Reading Comprehension:\nRead the passage and answer the question:\n'The stock market experienced a sharp decline due to economic uncertainties. What caused the market downturn?'", createChoices("A. Stable economy", "B. Uncertainties", "C. Positive outlook", "D. Government intervention"), 1));
+        questions.add(new Question("Sentence Ordering:\nArrange the following words to form a coherent sentence:\n'Strategies - innovative - company - the - implemented - to - stay - competitive.'", createChoices("A. The company implemented innovative strategies to stay competitive.", "B. To stay competitive, the company implemented innovative strategies.", "C. Implemented to stay competitive, the company innovative strategies.", "D. Innovative strategies to stay competitive the company implemented."), 0));
+        questions.add(new Question("Error Identification:\nIdentify the error in the following sentence:\n'The team is working hard to ensure their project meets it's deadline.'", createChoices("A. Their", "B. Meets", "C. It's", "D. Working"), 2));
+        questions.add(new Question("Fill in the blank:\n'The marketing campaign was a huge __________, resulting in a significant increase in sales.'", createChoices("A. Triumph", "B. Failure", "C. Setback", "D. Disappointment"), 0));
+        questions.add(new Question("Antonym:\nSelect the word that is the opposite of 'concur':", createChoices("A. Agree", "B. Dissent", "C. Approve", "D. Comply"), 1));
+        questions.add(new Question("Analogies:\n'Author is to book as sculptor is to __________.'", createChoices("A. Marble", "B. Paint", "C. Canvas", "D. Clay"), 3));
+        questions.add(new Question("Sentence Correction:\nWhich of the following sentences is grammatically correct?", createChoices("A. The team has been working diligently to achieve their goals.", "B. Him and his colleagues are attending the conference.", "C. Each member of the committee have submitted their reports.", "D. She is more smarter than her peers."), 0));
+        questions.add(new Question("Synonyms:\nChoose the word that is most similar in meaning to 'proficient':", createChoices("A. Adept", "B. Inept", "C. Mediocre", "D. Amateur"), 0));
+        questions.add(new Question("Fill in the blank:\n'The negotiation reached a __________ when both parties agreed to the terms.'", createChoices("A. Stalemate", "B. Compromise", "C. Impasse", "D. Deadlock"), 1));
+        questions.add(new Question("Antonym:\nSelect the word that is the opposite of 'obsolete':", createChoices("A. Current", "B. Modern", "C. Outdated", "D. Ancient"), 0));
+        questions.add(new Question("Analogies:\n'Chef is to kitchen as conductor is to __________.'", createChoices("A. Train", "B. Symphony", "C. Music", "D. Orchestra"), 3));
+        questions.add(new Question("Sentence Correction:\nWhich of the following sentences is grammatically correct?", createChoices("A. The company's profits have significantly increased last quarter.", "B. Each member of the team have different responsibilities.", "C. Her presentation was more better than his.", "D. The project manager oversees all aspects of the project."), 3));
+        questions.add(new Question("Synonyms:\nChoose the word that is most similar in meaning to 'precise':", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0));
+        questions.add(new Question("Sentence Completion:\n'The team's ability to adapt to changing circumstances was crucial for __________ success.'", createChoices("A. Their", "B. It's", "C. There", "D. Its"), 3));
+        questions.add(new Question("Word Jumble:\nRearrange the letters to form a meaningful word:\n'I T N E V E S T M N E'\nHint: It's a term related to financial markets.", createChoices("A. Investment", "B. Statement", "C. Sentiment", "D. Entertainment"), 0));
+        questions.add(new Question("Reading Comprehension:\nRead the passage and answer the question:\n'The article discusses the benefits of diversifying investment portfolios. Why is diversification important in investing?'", createChoices("A. To focus on a single investment", "B. To reduce risk", "C. To maximize returns", "D. To predict market trends"), 1));
+        questions.add(new Question("Sentence Ordering:\nArrange the following words to form a coherent sentence:\n'Strategies - innovative - company - the - implemented - to - stay - competitive.'", createChoices("A. The company implemented innovative strategies to stay competitive.", "B. To stay competitive, the company implemented innovative strategies.", "C. Implemented to stay competitive, the company innovative strategies.", "D. Innovative strategies to stay competitive the company implemented."), 0));
+        questions.add(new Question("Error Identification:\nIdentify the error in the following sentence:\n'The team is working hard to ensure their project meets it's deadline.'", createChoices("A. Their", "B. Meets", "C. It's", "D. Working"), 2));
+        questions.add(new Question("Fill in the blank: \"The successful candidate demonstrated exceptional __________ during the interview.\"", createChoices("A. Prowess", "B. Weakness", "C. Incompetence", "D. Inability"), 0));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"beneficial\":", createChoices("A. Advantageous", "B. Favorable", "C. Detrimental", "D. Profitable"), 2));
+        questions.add(new Question("Analogies: \"Teacher is to classroom as conductor is to __________.\"", createChoices("A. Music", "B. Orchestra", "C. Baton", "D. Audience"), 1));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The team have completed their tasks ahead of schedule.", "B. Him and his colleagues are attending the seminar.", "C. She is more talented than any other artist in the gallery.", "D. Each member of the committee has a specific role to play."), 3));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"proficient\":", createChoices("A. Adept", "B. Inept", "C. Mediocre", "D. Amateur"), 0));
+        questions.add(new Question("Fill in the blank: \"The team's collaborative effort led to the __________ completion of the project.\"", createChoices("A. Timely", "B. Delayed", "C. Hasty", "D. Rushed"), 0));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"innovative\":", createChoices("A. Creative", "B. Conventional", "C. Original", "D. Inventive"), 1));
+        questions.add(new Question("Analogies: \"Painter is to canvas as writer is to __________.\"", createChoices("A. Pen", "B. Paper", "C. Novel", "D. Ink"), 1));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The team's efforts have resulted in a successful completion of the project.", "B. Each members of the team have contributed to the project.", "C. The report needs to be reviewed by him and I.", "D. She is more smarter than her peers."), 0));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"precise\":", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0));
+        questions.add(new Question("Fill in the blank: \"The negotiation reached a __________ when both parties agreed to the terms.\"", createChoices("A. Stalemate", "B. Compromise", "C. Impasse", "D. Deadlock"), 1));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"obsolete\":", createChoices("A. Current", "B. Modern", "C. Outdated", "D. Ancient"), 0));
+        questions.add(new Question("Analogies: \"Chef is to kitchen as conductor is to __________.\"", createChoices("A. Train", "B. Symphony", "C. Music", "D. Orchestra"), 3));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The company's profits have significantly increased last quarter.", "B. Each member of the team have different responsibilities.", "C. Her presentation was more better than his.", "D. The project manager oversees all aspects of the project."), 3));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"precise\":", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0));
+        questions.add(new Question("Sentence Completion: \"The team's ability to adapt to changing circumstances was crucial for __________ success.\"", createChoices("A. Their", "B. It's", "C. There", "D. Its"), 3));
+        questions.add(new Question("Word Jumble: Rearrange the letters to form a meaningful word: \"I T N E V E S T M N E\" Hint: It's a term related to financial markets.", createChoices("A. Investment", "B. Statement", "C. Sentiment", "D. Entertainment"), 0));
+        questions.add(new Question("Reading Comprehension: Read the passage and answer the question: \"The article discusses the benefits of diversifying investment portfolios. Why is diversification important in investing?\"", createChoices("A. To focus on a single investment", "B. To reduce risk", "C. To maximize returns", "D. To predict market trends"), 1));
+        questions.add(new Question("Sentence Ordering: Arrange the following words to form a coherent sentence: \"Strategies - innovative - company - the - implemented - to - stay - competitive.\"", createChoices("A. The company implemented innovative strategies to stay competitive.", "B. To stay competitive, the company implemented innovative strategies.", "C. Implemented to stay competitive, the company innovative strategies.", "D. Innovative strategies to stay competitive the company implemented."), 0));
+        questions.add(new Question("Error Identification: Identify the error in the following sentence: \"The team is working hard to ensure their project meets it's deadline.\"", createChoices("A. Their", "B. Meets", "C. It's", "D. Working"), 2));
+        questions.add(new Question("Fill in the blank: \"The successful candidate demonstrated exceptional __________ during the interview.\"", createChoices("A. Prowess", "B. Weakness", "C. Incompetence", "D. Inability"), 0));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"beneficial\":", createChoices("A. Advantageous", "B. Favorable", "C. Detrimental", "D. Profitable"), 2));
+        questions.add(new Question("Analogies: \"Teacher is to classroom as conductor is to __________.\"", createChoices("A. Music", "B. Orchestra", "C. Baton", "D. Audience"), 1));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The team have completed their tasks ahead of schedule.", "B. Him and his colleagues are attending the seminar.", "C. She is more talented than any other artist in the gallery.", "D. Each member of the committee has a specific role to play."), 3));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"proficient\":", createChoices("A. Adept", "B. Inept", "C. Mediocre", "D. Amateur"), 0));
+        questions.add(new Question("Fill in the blank: \"The team's collaborative effort led to the __________ completion of the project.\"", createChoices("A. Timely", "B. Delayed", "C. Hasty", "D. Rushed"), 0));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"innovative\":", createChoices("A. Creative", "B. Conventional", "C. Original", "D. Inventive"), 1));
+        questions.add(new Question("Analogies: \"Painter is to canvas as writer is to __________.\"", createChoices("A. Pen", "B. Paper", "C. Novel", "D. Ink"), 1));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The team's efforts have resulted in a successful completion of the project.", "B. Each members of the team have contributed to the project.", "C. The report needs to be reviewed by him and I.", "D. She is more smarter than her peers."), 0));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"precise\":", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0));
+        questions.add(new Question("Fill in the blank: \"The negotiation reached a __________ when both parties agreed to the terms.\"", createChoices("A. Stalemate", "B. Compromise", "C. Impasse", "D. Deadlock"), 1));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"obsolete\":", createChoices("A. Current", "B. Modern", "C. Outdated", "D. Ancient"), 0));
+        questions.add(new Question("Analogies: \"Chef is to kitchen as conductor is to __________.\"", createChoices("A. Train", "B. Symphony", "C. Music", "D. Orchestra"), 3));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The company's profits have significantly increased last quarter.", "B. Each member of the team have different responsibilities.", "C. Her presentation was more better than his.", "D. The project manager oversees all aspects of the project."), 3));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"precise\":", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0));
+        questions.add(new Question("Sentence Completion: \"The team's ability to adapt to changing circumstances was crucial for __________ success.\"", createChoices("A. Their", "B. It's", "C. There", "D. Its"), 3));
+        questions.add(new Question("Word Jumble: Rearrange the letters to form a meaningful word: \"I T N E V E S T M N E\" Hint: It's a term related to financial markets.", createChoices("A. Investment", "B. Statement", "C. Sentiment", "D. Entertainment"), 0));
+        questions.add(new Question("Reading Comprehension: Read the passage and answer the question: \"The article discusses the benefits of diversifying investment portfolios. Why is diversification important in investing?\"", createChoices("A. To focus on a single investment", "B. To reduce risk", "C. To maximize returns", "D. To predict market trends"), 1));
+        questions.add(new Question("Sentence Ordering: Arrange the following words to form a coherent sentence: \"Strategies - innovative - company - the - implemented - to - stay - competitive.\"", createChoices("A. The company implemented innovative strategies to stay competitive.", "B. To stay competitive, the company implemented innovative strategies.", "C. Implemented to stay competitive, the company innovative strategies.", "D. Innovative strategies to stay competitive the company implemented."), 0));
+        questions.add(new Question("Error Identification: Identify the error in the following sentence: \"The team is working hard to ensure their project meets it's deadline.\"", createChoices("A. Their", "B. Meets", "C. It's", "D. Working"), 2));
+        questions.add(new Question("Fill in the blank: \"The successful candidate demonstrated exceptional __________ during the interview.\"", createChoices("A. Prowess", "B. Weakness", "C. Incompetence", "D. Inability"), 0));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"beneficial\":", createChoices("A. Advantageous", "B. Favorable", "C. Detrimental", "D. Profitable"), 2));
+        questions.add(new Question("Analogies: \"Teacher is to classroom as conductor is to __________.\"", createChoices("A. Music", "B. Orchestra", "C. Baton", "D. Audience"), 1));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The team have completed their tasks ahead of schedule.", "B. Him and his colleagues are attending the seminar.", "C. She is more talented than any other artist in the gallery.", "D. Each member of the committee has a specific role to play."), 3));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"proficient\":", createChoices("A. Adept", "B. Inept", "C. Mediocre", "D. Amateur"), 0));
+        questions.add(new Question("Fill in the blank: \"The team's collaborative effort led to the __________ completion of the project.\"", createChoices("A. Timely", "B. Delayed", "C. Hasty", "D. Rushed"), 0));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"innovative\":", createChoices("A. Creative", "B. Conventional", "C. Original", "D. Inventive"), 1));
+        questions.add(new Question("Analogies: \"Painter is to canvas as writer is to __________.\"", createChoices("A. Pen", "B. Paper", "C. Novel", "D. Ink"), 1));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The team's efforts have resulted in a successful completion of the project.", "B. Each members of the team have contributed to the project.", "C. The report needs to be reviewed by him and I.", "D. She is more smarter than her peers."), 0));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"precise\":", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0));
+        questions.add(new Question("Fill in the blank: \"The negotiation reached a __________ when both parties agreed to the terms.\"", createChoices("A. Stalemate", "B. Compromise", "C. Impasse", "D. Deadlock"), 1));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"obsolete\":", createChoices("A. Current", "B. Modern", "C. Outdated", "D. Ancient"), 0));
+        questions.add(new Question("Analogies: \"Chef is to kitchen as conductor is to __________.\"", createChoices("A. Train", "B. Symphony", "C. Music", "D. Orchestra"), 3));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The company's profits have significantly increased last quarter.", "B. Each member of the team have different responsibilities.", "C. Her presentation was more better than his.", "D. The project manager oversees all aspects of the project."), 3));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"precise\":", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0));
+        questions.add(new Question("Sentence Completion: \"The team's ability to adapt to changing circumstances was crucial for __________ success.\"", createChoices("A. Their", "B. It's", "C. There", "D. Its"), 3));
+        questions.add(new Question("Word Jumble: Rearrange the letters to form a meaningful word: \"I T N E V E S T M N E\" Hint: It's a term related to financial markets.", createChoices("A. Investment", "B. Statement", "C. Sentiment", "D. Entertainment"), 0));
+        questions.add(new Question("Reading Comprehension: Read the passage and answer the question: \"The article discusses the benefits of diversifying investment portfolios. Why is diversification important in investing?\"", createChoices("A. To focus on a single investment", "B. To reduce risk", "C. To maximize returns", "D. To predict market trends"), 1));
+        questions.add(new Question("Sentence Ordering: Arrange the following words to form a coherent sentence: \"Strategies - innovative - company - the - implemented - to - stay - competitive.\"", createChoices("A. The company implemented innovative strategies to stay competitive.", "B. To stay competitive, the company implemented innovative strategies.", "C. Implemented to stay competitive, the company innovative strategies.", "D. Innovative strategies to stay competitive the company implemented."), 0));
+        questions.add(new Question("Error Identification: Identify the error in the following sentence: \"The team is working hard to ensure their project meets it's deadline.\"", createChoices("A. Their", "B. Meets", "C. It's", "D. Working"), 2));
+        questions.add(new Question("Fill in the blank: \"The successful candidate demonstrated exceptional __________ during the interview.\"", createChoices("A. Prowess", "B. Weakness", "C. Incompetence", "D. Inability"), 0));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"beneficial\":", createChoices("A. Advantageous", "B. Favorable", "C. Detrimental", "D. Profitable"), 2));
+        questions.add(new Question("Analogies: \"Teacher is to classroom as conductor is to __________.\"", createChoices("A. Music", "B. Orchestra", "C. Baton", "D. Audience"), 1));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The team have completed their tasks ahead of schedule.", "B. Him and his colleagues are attending the seminar.", "C. She is more talented than any other artist in the gallery.", "D. Each member of the committee has a specific role to play."), 3));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"proficient\":", createChoices("A. Adept", "B. Inept", "C. Mediocre", "D. Amateur"), 0));
+        questions.add(new Question("Fill in the blank: \"The team's collaborative effort led to the __________ completion of the project.\"", createChoices("A. Timely", "B. Delayed", "C. Hasty", "D. Rushed"), 0));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"innovative\":", createChoices("A. Creative", "B. Conventional", "C. Original", "D. Inventive"), 1));
+        questions.add(new Question("Analogies: \"Painter is to canvas as writer is to __________.\"", createChoices("A. Pen", "B. Paper", "C. Novel", "D. Ink"), 1));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The team's efforts have resulted in a successful completion of the project.", "B. Each members of the team have contributed to the project.", "C. The report needs to be reviewed by him and I.", "D. She is more smarter than her peers."), 0));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"precise\":", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0));
+        questions.add(new Question("Fill in the blank: \"The negotiation reached a __________ when both parties agreed to the terms.\"", createChoices("A. Stalemate", "B. Compromise", "C. Impasse", "D. Deadlock"), 1));
+        questions.add(new Question("Antonym: Select the word that is the opposite of \"obsolete\":", createChoices("A. Current", "B. Modern", "C. Outdated", "D. Ancient"), 0));
+        questions.add(new Question("Analogies: \"Chef is to kitchen as conductor is to __________.\"", createChoices("A. Train", "B. Symphony", "C. Music", "D. Orchestra"), 3));
+        questions.add(new Question("Sentence Correction: Which of the following sentences is grammatically correct?", createChoices("A. The company's profits have significantly increased last quarter.", "B. Each member of the team have different responsibilities.", "C. Her presentation was more better than his.", "D. The project manager oversees all aspects of the project."), 3));
+        questions.add(new Question("Synonyms: Choose the word that is most similar in meaning to \"precise\":", createChoices("A. Accurate", "B. Vague", "C. Approximate", "D. Uncertain"), 0)); 
+    }    
+
+    private void setOnClickListeners() {
+        for (int i = 0; i < textToSpeechButtons.size(); i++) {
+            int finalI = i; // To access in lambda expression
+            textToSpeechButtons.get(i).setOnClickListener(view -> speakText(questions.get(finalI).getQuestionText() + ". " + getChoicesText(finalI)));
+        }
 
         submitButton.setOnClickListener(view -> showScoreDialog());
+    }
+
+    private void speakText(String text) {
+        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+    }
+
+    private String getChoicesText(int index) {
+        StringBuilder choicesText = new StringBuilder();
+        List<String> choices = questions.get(index).getChoices();
+        for (int i = 0; i < choices.size(); i++) {
+            choicesText.append(choices.get(i)).append(". ");
+        }
+        return choicesText.toString();
+    }
+
+    private void showScoreDialog() {
+        int correctAnswers = 0;
+        StringBuilder correctAnswersText = new StringBuilder();
+    
+        for (int i = 0; i < questions.size(); i++) {
+            if (checkAnswer(i)) {
+                correctAnswers++;
+                correctAnswersText.append(i + 1).append(". Correct\n");
+            } else {
+                correctAnswersText.append(i + 1).append(". (Correct Answer: ")
+                        .append(questions.get(i).getChoices().get(questions.get(i).getCorrectAnswerIndex())).append(")\n");
+            }
+        }
+    
+        // Build the dialog message
+        String dialogMessage = "Your score is " + correctAnswers + "/" + questions.size() + "\n\n";
+        dialogMessage += "Correct Answers:\n" + correctAnswersText.toString();
+    
+        // Create and show the dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(dialogMessage)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Finish the current activity to go back
+                        finish();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }    
+
+    private boolean checkAnswer(int index) {
+        int selectedId = choiceRadioGroups.get(index).getCheckedRadioButtonId();
+        RadioButton selectedRadioButton = findViewById(selectedId);
+        int selectedAnswerIndex = choiceRadioGroups.get(index).indexOfChild(selectedRadioButton);
+        int correctAnswerIndex = questions.get(index).getCorrectAnswerIndex();
+        return selectedAnswerIndex == correctAnswerIndex;
+    }
+    
+
+    private void shuffleQuestions() {
+        Collections.shuffle(questions);
+        currentQuestionIndex = 0; // Reset current question index
+
+        // Update UI with shuffled questions
+        for (int i = 0; i < questions.size(); i++) {
+            Question question = questions.get(i);
+            TextView textView = questionTextViews.get(i);
+            textView.setText(question.getQuestionText());
+
+            List<String> choices = question.getChoices();
+            for (int j = 0; j < choices.size(); j++) {
+                RadioButton radioButton = (RadioButton) choiceRadioGroups.get(i).getChildAt(j);
+                radioButton.setText(choices.get(j));
+            }
+        }
     }
 
     @Override
@@ -144,186 +269,6 @@ public class NumericalQuestionnaireActivity extends AppCompatActivity implements
         }
     }
 
-    private void speakText(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
-    }
-
-    private String getChoicesText(RadioGroup radioGroup) {
-        StringBuilder choicesText = new StringBuilder();
-        for (int i = 0; i < radioGroup.getChildCount(); i++) {
-            RadioButton radioButton = (RadioButton) radioGroup.getChildAt(i);
-            choicesText.append(radioButton.getText()).append(". ");
-        }
-        return choicesText.toString();
-    }
-
-    private void showScoreDialog() {
-        int correctAnswers = 0;
-    
-        StringBuilder correctAnswersText = new StringBuilder();
-    
-        if (checkAnswer(choiceRadioGroup1, R.id.choiceRadioButton1B)) {
-            correctAnswers++;
-            correctAnswersText.append("1. B\n");
-        } else {
-            correctAnswersText.append("1. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup2, R.id.choiceRadioButton2D)) {
-            correctAnswers++;
-            correctAnswersText.append("2. D\n");
-        } else {
-            correctAnswersText.append("2. (Correct Answer: D)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup3, R.id.choiceRadioButton3B)) {
-            correctAnswers++;
-            correctAnswersText.append("3. B\n");
-        } else {
-            correctAnswersText.append("3. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup4, R.id.choiceRadioButton4D)) {
-            correctAnswers++;
-            correctAnswersText.append("4. D\n");
-        } else {
-            correctAnswersText.append("4. (Correct Answer: D)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup5, R.id.choiceRadioButton5D)) {
-            correctAnswers++;
-            correctAnswersText.append("5. D\n");
-        } else {
-            correctAnswersText.append("5. (Correct Answer: D)\n");
-        }
-
-        if (checkAnswer(choiceRadioGroup6, R.id.choiceRadioButton6C)) {
-            correctAnswers++;
-            correctAnswersText.append("6. C\n");
-        } else {
-            correctAnswersText.append("6. (Correct Answer: C)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup7, R.id.choiceRadioButton7C)) {
-            correctAnswers++;
-            correctAnswersText.append("7. C\n");
-        } else {
-            correctAnswersText.append("7. (Correct Answer: C)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup8, R.id.choiceRadioButton8A)) {
-            correctAnswers++;
-            correctAnswersText.append("8. A\n");
-        } else {
-            correctAnswersText.append("8. (Correct Answer: A)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup9, R.id.choiceRadioButton9C)) {
-            correctAnswers++;
-            correctAnswersText.append("9. C\n");
-        } else {
-            correctAnswersText.append("9. (Correct Answer: C)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup10, R.id.choiceRadioButton10A)) {
-            correctAnswers++;
-            correctAnswersText.append("10. A\n");
-        } else {
-            correctAnswersText.append("10. (Correct Answer: A)\n");
-        }
-
-        if (checkAnswer(choiceRadioGroup11, R.id.choiceRadioButton11D)) {
-            correctAnswers++;
-            correctAnswersText.append("11. D\n");
-        } else {
-            correctAnswersText.append("11. (Correct Answer: D)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup12, R.id.choiceRadioButton12B)) {
-            correctAnswers++;
-            correctAnswersText.append("12. B\n");
-        } else {
-            correctAnswersText.append("12. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup13, R.id.choiceRadioButton13C)) {
-            correctAnswers++;
-            correctAnswersText.append("13. C\n");
-        } else {
-            correctAnswersText.append("13. (Correct Answer: C)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup14, R.id.choiceRadioButton14D)) {
-            correctAnswers++;
-            correctAnswersText.append("14. D\n");
-        } else {
-            correctAnswersText.append("14. (Correct Answer: D)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup15, R.id.choiceRadioButton15B)) {
-            correctAnswers++;
-            correctAnswersText.append("15. B\n");
-        } else {
-            correctAnswersText.append("15. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup16, R.id.choiceRadioButton16C)) {
-            correctAnswers++;
-            correctAnswersText.append("16. C\n");
-        } else {
-            correctAnswersText.append("16. (Correct Answer: C)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup17, R.id.choiceRadioButton17B)) {
-            correctAnswers++;
-            correctAnswersText.append("17. B\n");
-        } else {
-            correctAnswersText.append("17. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup18, R.id.choiceRadioButton18A)) {
-            correctAnswers++;
-            correctAnswersText.append("18. A\n");
-        } else {
-            correctAnswersText.append("18. (Correct Answer: A)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup19, R.id.choiceRadioButton19B)) {
-            correctAnswers++;
-            correctAnswersText.append("19. B\n");
-        } else {
-            correctAnswersText.append("19. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup20, R.id.choiceRadioButton20C)) {
-            correctAnswers++;
-            correctAnswersText.append("20. C\n");
-        } else {
-            correctAnswersText.append("20. (Correct Answer: C)\n");
-        }
-    
-        // Build the dialog message
-        String dialogMessage = "Your score is " + correctAnswers + "/20\n\n";
-        dialogMessage += "Correct Answers:\n" + correctAnswersText.toString();
-    
-        // Create and show the dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(dialogMessage)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Return to previous activity
-                        finish();
-                    }
-                });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-    private boolean checkAnswer(RadioGroup radioGroup, int correctChoiceId) {
-        int selectedId = radioGroup.getCheckedRadioButtonId();
-        return selectedId == correctChoiceId;
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -331,5 +276,11 @@ public class NumericalQuestionnaireActivity extends AppCompatActivity implements
             textToSpeech.stop();
             textToSpeech.shutdown();
         }
+    }
+
+    private List<String> createChoices(String... choices) {
+        List<String> choicesList = new ArrayList<>();
+        Collections.addAll(choicesList, choices);
+        return choicesList;
     }
 }
