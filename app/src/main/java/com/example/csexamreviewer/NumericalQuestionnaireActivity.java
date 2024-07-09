@@ -145,7 +145,6 @@ public class NumericalQuestionnaireActivity extends AppCompatActivity implements
         questions.add(new Question("If a store sells a product for $75 with a 10% discount, what is the discounted price?", createChoices("A. $65", "B. $67.50", "C. $70", "D. $72.50"), 1));
         questions.add(new Question("A train travels 400 miles in 5 hours. What is the speed of the train in miles per hour?", createChoices("A. 75 mph", "B. 80 mph", "C. 85 mph", "D. 90 mph"), 1));
         questions.add(new Question("What is the area of a triangle with a base of 15 cm and a height of 10 cm?", createChoices("A. 75 sq cm", "B. 100 sq cm", "C. 125 sq cm", "D. 150 sq cm"), 1));
-        // Replaced questions
         questions.add(new Question("If a company's profit was $80,000 and its revenue was $400,000, what is the profit margin as a percentage?", createChoices("A. 15%", "B. 20%", "C. 25%", "D. 30%"), 1));
         questions.add(new Question("What is 15% of 180?", createChoices("A. 24", "B. 27", "C. 30", "D. 33"), 1));
         questions.add(new Question("A car travels 240 miles on 12 gallons of gas. What is the car's miles per gallon (MPG)?", createChoices("A. 15 mpg", "B. 18 mpg", "C. 20 mpg", "D. 22 mpg"), 2));
@@ -174,7 +173,8 @@ public class NumericalQuestionnaireActivity extends AppCompatActivity implements
         questions.add(new Question("If a rectangle has a length of 20 cm and a width of 15 cm, what is its perimeter?", createChoices("A. 50 cm", "B. 60 cm", "C. 70 cm", "D. 80 cm"), 3));
         questions.add(new Question("What is 30% of 240?", createChoices("A. 60", "B. 70", "C. 72", "D. 80"), 2));
         questions.add(new Question("Calculate the area of a circle with a radius of 8 cm.", createChoices("A. 64π sq cm", "B. 96π sq cm", "C. 128π sq cm", "D. 160π sq cm"), 0));
-        questions.add(new Question("If a company's revenue is $400,000 and its expenses are $250,000, what is the profit margin as a percentage?", createChoices("A. 20%", "B. 30%", "C. 35%", "D. 40%"), 2)); 
+        questions.add(new Question("If a company's revenue is $400,000 and its expenses are $250,000, what is the profit margin as a percentage?", createChoices("A. 20%", "B. 30%", "C. 35%", "D. 40%"), 2));
+        questions.add(new Question("What is the next number in the sequence: 10, 20, 40, 80, __?", createChoices("A. 100", "B. 120", "C. 160", "D. 200"), 2)); 
     }    
 
     private void setOnClickListeners() {
