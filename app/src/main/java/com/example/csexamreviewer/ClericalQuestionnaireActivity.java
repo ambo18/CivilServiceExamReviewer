@@ -150,7 +150,31 @@ public class ClericalQuestionnaireActivity extends AppCompatActivity implements 
         questions.add(new Question("What is the name of the first person to climb the Annapurna XVI?", createChoices("a) H. Tichy", "b) J. Joechler", "c) T. Imanishi", "d) G. Norbu"), 0)); // Note: H. Tichy and J. Joechler both climbed together.
         questions.add(new Question("What is the name of the first person to climb the Annapurna XVII?", createChoices("a) A. R. MacIntyre", "b) C. J. Bonington", "c) T. Imanishi", "d) G. Norbu"), 0)); // Note: A. R. MacIntyre and C. J. Bonington both climbed together.
         questions.add(new Question("What is the name of the first person to climb the Annapurna XVIII?", createChoices("a) D. F. Brown", "b) C. J. Bonington", "c) T. Imanishi", "d) G. Norbu"), 0)); // Note: D. F. Brown and C. J. Bonington both climbed together.
-             
+        questions.add(new Question("What is the name of the first person to climb the Annapurna XIX?", createChoices("A. R. M. Bates", "B. W. F. House", "C. T. Imanishi", "D. G. Norbu"), 0));
+        questions.add(new Question("What is the name of the first person to climb the Annapurna XX?", createChoices("A. P. Schoening", "B. A. Kauffman", "C. T. Imanishi", "D. G. Norbu"), 0));
+        questions.add(new Question("What is the name of the first person to climb the Annapurna XXI?", createChoices("A. G. O. Dyhrenfurth", "B. N. D. Couzijn", "C. T. Imanishi", "D. G. Norbu"), 0));
+        questions.add(new Question("What is the name of the first person to climb the Annapurna XXII?", createChoices("A. T. Imanishi", "B. G. Norbu", "C. A. Huber", "D. G. Schaller"), 0));
+        questions.add(new Question("What is the name of the first person to climb the Annapurna XXIII?", createChoices("A. H. Tichy", "B. J. Joechler", "C. T. Imanishi", "D. G. Norbu"), 0));
+        questions.add(new Question("Which of these is a type of renewable energy source?", createChoices("A. Coal", "B. Natural Gas", "C. Solar Power", "D. Nuclear Power"), 2));
+        questions.add(new Question("What is the name of the largest country in the world by population?", createChoices("A. India", "B. United States", "C. China", "D. Indonesia"), 2));
+        questions.add(new Question("Who wrote the famous novel '1984'?", createChoices("A. George Orwell", "B. Aldous Huxley", "C. Ray Bradbury", "D. H.G. Wells"), 0));
+        questions.add(new Question("What is the capital of France?", createChoices("A. Paris", "B. Marseille", "C. Lyon", "D. Bordeaux"), 0));
+        questions.add(new Question("What is the name of the smallest planet in our solar system?", createChoices("A. Mars", "B. Mercury", "C. Venus", "D. Pluto"), 1));
+        questions.add(new Question("What is the name of the currency used in the United Kingdom?", createChoices("A. Euro", "B. Pound Sterling", "C. Dollar", "D. Yen"), 1));
+        questions.add(new Question("Who painted the famous artwork 'The Scream'?", createChoices("A. Edvard Munch", "B. Gustav Klimt", "C. Salvador Dalí", "D. Pablo Picasso"), 0));
+        questions.add(new Question("Which of these is NOT a type of musical instrument?", createChoices("A. Violin", "B. Piano", "C. Telescope", "D. Trumpet"), 2));
+        questions.add(new Question("What is the name of the first computer?", createChoices("A. ENIAC", "B. Apple I", "C. IBM PC", "D. Colossus"), 0));
+        questions.add(new Question("What is the name of the longest bone in the human body?", createChoices("A. Femur", "B. Tibia", "C. Fibula", "D. Humerus"), 0));
+        questions.add(new Question("What is the name of the largest desert in the world?", createChoices("A. Sahara Desert", "B. Gobi Desert", "C. Arabian Desert", "D. Antarctic Polar Desert"), 3));
+        questions.add(new Question("What is the name of the first woman to win a Nobel Prize in Literature?", createChoices("A. Pearl Buck", "B. Toni Morrison", "C. Nadine Gordimer", "D. Gabriela Mistral"), 3));
+        questions.add(new Question("What is the name of the first artificial satellite to orbit the Earth?", createChoices("A. Explorer 1", "B. Sputnik 1", "C. Vanguard 1", "D. Telstar 1"), 1));
+        questions.add(new Question("What is the name of the first person to fly solo around the world?", createChoices("A. Charles Lindbergh", "B. Wiley Post", "C. Amelia Earhart", "D. Jimmy Doolittle"), 0));
+        questions.add(new Question("What is the name of the first animal to be cloned from an adult cell?", createChoices("A. Dolly the sheep", "B. CC the cat", "C. Snuppy the dog", "D. Idaho Gem the mule"), 0));
+        questions.add(new Question("What is the name of the first president of the United States?", createChoices("A. Thomas Jefferson", "B. John Adams", "C. George Washington", "D. Abraham Lincoln"), 2));
+        questions.add(new Question("What is the name of the first person to climb Mount Everest?", createChoices("A. Edmund Hillary", "B. Tenzing Norgay", "C. George Mallory", "D. Andrew Irvine"), 0));
+        questions.add(new Question("What is the name of the first woman to win an Olympic gold medal?", createChoices("A. Babe Didrikson Zaharias", "B. Wilma Rudolph", "C. Jackie Joyner-Kersee", "D. Margaret Abbott"), 3));
+        questions.add(new Question("What is the name of the first person to swim across the English Channel?", createChoices("A. Gertrude Ederle", "B. Captain Matthew Webb", "C. Diana Nyad", "D. Florence Chadwick"), 1));
+        questions.add(new Question("What is the name of the first person to fly across the Atlantic Ocean?", createChoices("A. Charles Lindbergh", "B. Amelia Earhart", "C. Richard Byrd", "D. Charles Kingsford Smith"), 0));             
     }    
 
     private void setOnClickListeners() {
