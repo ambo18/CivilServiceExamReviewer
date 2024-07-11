@@ -100,7 +100,32 @@ public class ClericalQuestionnaireActivity extends AppCompatActivity implements 
         questions.add(new Question("What is the name of the longest mountain range in the world?", createChoices("a) Himalayas", "b) Andes Mountains", "c) Rocky Mountains", "d) Alps"), 1));
         questions.add(new Question("What is the name of the hottest continent in the world?", createChoices("a) Asia", "b) Africa", "c) Australia", "d) South America"), 1));
         questions.add(new Question("What is the name of the smallest continent in the world?", createChoices("a) Australia", "b) Europe", "c) Antarctica", "d) South America"), 0));
-     
+        questions.add(new Question("What is the name of the largest island in the world?", createChoices("a) Madagascar", "b) Greenland", "c) New Guinea", "d) Borneo"), 1));
+        questions.add(new Question("What is the name of the largest mammal in the world?", createChoices("a) African Elephant", "b) Blue Whale", "c) Giraffe", "d) Hippopotamus"), 1));
+        questions.add(new Question("What is the name of the first successful heart transplant recipient?", createChoices("a) Christiaan Barnard", "b) Louis Washkansky", "c) Norman Shumway", "d) Michael DeBakey"), 1));
+        questions.add(new Question("What is the name of the chemical element with the atomic number 8?", createChoices("a) Carbon", "b) Nitrogen", "c) Oxygen", "d) Helium"), 2));
+        questions.add(new Question("What is the name of the author of the classic novel \"Pride and Prejudice\"?", createChoices("a) Jane Austen", "b) Emily Brontë", "c) Charlotte Brontë", "d) Mary Shelley"), 0));
+        questions.add(new Question("What is the name of the first woman to win a Nobel Prize?", createChoices("a) Marie Curie", "b) Lise Meitner", "c) Ada Lovelace", "d) Rosalind Franklin"), 0));
+        questions.add(new Question("What is the name of the largest library in the world by number of volumes?", createChoices("a) British Library", "b) New York Public Library", "c) Library of Congress", "d) Bibliothèque nationale de France"), 2));
+        questions.add(new Question("What is the name of the longest bridge in the world?", createChoices("a) Golden Gate Bridge", "b) Akashi Kaikyō Bridge", "c) Hong Kong-Zhuhai-Macau Bridge", "d) Great Belt Bridge"), 2));
+        questions.add(new Question("What is the name of the deepest part of the ocean?", createChoices("a) Puerto Rico Trench", "b) Java Trench", "c) Mariana Trench", "d) Kermadec Trench"), 2));
+        questions.add(new Question("What is the name of the first artificial satellite to orbit the Earth?", createChoices("a) Explorer 1", "b) Sputnik 1", "c) Vanguard 1", "d) Telstar 1"), 1));
+        questions.add(new Question("What is the name of the first person to fly solo around the world?", createChoices("a) Charles Lindbergh", "b) Wiley Post", "c) Amelia Earhart", "d) Jimmy Doolittle"), 0));
+        questions.add(new Question("What is the name of the first animal to be cloned from an adult cell?", createChoices("a) Dolly the sheep", "b) CC the cat", "c) Snuppy the dog", "d) Idaho Gem the mule"), 0));
+        questions.add(new Question("What is the name of the first president of the United States?", createChoices("a) Thomas Jefferson", "b) John Adams", "c) George Washington", "d) Abraham Lincoln"), 2));
+        questions.add(new Question("What is the name of the first person to climb Mount Everest?", createChoices("a) Edmund Hillary", "b) Tenzing Norgay", "c) George Mallory", "d) Andrew Irvine"), 0)); // Note: Both Edmund Hillary and Tenzing Norgay climbed together.
+        questions.add(new Question("What is the name of the first woman to win an Olympic gold medal?", createChoices("a) Babe Didrikson Zaharias", "b) Wilma Rudolph", "c) Jackie Joyner-Kersee", "d) Margaret Abbott"), 3));
+        questions.add(new Question("What is the name of the first person to swim across the English Channel?", createChoices("a) Gertrude Ederle", "b) Captain Matthew Webb", "c) Diana Nyad", "d) Florence Chadwick"), 1));
+        questions.add(new Question("What is the name of the first person to fly across the Atlantic Ocean?", createChoices("a) Charles Lindbergh", "b) Amelia Earhart", "c) Richard Byrd", "d) Charles Kingsford Smith"), 0));
+        questions.add(new Question("What is the name of the first person to walk across the North Pole?", createChoices("a) Robert Peary", "b) Fridtjof Nansen", "c) Roald Amundsen", "d) Richard Byrd"), 1));
+        questions.add(new Question("What is the name of the first person to climb the Matterhorn?", createChoices("a) Edward Whymper", "b) Edmund Hillary", "c) Tenzing Norgay", "d) George Mallory"), 0));
+        questions.add(new Question("What is the name of the first person to circumnavigate the globe?", createChoices("a) Christopher Columbus", "b) Ferdinand Magellan", "c) Francis Drake", "d) James Cook"), 1)); // Note: Ferdinand Magellan died during the expedition, Juan Sebastián Elcano completed the journey.
+        questions.add(new Question("What is the name of the first person to sail solo around the world?", createChoices("a) Sir Francis Chichester", "b) Joshua Slocum", "c) Ellen MacArthur", "d) Alain Colas"), 1));
+        questions.add(new Question("What is the name of the first successful heart transplant recipient?", createChoices("a) Christiaan Barnard", "b) Louis Washkansky", "c) Norman Shumway", "d) Michael DeBakey"), 1));
+        questions.add(new Question("What is the name of the first person to fly solo across the Pacific Ocean?", createChoices("a) Charles Lindbergh", "b) Amelia Earhart", "c) Charles Kingsford Smith", "d) Wiley Post"), 2));
+        questions.add(new Question("What is the name of the first person to reach the South Pole?", createChoices("a) Robert Peary", "b) Fridtjof Nansen", "c) Roald Amundsen", "d) Richard Byrd"), 2));
+        questions.add(new Question("What is the name of the first person to sail solo around the world non-stop?", createChoices("a) Sir Francis Chichester", "b) Sir Robin Knox-Johnston", "c) Ellen MacArthur", "d) Alain Colas"), 1));
+         
     }    
 
     private void setOnClickListeners() {
