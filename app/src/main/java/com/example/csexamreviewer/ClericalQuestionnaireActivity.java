@@ -202,8 +202,13 @@ public class ClericalQuestionnaireActivity extends AppCompatActivity implements 
     private void showScoreDialog() {
         int correctAnswers = 0;
         StringBuilder correctAnswersText = new StringBuilder();
+        boolean allAnswered = true;
     
         for (int i = 0; i < questions.size(); i++) {
+            if (choiceRadioGroups.get(i).getCheckedRadioButtonId() == -1) {
+                allAnswered = false;
+                break;
+            }
             if (checkAnswer(i)) {
                 correctAnswers++;
                 correctAnswersText.append(i + 1).append(". Correct\n");
@@ -211,6 +216,16 @@ public class ClericalQuestionnaireActivity extends AppCompatActivity implements 
                 correctAnswersText.append(i + 1).append(". (Correct Answer: ")
                         .append(questions.get(i).getChoices().get(questions.get(i).getCorrectAnswerIndex())).append(")\n");
             }
+        }
+    
+        if (!allAnswered) {
+            // Alert dialog to inform the user to answer all questions
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Please answer all the questions before submitting.")
+                    .setPositiveButton("OK", null);
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            return;
         }
     
         // Build the dialog message
@@ -228,7 +243,7 @@ public class ClericalQuestionnaireActivity extends AppCompatActivity implements 
                 });
         AlertDialog dialog = builder.create();
         dialog.show();
-    }    
+    }        
 
     private boolean checkAnswer(int index) {
         int selectedId = choiceRadioGroups.get(index).getCheckedRadioButtonId();
