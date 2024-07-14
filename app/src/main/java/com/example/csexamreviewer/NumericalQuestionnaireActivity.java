@@ -203,13 +203,15 @@ public class NumericalQuestionnaireActivity extends AppCompatActivity implements
         int correctAnswers = 0;
         StringBuilder correctAnswersText = new StringBuilder();
         boolean allAnswered = true;
+        int firstUnansweredIndex = -1;
     
         for (int i = 0; i < questions.size(); i++) {
             if (choiceRadioGroups.get(i).getCheckedRadioButtonId() == -1) {
                 allAnswered = false;
-                break;
-            }
-            if (checkAnswer(i)) {
+                if (firstUnansweredIndex == -1) {
+                    firstUnansweredIndex = i;
+                }
+            } else if (checkAnswer(i)) {
                 correctAnswers++;
                 correctAnswersText.append(i + 1).append(". Correct\n");
             } else {
@@ -219,6 +221,10 @@ public class NumericalQuestionnaireActivity extends AppCompatActivity implements
         }
     
         if (!allAnswered) {
+            // Scroll to the first unanswered question
+            TextView unansweredQuestionTextView = questionTextViews.get(firstUnansweredIndex);
+            unansweredQuestionTextView.getParent().requestChildFocus(unansweredQuestionTextView, unansweredQuestionTextView);
+    
             // Alert dialog to inform the user to answer all questions
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Please answer all the questions before submitting.")
@@ -243,7 +249,7 @@ public class NumericalQuestionnaireActivity extends AppCompatActivity implements
                 });
         AlertDialog dialog = builder.create();
         dialog.show();
-    }        
+    }           
 
     private boolean checkAnswer(int index) {
         int selectedId = choiceRadioGroups.get(index).getCheckedRadioButtonId();
