@@ -100,6 +100,32 @@ public class SubGenInfoQuestionnaireActivity extends AppCompatActivity implement
         questions.add(new Question("Choose the correct sentence:", createChoices("A. They is going to the park.", "B. They are going to the park.", "C. They am going to the park.", "D. They be going to the park."), 1));
         questions.add(new Question("Which word is an antonym for 'fast'?", createChoices("A. Quick", "B. Slow", "C. Rapid", "D. Swift"), 1));
         questions.add(new Question("What is the comparative form of the adjective 'good'?", createChoices("A. Best", "B. Better", "C. Gooder", "D. Goodest"), 1));
+        questions.add(new Question("What is the result of 15 + 6 x 2?", createChoices("A. 24", "B. 27", "C. 30", "D. 33"), 1));
+        questions.add(new Question("If a box contains 24 chocolates and you take away 8, how many chocolates are left?", createChoices("A. 8", "B. 12", "C. 16", "D. 20"), 2));
+        questions.add(new Question("What is the area of a rectangle with length 8 cm and width 4 cm?", createChoices("A. 24 cm²", "B. 30 cm²", "C. 32 cm²", "D. 40 cm²"), 2));
+        questions.add(new Question("Who won the 2021 Nobel Peace Prize?", createChoices("A. Greta Thunberg", "B. Malala Yousafzai", "C. The World Food Programme", "D. Dr. Anthony Fauci"), 2));
+        questions.add(new Question("Which country recently hosted the 2022 Winter Olympics?", createChoices("A. South Korea", "B. China", "C. Russia", "D. Canada"), 1));
+        questions.add(new Question("Who is known as the 'Father of Modern Physics'?", createChoices("A. Isaac Newton", "B. Albert Einstein", "C. Galileo Galilei", "D. Nikola Tesla"), 1));
+        questions.add(new Question("What is the largest organ in the human body?", createChoices("A. Liver", "B. Heart", "C. Brain", "D. Skin"), 3));
+        questions.add(new Question("Which country is famous for the ancient monument Machu Picchu?", createChoices("A. Peru", "B. Mexico", "C. Brazil", "D. Chile"), 0));
+        questions.add(new Question("Who wrote the play 'Hamlet'?", createChoices("A. William Shakespeare", "B. George Bernard Shaw", "C. Anton Chekhov", "D. Tennessee Williams"), 0));
+        questions.add(new Question("What is the main ingredient in guacamole?", createChoices("A. Avocado", "B. Tomato", "C. Onion", "D. Garlic"), 0));
+        questions.add(new Question("Choose the correct spelling:", createChoices("A. Embarrass", "B. Embarass", "C. Embaras", "D. Embarras"), 0));
+        questions.add(new Question("Which word is a synonym for 'joyful'?", createChoices("A. Sad", "B. Happy", "C. Cheerful", "D. Mournful"), 2));
+        questions.add(new Question("What is the past tense of 'eat'?", createChoices("A. Ate", "B. Eated", "C. Eat", "D. Eaten"), 0));
+        questions.add(new Question("What is the result of 18 ÷ 3 x 2?", createChoices("A. 6", "B. 10", "C. 12", "D. 36"), 0));
+        questions.add(new Question("If a box contains 36 marbles and you take away 12, how many marbles are left?", createChoices("A. 12", "B. 18", "C. 24", "D. 30"), 2));
+        questions.add(new Question("What is the volume of a cube with a side length of 5 cm?", createChoices("A. 25 cm³", "B. 100 cm³", "C. 125 cm³", "D. 150 cm³"), 2));
+        questions.add(new Question("Who is the current Prime Minister of India?", createChoices("A. Narendra Modi", "B. Rahul Gandhi", "C. Manmohan Singh", "D. Indira Gandhi"), 0));
+        questions.add(new Question("Which country recently won the UEFA European Championship in 2020?", createChoices("A. Italy", "B. England", "C. Spain", "D. France"), 0));
+        questions.add(new Question("Who won the 2021 Nobel Prize in Literature?", createChoices("A. Kazuo Ishiguro", "B. Louise Glück", "C. Bob Dylan", "D. Toni Morrison"), 1));
+        questions.add(new Question("What is the chemical symbol for gold?", createChoices("A. Au", "B. Ag", "C. Fe", "D. Hg"), 0));
+        questions.add(new Question("What is the process by which plants release oxygen called?", createChoices("A. Photosynthesis", "B. Respiration", "C. Decomposition", "D. Transpiration"), 0));
+        questions.add(new Question("What is the unit of measurement for electric current?", createChoices("A. Watt", "B. Ampere", "C. Volt", "D. Ohm"), 1));
+        questions.add(new Question("Who is the author of the play 'Romeo and Juliet'?", createChoices("A. William Shakespeare", "B. Charles Dickens", "C. Jane Austen", "D. Mark Twain"), 0));
+        questions.add(new Question("What is the currency of Japan?", createChoices("A. Yen", "B. Euro", "C. Dollar", "D. Pound"), 0));
+        questions.add(new Question("Which planet is known as the 'Morning Star'?", createChoices("A. Mars", "B. Venus", "C. Mercury", "D. Jupiter"), 1));
+
     }    
 
     private void setOnClickListeners() {
