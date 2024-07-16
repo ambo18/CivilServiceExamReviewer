@@ -125,6 +125,31 @@ public class SubGenInfoQuestionnaireActivity extends AppCompatActivity implement
         questions.add(new Question("Who is the author of the play 'Romeo and Juliet'?", createChoices("A. William Shakespeare", "B. Charles Dickens", "C. Jane Austen", "D. Mark Twain"), 0));
         questions.add(new Question("What is the currency of Japan?", createChoices("A. Yen", "B. Euro", "C. Dollar", "D. Pound"), 0));
         questions.add(new Question("Which planet is known as the 'Morning Star'?", createChoices("A. Mars", "B. Venus", "C. Mercury", "D. Jupiter"), 1));
+        questions.add(new Question("What is the capital city of Canada?", createChoices("A. Toronto", "B. Vancouver", "C. Ottawa", "D. Montreal"), 2));
+        questions.add(new Question("Who wrote the novel 'Pride and Prejudice'?", createChoices("A. Charlotte Bronte", "B. Jane Austen", "C. Emily Dickinson", "D. Virginia Woolf"), 1));
+        questions.add(new Question("Choose the correct spelling:", createChoices("A. Acommodate", "B. Accomodate", "C. Accommodate", "D. Acomodate"), 2));
+        questions.add(new Question("Which word is a synonym for 'happy'?", createChoices("A. Sad", "B. Joyful", "C. Angry", "D. Tired"), 1));
+        questions.add(new Question("What is the past tense of 'run'?", createChoices("A. Ran", "B. Runned", "C. Running", "D. Ranned"), 0));
+        questions.add(new Question("What is 30% of 80?", createChoices("A. 15", "B. 20", "C. 25", "D. 30"), 1));
+        questions.add(new Question("If a shirt costs $20 and is on sale for 25% off, what is the sale price?", createChoices("A. $15", "B. $18", "C. $21", "D. $22.50"), 0));
+        questions.add(new Question("What is the next number in the sequence: 2, 4, 6, 8, __?", createChoices("A. 9", "B. 10", "C. 12", "D. 14"), 2));
+        questions.add(new Question("Who is the current Secretary-General of the United Nations?", createChoices("A. Angela Merkel", "B. Antonio Guterres", "C. Justin Trudeau", "D. Emmanuel Macron"), 1));
+        questions.add(new Question("Which country recently won the FIFA World Cup?", createChoices("A. Germany", "B. France", "C. Brazil", "D. Argentina"), 1));
+        questions.add(new Question("What is the capital of Australia?", createChoices("A. Sydney", "B. Melbourne", "C. Canberra", "D. Brisbane"), 2));
+        questions.add(new Question("Who is considered the Father of Filipino National Language?", createChoices("A. Andres Bonifacio", "B. Jose Rizal", "C. Emilio Aguinaldo", "D. Manuel L. Quezon"), 3));
+        questions.add(new Question("What is the official language of the Philippines?", createChoices("A. English", "B. Filipino", "C. Spanish", "D. Mandarin"), 1));
+        questions.add(new Question("When is Philippine Independence Day celebrated?", createChoices("A. June 12", "B. July 4", "C. May 1", "D. September 21"), 0));
+        questions.add(new Question("Which Philippine national hero is known as the 'Sublime Paralytic'?", createChoices("A. Apolinario Mabini", "B. Jose Rizal", "C. Andres Bonifacio", "D. Emilio Aguinaldo"), 0));
+        questions.add(new Question("What is the highest mountain in the Philippines?", createChoices("A. Mount Halcon", "B. Mount Pulag", "C. Mount Apo", "D. Mount Mayon"), 2));
+        questions.add(new Question("Who is the current President of the Philippines?", createChoices("A. Rodrigo Duterte", "B. Benigno Aquino III", "C. Gloria Macapagal-Arroyo", "D. Ferdinand Marcos Jr."), 3));
+        questions.add(new Question("Who is the Vice President of the Philippines?", createChoices("A. Leni Robredo", "B. Bongbong Marcos", "C. Manny Pacquiao", "D. Sara Duterte"), 3));
+        questions.add(new Question("What is the current population of the Philippines?", createChoices("A. Approximately 110 million", "B. Approximately 120 million", "C. Approximately 130 million", "D. Approximately 140 million"), 0));
+        questions.add(new Question("When is the next presidential election in the Philippines scheduled to take place?", createChoices("A. 2022", "B. 2024", "C. 2026", "D. 2028"), 1));
+        questions.add(new Question("Who is the author of 'The Adventures of Tom Sawyer'?", createChoices("A. Mark Twain", "B. Charles Dickens", "C. J.K. Rowling", "D. George Orwell"), 0));
+        questions.add(new Question("What is the currency of South Africa?", createChoices("A. Rand", "B. Peso", "C. Dinar", "D. Rupee"), 0));
+        questions.add(new Question("Which country is known as the 'Land of the Rising Sun'?", createChoices("A. China", "B. South Korea", "C. Japan", "D. Thailand"), 2));
+        questions.add(new Question("Who painted the famous artwork 'The Starry Night'?", createChoices("A. Vincent van Gogh", "B. Pablo Picasso", "C. Leonardo da Vinci", "D. Claude Monet"), 0));
+        questions.add(new Question("What is the largest desert in the world?", createChoices("A. Sahara Desert", "B. Gobi Desert", "C. Kalahari Desert", "D. Arabian Desert"), 0));
 
     }    
 
