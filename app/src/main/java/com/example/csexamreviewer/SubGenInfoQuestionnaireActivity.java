@@ -150,7 +150,31 @@ public class SubGenInfoQuestionnaireActivity extends AppCompatActivity implement
         questions.add(new Question("Which country is known as the 'Land of the Rising Sun'?", createChoices("A. China", "B. South Korea", "C. Japan", "D. Thailand"), 2));
         questions.add(new Question("Who painted the famous artwork 'The Starry Night'?", createChoices("A. Vincent van Gogh", "B. Pablo Picasso", "C. Leonardo da Vinci", "D. Claude Monet"), 0));
         questions.add(new Question("What is the largest desert in the world?", createChoices("A. Sahara Desert", "B. Gobi Desert", "C. Kalahari Desert", "D. Arabian Desert"), 0));
-
+        questions.add(new Question("Choose the correct spelling:", createChoices("A. Embarrass", "B. Embarass", "C. Embaras", "D. Embarras"), 0));
+        questions.add(new Question("Which word is a synonym for 'brave'?", createChoices("A. Cowardly", "B. Fearful", "C. Courageous", "D. Timid"), 2));
+        questions.add(new Question("What is the comparative form of the adjective 'good'?", createChoices("A. Best", "B. Better", "C. Gooder", "D. Goodest"), 1));
+        questions.add(new Question("What is the result of 8 x 7 ÷ 4?", createChoices("A. 14", "B. 15", "C. 16", "D. 17"), 1));
+        questions.add(new Question("If a bookshelf has 5 shelves, and each shelf can hold 10 books, how many books can the bookshelf hold in total?", createChoices("A. 20", "B. 30", "C. 40", "D. 50"), 3));
+        questions.add(new Question("What is the perimeter of a square with a side length of 5 cm?", createChoices("A. 15 cm", "B. 20 cm", "C. 25 cm", "D. 30 cm"), 2));
+        questions.add(new Question("Who won the 2020 US Presidential Election?", createChoices("A. Joe Biden", "B. Donald Trump", "C. Hillary Clinton", "D. Bernie Sanders"), 0));
+        questions.add(new Question("Which country recently hosted the 2020 Summer Olympics?", createChoices("A. Japan", "B. Brazil", "C. Russia", "D. China"), 0));
+        questions.add(new Question("Who is the current Prime Minister of Canada?", createChoices("A. Justin Trudeau", "B. Stephen Harper", "C. Jean Chretien", "D. Brian Mulroney"), 0));
+        questions.add(new Question("What is the chemical symbol for water?", createChoices("A. H2O", "B. CO2", "C. NaCl", "D. O2"), 0));
+        questions.add(new Question("What is the process by which plants make their own food called?", createChoices("A. Respiration", "B. Photosynthesis", "C. Decomposition", "D. Fermentation"), 1));
+        questions.add(new Question("What is the unit of measurement for energy?", createChoices("A. Joule", "B. Watt", "C. Volt", "D. Ohm"), 0));
+        questions.add(new Question("Where is the Great Wall of China located?", createChoices("A. India", "B. China", "C. Japan", "D. Mongolia"), 1));
+        questions.add(new Question("Who was the first President of the United States?", createChoices("A. Thomas Jefferson", "B. George Washington", "C. John Adams", "D. Alexander Hamilton"), 1));
+        questions.add(new Question("Which continent is the largest by land area?", createChoices("A. Europe", "B. Africa", "C. Asia", "D. South America"), 2));
+        questions.add(new Question("In which year did Christopher Columbus discover America?", createChoices("A. 1492", "B. 1520", "C. 1607", "D. 1776"), 0));
+        questions.add(new Question("Who is the author of the novel 'Harry Potter and the Philosopher's Stone'?", createChoices("A. J.K. Rowling", "B. Stephen King", "C. Dan Brown", "D. George R.R. Martin"), 0));
+        questions.add(new Question("What is the currency of the United Kingdom?", createChoices("A. Dollar", "B. Euro", "C. Pound", "D. Yen"), 2));
+        questions.add(new Question("Which country is known as the 'Land of the Midnight Sun'?", createChoices("A. Norway", "B. Sweden", "C. Finland", "D. Iceland"), 0));
+        questions.add(new Question("Who painted the famous artwork 'The Scream'?", createChoices("A. Vincent van Gogh", "B. Pablo Picasso", "C. Edvard Munch", "D. Salvador Dali"), 2));
+        questions.add(new Question("What is the largest desert in the world?", createChoices("A. Sahara Desert", "B. Gobi Desert", "C. Kalahari Desert", "D. Arabian Desert"), 0));
+        questions.add(new Question("Choose the correct spelling:", createChoices("A. Embarrass", "B. Embarass", "C. Embaras", "D. Embarras"), 0));
+        questions.add(new Question("Which word is a synonym for 'joyful'?", createChoices("A. Sad", "B. Happy", "C. Cheerful", "D. Mournful"), 2));
+        questions.add(new Question("What is the past tense of 'eat'?", createChoices("A. Ate", "B. Eated", "C. Eat", "D. Eaten"), 0));
+        questions.add(new Question("What is the result of 15 + 6 x 2?", createChoices("A. 24", "B. 27", "C. 30", "D. 33"), 1));
     }    
 
     private void setOnClickListeners() {
