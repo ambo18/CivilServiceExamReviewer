@@ -75,7 +75,31 @@ public class SubGenInfoQuestionnaireActivity extends AppCompatActivity implement
 
     private void initializeQuestions() {
         questions = new ArrayList<>();
-        
+        questions.add(new Question("Who wrote the novel 'Harry Potter and the Philosopher's Stone'?", createChoices("A. J.K. Rowling", "B. Stephen King", "C. Dan Brown", "D. George R.R. Martin"), 0));
+        questions.add(new Question("What is the currency of the United Kingdom?", createChoices("A. Dollar", "B. Euro", "C. Pound", "D. Yen"), 2));
+        questions.add(new Question("Which country is known as the 'Land of the Midnight Sun'?", createChoices("A. Norway", "B. Sweden", "C. Finland", "D. Iceland"), 0));
+        questions.add(new Question("Who painted the famous artwork 'The Scream'?", createChoices("A. Vincent van Gogh", "B. Pablo Picasso", "C. Edvard Munch", "D. Salvador Dali"), 2));
+        questions.add(new Question("What is the largest desert in the world?", createChoices("A. Sahara Desert", "B. Gobi Desert", "C. Kalahari Desert", "D. Arabian Desert"), 0));
+        questions.add(new Question("Choose the correct sentence:", createChoices("A. She is going to the store.", "B. She are going to the store.", "C. She am going to the store.", "D. She be going to the store."), 0));
+        questions.add(new Question("Which word is a synonym for 'brave'?", createChoices("A. Cowardly", "B. Fearful", "C. Courageous", "D. Timid"), 2));
+        questions.add(new Question("What is the plural form of 'child'?", createChoices("A. Childs", "B. Childes", "C. Children", "D. Child's"), 2));
+        questions.add(new Question("What is the result of 8 x 7 ÷ 4?", createChoices("A. 14", "B. 15", "C. 16", "D. 17"), 1));
+        questions.add(new Question("If a bookshelf has 5 shelves, and each shelf can hold 10 books, how many books can the bookshelf hold in total?", createChoices("A. 20", "B. 30", "C. 40", "D. 50"), 3));
+        questions.add(new Question("What is the capital of the Philippines?", createChoices("A. Cebu City", "B. Davao City", "C. Manila", "D. Quezon City"), 2));
+        questions.add(new Question("Who is the current President of the Philippines?", createChoices("A. Rodrigo Duterte", "B. Benigno Aquino III", "C. Gloria Macapagal-Arroyo", "D. Ferdinand Marcos Jr."), 3));
+        questions.add(new Question("Which country recently won the FIFA World Cup?", createChoices("A. Germany", "B. France", "C. Brazil", "D. Argentina"), 3));
+        questions.add(new Question("What is the capital of Australia?", createChoices("A. Sydney", "B. Melbourne", "C. Canberra", "D. Brisbane"), 2));
+        questions.add(new Question("Who is considered the Father of Filipino National Language?", createChoices("A. Andres Bonifacio", "B. Jose Rizal", "C. Emilio Aguinaldo", "D. Manuel L. Quezon"), 3));
+        questions.add(new Question("What is the official language of the Philippines?", createChoices("A. English", "B. Filipino", "C. Spanish", "D. Mandarin"), 1));
+        questions.add(new Question("When is Philippine Independence Day celebrated?", createChoices("A. June 12", "B. July 4", "C. May 1", "D. September 21"), 0));
+        questions.add(new Question("Which Philippine national hero is known as the 'Sublime Paralytic'?", createChoices("A. Apolinario Mabini", "B. Jose Rizal", "C. Andres Bonifacio", "D. Emilio Aguinaldo"), 0));
+        questions.add(new Question("What is the highest mountain in the Philippines?", createChoices("A. Mount Halcon", "B. Mount Pulag", "C. Mount Apo", "D. Mount Mayon"), 2));
+        questions.add(new Question("What is the name of the current Philippine Senate President?", createChoices("A. Francis Pangilinan", "B. Juan Miguel Zubiri", "C. Alan Peter Cayetano", "D. Koko Pimentel"), 1));
+        questions.add(new Question("In which country is the city of Prague located?", createChoices("A. Austria", "B. Hungary", "C. Czech Republic", "D. Poland"), 2));
+        questions.add(new Question("Who is the author of the book 'The Great Gatsby'?", createChoices("A. F. Scott Fitzgerald", "B. Ernest Hemingway", "C. Mark Twain", "D. Virginia Woolf"), 0));
+        questions.add(new Question("Choose the correct sentence:", createChoices("A. They is going to the park.", "B. They are going to the park.", "C. They am going to the park.", "D. They be going to the park."), 1));
+        questions.add(new Question("Which word is an antonym for 'fast'?", createChoices("A. Quick", "B. Slow", "C. Rapid", "D. Swift"), 1));
+        questions.add(new Question("What is the comparative form of the adjective 'good'?", createChoices("A. Best", "B. Better", "C. Gooder", "D. Goodest"), 1));
     }    
 
     private void setOnClickListeners() {
