@@ -5,19 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Background Image -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/logo"
-        android:alpha="0.5" /> <!-- Adjust alpha to control transparency -->
+        android:alpha="0.5" /> 
 
     <!-- Dark Overlay -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#80000000" /> <!-- Adjust the color and transparency -->
+        android:background="#80000000" /> 
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,16 +32,29 @@
             android:textStyle="bold"
             android:gravity="center"
             android:textColor="@android:color/white"
-            android:paddingBottom="100dp" />
+            android:paddingBottom="20dp" />
 
         <ListView
             android:id="@+id/subjectListView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:divider="@null"
             android:dividerHeight="0dp"
-            android:textColor="@android:color/white" />
-            
+            android:textColor="@android:color/white"
+            android:paddingBottom="20dp" />
+
+        <Button
+            android:id="@+id/sourcesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sources (i)"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_marginTop="20dp"/> 
 
     </LinearLayout>
+
 </FrameLayout>
