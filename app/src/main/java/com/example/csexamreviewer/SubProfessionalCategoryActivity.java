@@ -19,7 +19,7 @@ public class SubProfessionalCategoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sub_professional_category);
 
         subjectListView = findViewById(R.id.subjectListView);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, subjects);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_button, subjects);
         subjectListView.setAdapter(adapter);
 
         subjectListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
