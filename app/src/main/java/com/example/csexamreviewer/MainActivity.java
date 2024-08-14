@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         subjectListView = findViewById(R.id.subjectListView);
         sourcesButton = findViewById(R.id.sourcesButton);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, subjects);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_button, subjects);
         subjectListView.setAdapter(adapter);
 
         subjectListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
