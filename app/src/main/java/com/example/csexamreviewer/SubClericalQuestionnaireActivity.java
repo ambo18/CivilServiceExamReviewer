@@ -13,123 +13,269 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Locale;
 
 public class SubClericalQuestionnaireActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
     // Views
-    private TextView questionTextView1, questionTextView2, questionTextView3, questionTextView4, 
-    questionTextView5, questionTextView6, questionTextView7, questionTextView8, questionTextView9, 
-    questionTextView10, questionTextView11, questionTextView12, questionTextView13, questionTextView14, questionTextView15, 
-    questionTextView16, questionTextView17, questionTextView18, questionTextView19, questionTextView20;
-    private RadioGroup choiceRadioGroup1, choiceRadioGroup2, choiceRadioGroup3, choiceRadioGroup4, choiceRadioGroup5,
-    choiceRadioGroup6, choiceRadioGroup7, choiceRadioGroup8, choiceRadioGroup9, choiceRadioGroup10, choiceRadioGroup11,
-    choiceRadioGroup12, choiceRadioGroup13, choiceRadioGroup14, choiceRadioGroup15, choiceRadioGroup16, choiceRadioGroup17,
-    choiceRadioGroup18, choiceRadioGroup19, choiceRadioGroup20;
-    private ImageView textToSpeechButton1, textToSpeechButton2, textToSpeechButton3, textToSpeechButton4, textToSpeechButton5, 
-    textToSpeechButton6, textToSpeechButton7, textToSpeechButton8, textToSpeechButton9, textToSpeechButton10, textToSpeechButton11, textToSpeechButton12, textToSpeechButton13,
-    textToSpeechButton14, textToSpeechButton15, textToSpeechButton16, textToSpeechButton17, textToSpeechButton18, textToSpeechButton19, textToSpeechButton20;
+    private List<TextView> questionTextViews;
+    private List<RadioGroup> choiceRadioGroups;
+    private List<ImageView> textToSpeechButtons;
     private Button submitButton;
+
+    // Questions
+    private List<Question> questions;
+    private int currentQuestionIndex = 0;
+
     // Text-to-speech
     private TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub_clerical);
+        setContentView(R.layout.activity_verbal);
 
         // Initialize views
-        questionTextView1 = findViewById(R.id.questionTextView1);
-        questionTextView2 = findViewById(R.id.questionTextView2);
-        questionTextView3 = findViewById(R.id.questionTextView3);
-        questionTextView4 = findViewById(R.id.questionTextView4);
-        questionTextView5 = findViewById(R.id.questionTextView5);
-        questionTextView6 = findViewById(R.id.questionTextView6);
-        questionTextView7 = findViewById(R.id.questionTextView7);
-        questionTextView8 = findViewById(R.id.questionTextView8);
-        questionTextView9 = findViewById(R.id.questionTextView9);
-        questionTextView10 = findViewById(R.id.questionTextView10);
-        questionTextView11 = findViewById(R.id.questionTextView11);
-        questionTextView12 = findViewById(R.id.questionTextView12);
-        questionTextView13 = findViewById(R.id.questionTextView13);
-        questionTextView14 = findViewById(R.id.questionTextView14);
-        questionTextView15 = findViewById(R.id.questionTextView15);
-        questionTextView16 = findViewById(R.id.questionTextView16);
-        questionTextView17 = findViewById(R.id.questionTextView17);
-        questionTextView18 = findViewById(R.id.questionTextView18);
-        questionTextView19 = findViewById(R.id.questionTextView19);
-        questionTextView20 = findViewById(R.id.questionTextView20);
+        initializeViews();
 
-        choiceRadioGroup1 = findViewById(R.id.choiceRadioGroup1);
-        choiceRadioGroup2 = findViewById(R.id.choiceRadioGroup2);
-        choiceRadioGroup3 = findViewById(R.id.choiceRadioGroup3);
-        choiceRadioGroup4 = findViewById(R.id.choiceRadioGroup4);
-        choiceRadioGroup5 = findViewById(R.id.choiceRadioGroup5);
-        choiceRadioGroup6 = findViewById(R.id.choiceRadioGroup6);
-        choiceRadioGroup7 = findViewById(R.id.choiceRadioGroup7);
-        choiceRadioGroup8 = findViewById(R.id.choiceRadioGroup8);
-        choiceRadioGroup9 = findViewById(R.id.choiceRadioGroup9);
-        choiceRadioGroup10 = findViewById(R.id.choiceRadioGroup10);
-        choiceRadioGroup11 = findViewById(R.id.choiceRadioGroup11);
-        choiceRadioGroup12 = findViewById(R.id.choiceRadioGroup12);
-        choiceRadioGroup13 = findViewById(R.id.choiceRadioGroup13);
-        choiceRadioGroup14 = findViewById(R.id.choiceRadioGroup14);
-        choiceRadioGroup15 = findViewById(R.id.choiceRadioGroup15);
-        choiceRadioGroup16 = findViewById(R.id.choiceRadioGroup16);
-        choiceRadioGroup17 = findViewById(R.id.choiceRadioGroup17);
-        choiceRadioGroup18 = findViewById(R.id.choiceRadioGroup18);
-        choiceRadioGroup19 = findViewById(R.id.choiceRadioGroup19);
-        choiceRadioGroup20 = findViewById(R.id.choiceRadioGroup20);
-
-        textToSpeechButton1 = findViewById(R.id.textToSpeechButton1);
-        textToSpeechButton2 = findViewById(R.id.textToSpeechButton2);
-        textToSpeechButton3 = findViewById(R.id.textToSpeechButton3);
-        textToSpeechButton4 = findViewById(R.id.textToSpeechButton4);
-        textToSpeechButton5 = findViewById(R.id.textToSpeechButton5);
-        textToSpeechButton6 = findViewById(R.id.textToSpeechButton6);
-        textToSpeechButton7 = findViewById(R.id.textToSpeechButton7);
-        textToSpeechButton8 = findViewById(R.id.textToSpeechButton8);
-        textToSpeechButton9 = findViewById(R.id.textToSpeechButton9);
-        textToSpeechButton10 = findViewById(R.id.textToSpeechButton10);
-        textToSpeechButton11 = findViewById(R.id.textToSpeechButton11);
-        textToSpeechButton12 = findViewById(R.id.textToSpeechButton12);
-        textToSpeechButton13 = findViewById(R.id.textToSpeechButton13);
-        textToSpeechButton14 = findViewById(R.id.textToSpeechButton14);
-        textToSpeechButton15 = findViewById(R.id.textToSpeechButton15);
-        textToSpeechButton16 = findViewById(R.id.textToSpeechButton16);
-        textToSpeechButton17 = findViewById(R.id.textToSpeechButton17);
-        textToSpeechButton18 = findViewById(R.id.textToSpeechButton18);
-        textToSpeechButton19 = findViewById(R.id.textToSpeechButton19);
-        textToSpeechButton20 = findViewById(R.id.textToSpeechButton20);
-
-        submitButton = findViewById(R.id.submitButton);
+        // Initialize questions
+        initializeQuestions();
 
         // Initialize text-to-speech engine
         textToSpeech = new TextToSpeech(this, this);
 
         // Set onClick listeners
-        textToSpeechButton1.setOnClickListener(view -> speakText(questionTextView1.getText().toString() + ". " + getChoicesText(choiceRadioGroup1)));
-        textToSpeechButton2.setOnClickListener(view -> speakText(questionTextView2.getText().toString() + ". " + getChoicesText(choiceRadioGroup2)));
-        textToSpeechButton3.setOnClickListener(view -> speakText(questionTextView3.getText().toString() + ". " + getChoicesText(choiceRadioGroup3)));
-        textToSpeechButton4.setOnClickListener(view -> speakText(questionTextView4.getText().toString() + ". " + getChoicesText(choiceRadioGroup4)));
-        textToSpeechButton5.setOnClickListener(view -> speakText(questionTextView5.getText().toString() + ". " + getChoicesText(choiceRadioGroup5)));
-        textToSpeechButton6.setOnClickListener(view -> speakText(questionTextView6.getText().toString() + ". " + getChoicesText(choiceRadioGroup6)));
-        textToSpeechButton7.setOnClickListener(view -> speakText(questionTextView7.getText().toString() + ". " + getChoicesText(choiceRadioGroup7)));
-        textToSpeechButton8.setOnClickListener(view -> speakText(questionTextView8.getText().toString() + ". " + getChoicesText(choiceRadioGroup8)));
-        textToSpeechButton9.setOnClickListener(view -> speakText(questionTextView9.getText().toString() + ". " + getChoicesText(choiceRadioGroup9)));
-        textToSpeechButton10.setOnClickListener(view -> speakText(questionTextView10.getText().toString() + ". " + getChoicesText(choiceRadioGroup10)));
-        textToSpeechButton11.setOnClickListener(view -> speakText(questionTextView11.getText().toString() + ". " + getChoicesText(choiceRadioGroup11)));
-        textToSpeechButton12.setOnClickListener(view -> speakText(questionTextView12.getText().toString() + ". " + getChoicesText(choiceRadioGroup12)));
-        textToSpeechButton13.setOnClickListener(view -> speakText(questionTextView13.getText().toString() + ". " + getChoicesText(choiceRadioGroup13)));
-        textToSpeechButton14.setOnClickListener(view -> speakText(questionTextView14.getText().toString() + ". " + getChoicesText(choiceRadioGroup14)));
-        textToSpeechButton15.setOnClickListener(view -> speakText(questionTextView15.getText().toString() + ". " + getChoicesText(choiceRadioGroup15)));
-        textToSpeechButton16.setOnClickListener(view -> speakText(questionTextView16.getText().toString() + ". " + getChoicesText(choiceRadioGroup16)));
-        textToSpeechButton17.setOnClickListener(view -> speakText(questionTextView17.getText().toString() + ". " + getChoicesText(choiceRadioGroup17)));
-        textToSpeechButton18.setOnClickListener(view -> speakText(questionTextView18.getText().toString() + ". " + getChoicesText(choiceRadioGroup18)));
-        textToSpeechButton19.setOnClickListener(view -> speakText(questionTextView19.getText().toString() + ". " + getChoicesText(choiceRadioGroup19)));
-        textToSpeechButton20.setOnClickListener(view -> speakText(questionTextView20.getText().toString() + ". " + getChoicesText(choiceRadioGroup20)));
+        setOnClickListeners();
+
+        // Shuffle questions initially
+        shuffleQuestions();
+    }
+
+    private void initializeViews() {
+        questionTextViews = new ArrayList<>();
+        choiceRadioGroups = new ArrayList<>();
+        textToSpeechButtons = new ArrayList<>();
+
+        for (int i = 1; i <= 100; i++) {
+            int resID = getResources().getIdentifier("questionTextView" + i, "id", getPackageName());
+            questionTextViews.add(findViewById(resID));
+
+            int radioGroupResID = getResources().getIdentifier("choiceRadioGroup" + i, "id", getPackageName());
+            choiceRadioGroups.add(findViewById(radioGroupResID));
+
+            int textToSpeechButtonResID = getResources().getIdentifier("textToSpeechButton" + i, "id", getPackageName());
+            textToSpeechButtons.add(findViewById(textToSpeechButtonResID));
+        }
+
+        submitButton = findViewById(R.id.submitButton);
+    }
+
+    private void initializeQuestions() {
+        questions = new ArrayList<>();
+        questions.add(new Question("Which of the following is the correct spelling?", createChoices("A) Accommodate", "B) Accomodate", "C) Acommodate", "D) Accomodate"), 0));
+        questions.add(new Question("Which punctuation mark is used to indicate a question?", createChoices("A) Period", "B) Comma", "C) Question Mark", "D) Exclamation Point"), 2));
+        questions.add(new Question("How many spaces should follow a period in a typed document?", createChoices("A) None", "B) One", "C) Two", "D) Three"), 1));
+        questions.add(new Question("What is the correct format for a date in a formal letter?", createChoices("A) 12/31/2024", "B) 31-12-2024", "C) December 31, 2024", "D) 2024/12/31"), 2));
+        questions.add(new Question("How should a letter be filed in alphabetical order?", createChoices("A) By the sender's name", "B) By the recipient's name", "C) By the date", "D) By the subject"), 1));
+        questions.add(new Question("Which of the following is an example of a commonly used office supply?", createChoices("A) Stapler", "B) Calculator", "C) Printer", "D) All of the above"), 3));
+        questions.add(new Question("What is the purpose of a cover letter in job applications?", createChoices("A) To introduce yourself", "B) To list references", "C) To provide a resume", "D) To detail your salary expectations"), 0));
+        questions.add(new Question("What does a 'blind carbon copy' (BCC) in an email do?", createChoices("A) Sends the email to all recipients", "B) Hides the email addresses of recipients from each other", "C) Forwards the email to additional recipients", "D) Provides a copy to the sender"), 1));
+        questions.add(new Question("Which of the following best describes 'proofreading'?", createChoices("A) Checking spelling and grammar errors", "B) Formatting a document", "C) Creating a presentation", "D) Organizing files"), 0));
+        questions.add(new Question("How should a file be labeled for easy identification?", createChoices("A) With a unique number", "B) With a brief description", "C) With the file creation date", "D) With the file creator's name"), 1));
+        questions.add(new Question("What is the correct way to address a formal letter to an individual whose name you do not know?", createChoices("A) To Whom It May Concern", "B) Dear Sir/Madam", "C) Hello", "D) Greetings"), 1));
+        questions.add(new Question("Which of the following is a common typing error?", createChoices("A) Transposing letters", "B) Using correct punctuation", "C) Proper spacing", "D) Using correct spelling"), 0));
+        questions.add(new Question("What is the purpose of a memo in an office setting?", createChoices("A) To communicate internally", "B) To make official announcements", "C) To schedule meetings", "D) To record financial transactions"), 0));
+        questions.add(new Question("How should documents be organized in a filing cabinet?", createChoices("A) By date", "B) By subject", "C) By department", "D) All of the above"), 3));
+        questions.add(new Question("Which of the following is considered a basic office procedure?", createChoices("A) Filing documents", "B) Managing company finances", "C) Conducting interviews", "D) Creating marketing strategies"), 0));
+        questions.add(new Question("What does 'CC' stand for in an email?", createChoices("A) Confidential Copy", "B) Carbon Copy", "C) Certified Copy", "D) Creative Copy"), 1));
+        questions.add(new Question("What is the correct way to handle a phone call from a client?", createChoices("A) Ignore the call", "B) Transfer the call to a colleague", "C) Take a message and provide contact information", "D) Hang up after a brief greeting"), 2));
+        questions.add(new Question("Which key is used to capitalize letters while typing?", createChoices("A) Shift", "B) Control", "C) Alt", "D) Enter"), 0));
+        questions.add(new Question("What is the best practice for managing multiple tasks in an office?", createChoices("A) Do them all at once", "B) Prioritize tasks and manage time effectively", "C) Delegate all tasks", "D) Complete tasks in random order"), 1));
+        questions.add(new Question("What does the acronym 'PTO' stand for in office terminology?", createChoices("A) Paid Time Off", "B) Personal Time Off", "C) Public Time Off", "D) Professional Time Off"), 0));
+        questions.add(new Question("What is the purpose of a 'file folder'?", createChoices("A) To store files", "B) To organize files", "C) To protect files", "D) All of the above"), 3));
+        questions.add(new Question("How should a typist correct a mistake in a document?", createChoices("A) Erase and retype", "B) Use correction fluid", "C) Strike through and type the correction", "D) Ignore it"), 2));
+        questions.add(new Question("What is the role of a 'keypunch' machine?", createChoices("A) To type text", "B) To enter data into a computer", "C) To print documents", "D) To scan barcodes"), 1));
+        questions.add(new Question("What should be done if a confidential document is accidentally shared?", createChoices("A) Inform your supervisor immediately", "B) Ignore it", "C) Destroy the document", "D) Ask for a new copy"), 0));
+        questions.add(new Question("Which of the following is a common mistake in filing documents?", createChoices("A) Mislabeling", "B) Filing in chronological order", "C) Using proper labels", "D) Storing documents in secure folders"), 0));
+        questions.add(new Question("What is the proper format for a telephone number in a document?", createChoices("A) (123) 456-7890", "B) 123-456-7890", "C) 1234567890", "D) 123.456.7890"), 0));
+        questions.add(new Question("What does the term 'filing' refer to?", createChoices("A) Organizing documents", "B) Creating documents", "C) Sending documents", "D) Destroying documents"), 0));
+        questions.add(new Question("How should a letter be signed?", createChoices("A) With a typed name", "B) With a handwritten signature", "C) With a digital signature", "D) With a printed name"), 1));
+        questions.add(new Question("Which of the following best describes 'data entry'?", createChoices("A) Inputting information into a computer", "B) Analyzing data", "C) Creating reports", "D) Filing documents"), 0));
+        questions.add(new Question("What is a 'requisition form' used for?", createChoices("A) To request supplies", "B) To submit invoices", "C) To apply for a job", "D) To report problems"), 0));
+        questions.add(new Question("What is the standard font size for a formal document?", createChoices("A) 10 pt", "B) 12 pt", "C) 14 pt", "D) 16 pt"), 1));
+        questions.add(new Question("What is a 'fax machine' used for?", createChoices("A) Sending and receiving documents", "B) Typing documents", "C) Printing documents", "D) Scanning documents"), 0));
+        questions.add(new Question("Which key is used to delete the character to the right of the cursor?", createChoices("A) Backspace", "B) Delete", "C) Enter", "D) Shift"), 1));
+        questions.add(new Question("What is the correct method to file a document in a drawer?", createChoices("A) Alphabetically by title", "B) By date", "C) By importance", "D) By sender"), 0));
+        questions.add(new Question("How should a document be formatted for a business report?", createChoices("A) With a cover page and headings", "B) In bullet points only", "C) With a casual tone", "D) Without any formatting"), 0));
+        questions.add(new Question("What does 'confidential' mean in office terminology?", createChoices("A) Private and not to be shared", "B) Open for public viewing", "C) Available to all staff", "D) For external distribution"), 0));
+        questions.add(new Question("What is the best practice for handling incoming mail?", createChoices("A) Sort and distribute promptly", "B) Leave it in the mailroom", "C) Open and read all mail", "D) Discard unopened"), 0));
+        questions.add(new Question("What is the purpose of a 'routing slip'?", createChoices("A) To track the movement of documents", "B) To request office supplies", "C) To schedule meetings", "D) To record telephone calls"), 0));
+        questions.add(new Question("What is the purpose of using 'headers' in a document?", createChoices("A) To organize content", "B) To make the document look colorful", "C) To reduce the length of the document", "D) To hide information"), 0));
+        questions.add(new Question("What is the best way to handle a typo in a printed document?", createChoices("A) Use correction tape", "B) Cross it out and write the correction", "C) Reprint the document", "D) Ignore it"), 2));
+        questions.add(new Question("Which document format is most suitable for sharing resumes?", createChoices("A) PDF", "B) Word", "C) Excel", "D) PowerPoint"), 0));
+        questions.add(new Question("How should you file documents that need to be accessed frequently?", createChoices("A) By using a label system and placing them in an accessible drawer", "B) By storing them in a locked cabinet", "C) By placing them in a folder on the desk", "D) By keeping them in a binder"), 0));
+        questions.add(new Question("What does 'alphabetizing' a file mean?", createChoices("A) Arranging files in alphabetical order", "B) Sorting files by date", "C) Grouping files by size", "D) Organizing files by importance"), 0));
+        questions.add(new Question("Which of the following is an example of a 'standard operating procedure' (SOP)?", createChoices("A) A document outlining steps for handling customer complaints", "B) A monthly sales report", "C) A company directory", "D) A promotional flyer"), 0));
+        questions.add(new Question("What is the purpose of 'pagination' in a document?", createChoices("A) To number the pages for easy reference", "B) To add graphics to each page", "C) To increase the font size", "D) To format text in bold"), 0));
+        questions.add(new Question("Which punctuation mark is used to separate items in a list?", createChoices("A) Colon", "B) Semicolon", "C) Comma", "D) Period"), 2));
+        questions.add(new Question("How should a formal letter be signed off?", createChoices("A) Sincerely", "B) Cheers", "C) Regards", "D) Best wishes"), 0));
+        questions.add(new Question("What is the role of a 'data entry clerk'?", createChoices("A) To input data into computer systems", "B) To design websites", "C) To manage office supplies", "D) To handle customer service calls"), 0));
+        questions.add(new Question("What is the function of a 'paperclip'?", createChoices("A) To hold papers together", "B) To mark a page", "C) To clean the screen", "D) To record information"), 0));
+        questions.add(new Question("What does 'proofreading' involve?", createChoices("A) Reviewing a document for errors before finalizing", "B) Printing multiple copies of a document", "C) Creating a document outline", "D) Organizing files into folders"), 0));
+        questions.add(new Question("What is the most appropriate action if you find a document with sensitive information?", createChoices("A) Secure it in a confidential file", "B) Leave it on your desk", "C) Share it with colleagues", "D) Dispose of it in a recycling bin"), 0));
+        questions.add(new Question("Which is the best practice for handling confidential documents?", createChoices("A) Use secure storage and limit access", "B) Keep them in an unlocked drawer", "C) Share them with all team members", "D) Place them in an open filing cabinet"), 0));
+        questions.add(new Question("How should a typist handle a document that needs to be corrected?", createChoices("A) Strike through the error and type the correction", "B) Use a different document", "C) Erase the mistake and retype", "D) Highlight the error"), 0));
+        questions.add(new Question("What does 'filing' in an office refer to?", createChoices("A) Storing documents in an organized manner", "B) Creating documents", "C) Sending documents to clients", "D) Printing documents"), 0));
+        questions.add(new Question("What is the purpose of a 'telephone log'?", createChoices("A) To record phone calls and their details", "B) To list contact numbers", "C) To track office supplies", "D) To note meeting dates"), 0));
+        questions.add(new Question("What is the recommended way to format a resume?", createChoices("A) Use bullet points and a clear layout", "B) Write it in long paragraphs", "C) Include only personal information", "D) Use a casual tone"), 0));
+        questions.add(new Question("How should you handle a situation where you receive a document with missing pages?", createChoices("A) Report the issue and request the complete document", "B) Proceed with the incomplete document", "C) Ignore the missing pages", "D) Guess the missing information"), 0));
+        questions.add(new Question("What is the correct format for writing a professional email subject line?", createChoices("A) Brief and descriptive", "B) Long and detailed", "C) Generic and vague", "D) In all capital letters"), 0));
+        questions.add(new Question("What is the best way to organize a physical filing cabinet?", createChoices("A) Use labeled folders and categorize documents", "B) Stack documents randomly", "C) Place all documents in one drawer", "D) Store documents without labels"), 0));
+        questions.add(new Question("Which method is commonly used for document backup?", createChoices("A) Using cloud storage", "B) Storing documents on a single hard drive", "C) Keeping physical copies only", "D) Ignoring backup procedures"), 0));
+        questions.add(new Question("What is the purpose of a 'desk organizer'?", createChoices("A) To keep office supplies and documents organized", "B) To decorate the desk", "C) To hold books", "D) To increase desk space"), 0));
+        questions.add(new Question("What does 'data entry' typically involve?", createChoices("A) Inputting information into a computer system", "B) Creating marketing materials", "C) Scheduling appointments", "D) Conducting interviews"), 0));
+        questions.add(new Question("What is the best way to ensure accuracy in data entry?", createChoices("A) Double-check the entered information", "B) Rely on the computer system to correct errors", "C) Enter data quickly without checking", "D) Ignore any inconsistencies"), 0));
+        questions.add(new Question("How should a typist address a misalignment in text on a document?", createChoices("A) Adjust the margins and formatting", "B) Ignore it", "C) Use a different document format", "D) Reprint the document"), 0));
+        questions.add(new Question("What is the purpose of using 'template documents'?", createChoices("A) To standardize and speed up document creation", "B) To create unique documents", "C) To ensure documents are always handwritten", "D) To store personal notes"), 0));
+        questions.add(new Question("What is the best practice for handling incoming office mail?", createChoices("A) Sort and prioritize it immediately", "B) Leave it unattended", "C) Open and read all mail", "D) Store it in a drawer without sorting"), 0));
+        questions.add(new Question("What is the recommended method for storing confidential files digitally?", createChoices("A) Use encryption and access controls", "B) Store on a public cloud", "C) Keep them in an open folder", "D) Share them with all staff"), 0));
+        questions.add(new Question("Which punctuation mark is used to show possession?", createChoices("A) Comma", "B) Apostrophe", "C) Colon", "D) Semicolon"), 1));
+        questions.add(new Question("How should a document be formatted for a presentation?", createChoices("A) Use bullet points and a clear layout", "B) Write in long paragraphs", "C) Include complex charts", "D) Use multiple font sizes"), 0));
+        questions.add(new Question("What is the correct way to handle multiple versions of a document?", createChoices("A) Save each version with a different name or date", "B) Overwrite the previous version", "C) Delete old versions", "D) Keep all versions in one file"), 0));
+        questions.add(new Question("What does 'double-spacing' in a document refer to?", createChoices("A) Leaving a full line of space between lines of text", "B) Reducing line spacing", "C) Using two fonts", "D) Increasing font size"), 0));
+        questions.add(new Question("What is the purpose of a 'table of contents'?", createChoices("A) To provide an overview and page numbers for sections", "B) To include a summary of the document", "C) To list the authors", "D) To provide a cover page"), 0));
+        questions.add(new Question("How should an error in a typed document be corrected before printing?", createChoices("A) Use a computer's editing tools to fix the error", "B) Manually cross out and rewrite the correct information", "C) Print the document and correct it by hand", "D) Ignore the error"), 0));
+        questions.add(new Question("What does the term 'confidential' mean when handling documents?", createChoices("A) Restricted access to authorized individuals only", "B) Open for public viewing", "C) Available for all employees", "D) Shared with external partners"), 0));
+        questions.add(new Question("What is the correct action when receiving a document with an incorrect address?", createChoices("A) Return it to the sender with the correct address", "B) Ignore the mistake", "C) Open the document anyway", "D) Dispose of it"), 0));
+        questions.add(new Question("What is the primary function of a 'paper shredder' in an office?", createChoices("A) To destroy sensitive documents", "B) To organize papers", "C) To clean the desk", "D) To create paper clips"), 0));
+        questions.add(new Question("What is the best way to organize files in a digital filing system?", createChoices("A) Use clear and consistent folder names", "B) Save all files in one folder", "C) Store files by date only", "D) Use a different naming convention for each file"), 0));
+        questions.add(new Question("When creating a spreadsheet, what is the purpose of 'formulas'?", createChoices("A) To perform calculations automatically", "B) To format text", "C) To design graphics", "D) To sort data alphabetically"), 0));
+        questions.add(new Question("What does 'document versioning' refer to?", createChoices("A) Keeping track of different iterations of a document", "B) Changing the document's font", "C) Adding graphics to the document", "D) Printing multiple copies"), 0));
+        questions.add(new Question("What is an appropriate way to handle a large volume of incoming paperwork?", createChoices("A) Use a systematic sorting and filing process", "B) Stack all papers on the desk", "C) Discard unimportant documents immediately", "D) File all documents randomly"), 0));
+        questions.add(new Question("How should a clerical worker handle confidential information?", createChoices("A) Store it in a secure location and limit access", "B) Share it with colleagues", "C) Keep it in an unlocked drawer", "D) Send it via unencrypted email"), 0));
+        questions.add(new Question("What is the correct way to format a formal business letter?", createChoices("A) Use a professional tone, proper formatting, and correct punctuation", "B) Write casually and omit salutations", "C) Use a personal email style", "D) Avoid any formalities"), 0));
+        questions.add(new Question("What is the purpose of a 'file index' in a filing system?", createChoices("A) To quickly locate and access files", "B) To create additional copies of files", "C) To decorate the filing cabinet", "D) To categorize documents by color"), 0));
+        questions.add(new Question("What does 'spell check' do in a word processing program?", createChoices("A) Identifies and suggests corrections for spelling errors", "B) Formats the text", "C) Creates graphics", "D) Organizes files"), 0));
+        questions.add(new Question("What is the role of 'metadata' in a document?", createChoices("A) To provide additional information about the document's content", "B) To format the document's text", "C) To add watermarks", "D) To change the document's color scheme"), 0));
+        questions.add(new Question("How should you handle a situation where you need to prioritize tasks?", createChoices("A) Create a to-do list and tackle the most urgent tasks first", "B) Work on tasks randomly", "C) Complete tasks in alphabetical order", "D) Focus on less important tasks"), 0));
+        questions.add(new Question("What does 'data validation' ensure in a database?", createChoices("A) That the data entered meets certain criteria and is accurate", "B) That the database is visually appealing", "C) That the database is empty", "D) That data is encrypted"), 0));
+        questions.add(new Question("What is the purpose of a 'contact list' in office management?", createChoices("A) To keep track of important contacts and their information", "B) To list office supplies", "C) To create a calendar", "D) To file documents"), 0));
+        questions.add(new Question("How should errors in a typed document be corrected during the editing process?", createChoices("A) Use editing tools to make corrections", "B) Reprint the document and correct manually", "C) Ignore the errors", "D) Cross out mistakes and write over them"), 0));
+        questions.add(new Question("What does 'database backup' mean?", createChoices("A) Creating a copy of the database to prevent data loss", "B) Updating the database's design", "C) Reducing the database's size", "D) Increasing database speed"), 0));
+        questions.add(new Question("What is the best way to format a report for clarity?", createChoices("A) Use headings, bullet points, and clear sections", "B) Write in long paragraphs", "C) Include excessive details", "D) Use varied fonts and colors"), 0));
+        questions.add(new Question("What is a 'memo' used for in a business setting?", createChoices("A) To communicate brief messages internally", "B) To prepare detailed reports", "C) To create presentations", "D) To handle customer complaints"), 0));
+        questions.add(new Question("How should a clerical worker handle a document with mixed formats?", createChoices("A) Standardize the format for consistency", "B) Leave it as is", "C) Print it in multiple formats", "D) Convert all text to one font"), 0));
+        questions.add(new Question("What is the purpose of 'document collaboration' tools?", createChoices("A) To allow multiple users to work on a document simultaneously", "B) To create static documents", "C) To print multiple copies", "D) To encrypt documents"), 0));
+        questions.add(new Question("What is an 'address book' used for in office settings?", createChoices("A) To keep track of contact information", "B) To record office supply purchases", "C) To store meeting notes", "D) To manage task lists"), 0));
+        questions.add(new Question("How should you organize a digital folder structure for a project?", createChoices("A) Use a clear hierarchy and descriptive folder names", "B) Store all files in a single folder", "C) Use random names for folders", "D) Avoid creating subfolders"), 0));
+        questions.add(new Question("What is the purpose of a 'calendar' in office management?", createChoices("A) To schedule and track meetings and deadlines", "B) To file documents", "C) To design marketing materials", "D) To track inventory"), 0));
+        questions.add(new Question("What does 'document redaction' involve?", createChoices("A) Removing or obscuring sensitive information from a document", "B) Adding highlights to text", "C) Formatting the document's layout", "D) Printing additional copies"), 0));
+        questions.add(new Question("How should you handle the sorting of physical files in an office?", createChoices("A) Use a consistent and logical filing system", "B) Stack files randomly", "C) Ignore sorting", "D) Change file locations frequently"), 0));
+        questions.add(new Question("What is the best practice for handling office emails?", createChoices("A) Read and respond promptly, and organize by priority", "B) Ignore non-urgent emails", "C) Delete all emails immediately", "D) Keep all emails in one folder"), 0));
+    }    
+
+    private void setOnClickListeners() {
+        for (int i = 0; i < textToSpeechButtons.size(); i++) {
+            int finalI = i; // To access in lambda expression
+            textToSpeechButtons.get(i).setOnClickListener(view -> speakText(questions.get(finalI).getQuestionText() + ". " + getChoicesText(finalI)));
+        }
 
         submitButton.setOnClickListener(view -> showScoreDialog());
+    }
+
+    private void speakText(String text) {
+        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+    }
+
+    private String getChoicesText(int index) {
+        StringBuilder choicesText = new StringBuilder();
+        List<String> choices = questions.get(index).getChoices();
+        for (int i = 0; i < choices.size(); i++) {
+            choicesText.append(choices.get(i)).append(". ");
+        }
+        return choicesText.toString();
+    }
+
+    private void showScoreDialog() {
+        int correctAnswers = 0;
+        StringBuilder correctAnswersText = new StringBuilder();
+        boolean allAnswered = true;
+        int firstUnansweredIndex = -1;
+    
+        for (int i = 0; i < questions.size(); i++) {
+            if (choiceRadioGroups.get(i).getCheckedRadioButtonId() == -1) {
+                allAnswered = false;
+                if (firstUnansweredIndex == -1) {
+                    firstUnansweredIndex = i;
+                }
+            } else if (checkAnswer(i)) {
+                correctAnswers++;
+                correctAnswersText.append(i + 1).append(". Correct\n");
+            } else {
+                correctAnswersText.append(i + 1).append(". (Correct Answer: ")
+                        .append(questions.get(i).getChoices().get(questions.get(i).getCorrectAnswerIndex())).append(")\n");
+            }
+        }
+    
+        if (!allAnswered) {
+            // Scroll to the first unanswered question
+            TextView unansweredQuestionTextView = questionTextViews.get(firstUnansweredIndex);
+            unansweredQuestionTextView.getParent().requestChildFocus(unansweredQuestionTextView, unansweredQuestionTextView);
+    
+            // Alert dialog to inform the user to answer all questions
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Please answer all the questions before submitting.")
+                    .setPositiveButton("OK", null);
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            return;
+        }
+    
+        // Build the dialog message
+        String dialogMessage = "Your score is " + correctAnswers + "/" + questions.size() + "\n\n";
+        dialogMessage += "Correct Answers:\n" + correctAnswersText.toString();
+    
+        // Create and show the dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(dialogMessage)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Finish the current activity to go back
+                        finish();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }            
+
+    private boolean checkAnswer(int index) {
+        int selectedId = choiceRadioGroups.get(index).getCheckedRadioButtonId();
+        RadioButton selectedRadioButton = findViewById(selectedId);
+        int selectedAnswerIndex = choiceRadioGroups.get(index).indexOfChild(selectedRadioButton);
+        int correctAnswerIndex = questions.get(index).getCorrectAnswerIndex();
+        return selectedAnswerIndex == correctAnswerIndex;
+    }
+    
+
+    private void shuffleQuestions() {
+        Collections.shuffle(questions);
+        currentQuestionIndex = 0; // Reset current question index
+
+        // Update UI with shuffled questions
+        for (int i = 0; i < questions.size(); i++) {
+            Question question = questions.get(i);
+            TextView textView = questionTextViews.get(i);
+            textView.setText(question.getQuestionText());
+
+            List<String> choices = question.getChoices();
+            for (int j = 0; j < choices.size(); j++) {
+                RadioButton radioButton = (RadioButton) choiceRadioGroups.get(i).getChildAt(j);
+                radioButton.setText(choices.get(j));
+            }
+        }
     }
 
     @Override
@@ -144,186 +290,6 @@ public class SubClericalQuestionnaireActivity extends AppCompatActivity implemen
         }
     }
 
-    private void speakText(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
-    }
-
-    private String getChoicesText(RadioGroup radioGroup) {
-        StringBuilder choicesText = new StringBuilder();
-        for (int i = 0; i < radioGroup.getChildCount(); i++) {
-            RadioButton radioButton = (RadioButton) radioGroup.getChildAt(i);
-            choicesText.append(radioButton.getText()).append(". ");
-        }
-        return choicesText.toString();
-    }
-
-    private void showScoreDialog() {
-        int correctAnswers = 0;
-    
-        StringBuilder correctAnswersText = new StringBuilder();
-    
-        if (checkAnswer(choiceRadioGroup1, R.id.choiceRadioButton1B)) {
-            correctAnswers++;
-            correctAnswersText.append("1. B\n");
-        } else {
-            correctAnswersText.append("1. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup2, R.id.choiceRadioButton2C)) {
-            correctAnswers++;
-            correctAnswersText.append("2. C\n");
-        } else {
-            correctAnswersText.append("2. (Correct Answer:C)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup3, R.id.choiceRadioButton3B)) {
-            correctAnswers++;
-            correctAnswersText.append("3. B\n");
-        } else {
-            correctAnswersText.append("3. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup4, R.id.choiceRadioButton4B)) {
-            correctAnswers++;
-            correctAnswersText.append("4. B\n");
-        } else {
-            correctAnswersText.append("4. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup5, R.id.choiceRadioButton5B)) {
-            correctAnswers++;
-            correctAnswersText.append("5. B\n");
-        } else {
-            correctAnswersText.append("5. (Correct Answer: B)\n");
-        }
-
-        if (checkAnswer(choiceRadioGroup6, R.id.choiceRadioButton6C)) {
-            correctAnswers++;
-            correctAnswersText.append("6. C\n");
-        } else {
-            correctAnswersText.append("6. (Correct Answer: C)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup7, R.id.choiceRadioButton7C)) {
-            correctAnswers++;
-            correctAnswersText.append("7. C\n");
-        } else {
-            correctAnswersText.append("7. (Correct Answer: C)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup8, R.id.choiceRadioButton8C)) {
-            correctAnswers++;
-            correctAnswersText.append("8. C\n");
-        } else {
-            correctAnswersText.append("8. (Correct Answer: C)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup9, R.id.choiceRadioButton9B)) {
-            correctAnswers++;
-            correctAnswersText.append("9. B\n");
-        } else {
-            correctAnswersText.append("9. (Correct Answer: B)\n");
-        }
-    
-        if (checkAnswer(choiceRadioGroup10, R.id.choiceRadioButton10B)) {
-            correctAnswers++;
-            correctAnswersText.append("10. B\n");
-        } else {
-            correctAnswersText.append("10. (Correct Answer: B)\n");
-        }
-
-        if (checkAnswer(choiceRadioGroup11, R.id.choiceRadioButton11A)) {
-            correctAnswers++;
-            correctAnswersText.append("11. A\n");
-        } else {
-            correctAnswersText.append("11. (Correct Answer: A)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup12, R.id.choiceRadioButton12A)) {
-            correctAnswers++;
-            correctAnswersText.append("12. A\n");
-        } else {
-            correctAnswersText.append("12. (Correct Answer: A)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup13, R.id.choiceRadioButton13B)) {
-            correctAnswers++;
-            correctAnswersText.append("13. B\n");
-        } else {
-            correctAnswersText.append("13. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup14, R.id.choiceRadioButton14B)) {
-            correctAnswers++;
-            correctAnswersText.append("14. B\n");
-        } else {
-            correctAnswersText.append("14. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup15, R.id.choiceRadioButton15A)) {
-            correctAnswers++;
-            correctAnswersText.append("15. A\n");
-        } else {
-            correctAnswersText.append("15. (Correct Answer: A)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup16, R.id.choiceRadioButton16A)) {
-            correctAnswers++;
-            correctAnswersText.append("16. A\n");
-        } else {
-            correctAnswersText.append("16. (Correct Answer: A)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup17, R.id.choiceRadioButton17A)) {
-            correctAnswers++;
-            correctAnswersText.append("17. A\n");
-        } else {
-            correctAnswersText.append("17. (Correct Answer: A)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup18, R.id.choiceRadioButton18B)) {
-            correctAnswers++;
-            correctAnswersText.append("18. B\n");
-        } else {
-            correctAnswersText.append("18. (Correct Answer: B)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup19, R.id.choiceRadioButton19A)) {
-            correctAnswers++;
-            correctAnswersText.append("19. A\n");
-        } else {
-            correctAnswersText.append("19. (Correct Answer: A)\n");
-        }
-        
-        if (checkAnswer(choiceRadioGroup20, R.id.choiceRadioButton20D)) {
-            correctAnswers++;
-            correctAnswersText.append("20. D\n");
-        } else {
-            correctAnswersText.append("20. (Correct Answer: D)\n");
-        }
-    
-        // Build the dialog message
-        String dialogMessage = "Your score is " + correctAnswers + "/20\n\n";
-        dialogMessage += "Correct Answers:\n" + correctAnswersText.toString();
-    
-        // Create and show the dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(dialogMessage)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Return to previous activity
-                        finish();
-                    }
-                });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-    private boolean checkAnswer(RadioGroup radioGroup, int correctChoiceId) {
-        int selectedId = radioGroup.getCheckedRadioButtonId();
-        return selectedId == correctChoiceId;
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -331,5 +297,11 @@ public class SubClericalQuestionnaireActivity extends AppCompatActivity implemen
             textToSpeech.stop();
             textToSpeech.shutdown();
         }
+    }
+
+    private List<String> createChoices(String... choices) {
+        List<String> choicesList = new ArrayList<>();
+        Collections.addAll(choicesList, choices);
+        return choicesList;
     }
 }
