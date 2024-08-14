@@ -1,53 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".SubGenInfoDiscussionActivity">
 
     <ImageView
-        android:id="@+id/textToSpeechButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@id/geninfoAbilityTextView"
-        android:src="@drawable/ic_speaker" /> <!-- Replace ic_speaker with your speaker icon drawable -->
+        android:src="@drawable/logo"
+        android:alpha="0.2" /> 
 
-    <TextView
-        android:id="@+id/geninfoAbilityTextView"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_marginBottom="16dp"
-        android:textColor="@android:color/black"
-        android:text="General Information"
-        android:layout_toStartOf="@id/textToSpeechButton"/>
+        android:layout_height="match_parent"
+        android:background="#40000000" /> 
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/geninfoAbilityTextView">
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/textToSpeechButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/geninfoAbilityTextView"
+            android:src="@drawable/ic_speaker" /> <!-- Replace ic_speaker with your speaker icon drawable -->
 
         <TextView
-            android:id="@+id/discussionTextView"
+            android:id="@+id/geninfoAbilityTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="25sp"
+            android:layout_marginBottom="16dp"
             android:textColor="@android:color/black"
-            android:text="General Information assesses candidates' proficiency in performing clerical tasks, including spelling, punctuation, typing, filing, and basic office procedures. It tests their ability to organize information, follow instructions accurately, and maintain accuracy and attention to detail."
-            android:padding="8dp"
-            android:gravity="start" />
+            android:text="General Information"
+            android:layout_toStartOf="@id/textToSpeechButton"/>
 
-    </ScrollView>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/geninfoAbilityTextView">
 
-    <Button
-        android:id="@+id/takeQuestionnaireButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:text="Take Questionnaire" />
+            <TextView
+                android:id="@+id/discussionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="General Information assesses candidates' proficiency in performing clerical tasks, including spelling, punctuation, typing, filing, and basic office procedures. It tests their ability to organize information, follow instructions accurately, and maintain accuracy and attention to detail."
+                android:padding="8dp"
+                android:gravity="start" />
 
-</RelativeLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/takeQuestionnaireButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:text="Take Questionnaire" />
+    
+    </RelativeLayout>
+
+</FrameLayout>
