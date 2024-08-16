@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -24,11 +26,13 @@ public class SubClericalQuestionnaireActivity extends AppCompatActivity implemen
     private List<TextView> questionTextViews;
     private List<RadioGroup> choiceRadioGroups;
     private List<ImageView> textToSpeechButtons;
-    private Button submitButton;
+    private Button submitButton, nextButton;
 
     // Questions
     private List<Question> questions;
     private int currentQuestionIndex = 0;
+    private final int QUESTIONS_PER_PAGE = 20;
+    private final int TOTAL_PAGES = 5;
 
     // Text-to-speech
     private TextToSpeech textToSpeech;
@@ -52,25 +56,45 @@ public class SubClericalQuestionnaireActivity extends AppCompatActivity implemen
 
         // Shuffle questions initially
         shuffleQuestions();
+
+        // Show initial page
+        showPage(0);
     }
 
     private void initializeViews() {
         questionTextViews = new ArrayList<>();
         choiceRadioGroups = new ArrayList<>();
         textToSpeechButtons = new ArrayList<>();
-
+    
+        // Initialize TextViews, RadioGroups, and ImageViews
         for (int i = 1; i <= 100; i++) {
-            int resID = getResources().getIdentifier("questionTextView" + i, "id", getPackageName());
-            questionTextViews.add(findViewById(resID));
-
+            int textViewResID = getResources().getIdentifier("questionTextView" + i, "id", getPackageName());
+            TextView textView = findViewById(textViewResID);
+            if (textView != null) {
+                questionTextViews.add(textView);
+            } else {
+                Log.e("SubClericalQuestionnaireActivity", "TextView with ID questionTextView" + i + " not found.");
+            }
+    
             int radioGroupResID = getResources().getIdentifier("choiceRadioGroup" + i, "id", getPackageName());
-            choiceRadioGroups.add(findViewById(radioGroupResID));
-
+            RadioGroup radioGroup = findViewById(radioGroupResID);
+            if (radioGroup != null) {
+                choiceRadioGroups.add(radioGroup);
+            } else {
+                Log.e("SubClericalQuestionnaireActivity", "RadioGroup with ID choiceRadioGroup" + i + " not found.");
+            }
+    
             int textToSpeechButtonResID = getResources().getIdentifier("textToSpeechButton" + i, "id", getPackageName());
-            textToSpeechButtons.add(findViewById(textToSpeechButtonResID));
+            ImageView textToSpeechButton = findViewById(textToSpeechButtonResID);
+            if (textToSpeechButton != null) {
+                textToSpeechButtons.add(textToSpeechButton);
+            } else {
+                Log.e("SubClericalQuestionnaireActivity", "ImageView with ID textToSpeechButton" + i + " not found.");
+            }
         }
-
+    
         submitButton = findViewById(R.id.submitButton);
+        nextButton = findViewById(R.id.nextButton);
     }
 
     private void initializeQuestions() {
@@ -178,13 +202,147 @@ public class SubClericalQuestionnaireActivity extends AppCompatActivity implemen
     }    
 
     private void setOnClickListeners() {
+        nextButton.setOnClickListener(view -> {
+            if (areAllQuestionsAnswered()) {
+                if (currentQuestionIndex < TOTAL_PAGES - 1) {
+                    currentQuestionIndex++;
+                    showPage(currentQuestionIndex);
+                }
+            } else {
+                showUnansweredQuestionsAlert();
+            }
+        });
+    
         for (int i = 0; i < textToSpeechButtons.size(); i++) {
             int finalI = i; // To access in lambda expression
-            textToSpeechButtons.get(i).setOnClickListener(view -> speakText(questions.get(finalI).getQuestionText() + ". " + getChoicesText(finalI)));
+            ImageView button = textToSpeechButtons.get(finalI);
+            if (button != null) {
+                button.setOnClickListener(view -> speakText(questions.get(finalI).getQuestionText() + ". " + getChoicesText(finalI)));
+            } else {
+                Log.e("SubClericalQuestionnaireActivity", "ImageView in textToSpeechButtons list is null at index " + finalI);
+            }
         }
-
-        submitButton.setOnClickListener(view -> showScoreDialog());
+    
+        submitButton.setOnClickListener(view -> {
+            // Save current page's answers before showing score
+            saveCurrentPageAnswers();
+            showScoreDialog();
+        });
     }
+    
+    private boolean areAllQuestionsAnswered() {
+        int start = currentQuestionIndex * QUESTIONS_PER_PAGE;
+        int end = Math.min(start + QUESTIONS_PER_PAGE, questions.size());
+    
+        for (int i = start; i < end; i++) {
+            int selectedId = choiceRadioGroups.get(i - start).getCheckedRadioButtonId();
+            if (selectedId == -1) {
+                return false; // Found an unanswered question
+            }
+        }
+        return true; // All questions are answered
+    }
+    
+    private void showUnansweredQuestionsAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Please answer all questions before proceeding.")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Save current page's answers before navigating
+                        saveCurrentPageAnswers();
+                        
+                        // Find the first unanswered question and show it
+                        int unansweredQuestionIndex = findFirstUnansweredQuestionIndex();
+                        if (unansweredQuestionIndex != -1) {
+                            showQuestion(unansweredQuestionIndex);
+                        }
+                        // Dismiss the dialog
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }    
+    
+    private int findFirstUnansweredQuestionIndex() {
+        int start = currentQuestionIndex * QUESTIONS_PER_PAGE;
+        int end = Math.min(start + QUESTIONS_PER_PAGE, questions.size());
+    
+        for (int i = start; i < end; i++) {
+            int selectedId = choiceRadioGroups.get(i - start).getCheckedRadioButtonId();
+            if (selectedId == -1) {
+                return i; // Return the index of the first unanswered question
+            }
+        }
+        return -1; // All questions are answered
+    }
+    
+    private void showQuestion(int index) {
+        // Calculate the page number of the question
+        int pageIndex = index / QUESTIONS_PER_PAGE;
+        int questionIndexOnPage = index % QUESTIONS_PER_PAGE;
+    
+        // Update the current page index
+        currentQuestionIndex = pageIndex;
+    
+        // Show the corresponding page
+        showPage(pageIndex);
+    
+        // Scroll to the specific question if needed
+        scrollToQuestion(questionIndexOnPage);
+    }
+    
+    private void scrollToQuestion(int questionIndexOnPage) {
+        // Find the view for the specific question
+        if (questionIndexOnPage < questionTextViews.size()) {
+            // Set focus to the TextView of the unanswered question
+            questionTextViews.get(questionIndexOnPage).requestFocus();
+        } else {
+            Log.e("SubClericalQuestionnaireActivity", "Invalid question index for scrolling: " + questionIndexOnPage);
+        }
+    }                
+
+    private void showPage(int pageIndex) {
+        int start = pageIndex * QUESTIONS_PER_PAGE;
+        int end = Math.min(start + QUESTIONS_PER_PAGE, questions.size());
+        
+        // Hide all question views first
+        for (int i = 0; i < questionTextViews.size(); i++) {
+            questionTextViews.get(i).setVisibility(View.GONE);
+            choiceRadioGroups.get(i).setVisibility(View.GONE);
+            textToSpeechButtons.get(i).setVisibility(View.GONE);
+        }
+        
+        // Show only the views for the current page
+        for (int i = start; i < end; i++) {
+            Question question = questions.get(i);
+            TextView textView = questionTextViews.get(i - start);
+            RadioGroup radioGroup = choiceRadioGroups.get(i - start);
+            ImageView textToSpeechButton = textToSpeechButtons.get(i - start);
+        
+            textView.setText(question.getQuestionText());
+            textView.setVisibility(View.VISIBLE);
+            radioGroup.setVisibility(View.VISIBLE);
+            textToSpeechButton.setVisibility(View.VISIBLE);
+        
+            List<String> choices = question.getChoices();
+            for (int j = 0; j < choices.size(); j++) {
+                RadioButton radioButton = (RadioButton) radioGroup.getChildAt(j);
+                radioButton.setText(choices.get(j));
+            }
+        
+            // Restore the previously selected answer
+            if (question.getSelectedAnswerIndex() != -1) {
+                ((RadioButton) radioGroup.getChildAt(question.getSelectedAnswerIndex())).setChecked(true);
+            } else {
+                radioGroup.clearCheck(); // Ensure no selection if nothing was previously selected
+            }
+        }
+        
+        // Show or hide the next and submit buttons
+        nextButton.setVisibility(pageIndex < TOTAL_PAGES - 1 ? View.VISIBLE : View.INVISIBLE);
+        submitButton.setVisibility(pageIndex == TOTAL_PAGES - 1 ? View.VISIBLE : View.INVISIBLE);
+    }            
 
     private void speakText(String text) {
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
@@ -199,19 +357,27 @@ public class SubClericalQuestionnaireActivity extends AppCompatActivity implemen
         return choicesText.toString();
     }
 
+    private void saveCurrentPageAnswers() {
+        int start = currentQuestionIndex * QUESTIONS_PER_PAGE;
+        int end = Math.min(start + QUESTIONS_PER_PAGE, questions.size());
+    
+        for (int i = start; i < end; i++) {
+            int selectedId = choiceRadioGroups.get(i - start).getCheckedRadioButtonId();
+            if (selectedId != -1) {
+                RadioButton selectedRadioButton = findViewById(selectedId);
+                int selectedAnswerIndex = choiceRadioGroups.get(i - start).indexOfChild(selectedRadioButton);
+                questions.get(i).setSelectedAnswerIndex(selectedAnswerIndex);
+            }
+        }
+    }    
+
     private void showScoreDialog() {
         int correctAnswers = 0;
         StringBuilder correctAnswersText = new StringBuilder();
-        boolean allAnswered = true;
-        int firstUnansweredIndex = -1;
-    
+        
+        // Calculate the score and correct answers
         for (int i = 0; i < questions.size(); i++) {
-            if (choiceRadioGroups.get(i).getCheckedRadioButtonId() == -1) {
-                allAnswered = false;
-                if (firstUnansweredIndex == -1) {
-                    firstUnansweredIndex = i;
-                }
-            } else if (checkAnswer(i)) {
+            if (checkAnswer(i)) {
                 correctAnswers++;
                 correctAnswersText.append(i + 1).append(". Correct\n");
             } else {
@@ -219,25 +385,11 @@ public class SubClericalQuestionnaireActivity extends AppCompatActivity implemen
                         .append(questions.get(i).getChoices().get(questions.get(i).getCorrectAnswerIndex())).append(")\n");
             }
         }
-    
-        if (!allAnswered) {
-            // Scroll to the first unanswered question
-            TextView unansweredQuestionTextView = questionTextViews.get(firstUnansweredIndex);
-            unansweredQuestionTextView.getParent().requestChildFocus(unansweredQuestionTextView, unansweredQuestionTextView);
-    
-            // Alert dialog to inform the user to answer all questions
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Please answer all the questions before submitting.")
-                    .setPositiveButton("OK", null);
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            return;
-        }
-    
+        
         // Build the dialog message
         String dialogMessage = "Your score is " + correctAnswers + "/" + questions.size() + "\n\n";
         dialogMessage += "Correct Answers:\n" + correctAnswersText.toString();
-    
+        
         // Create and show the dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(dialogMessage)
@@ -249,12 +401,14 @@ public class SubClericalQuestionnaireActivity extends AppCompatActivity implemen
                 });
         AlertDialog dialog = builder.create();
         dialog.show();
-    }            
+    }
+            
 
     private boolean checkAnswer(int index) {
-        int selectedId = choiceRadioGroups.get(index).getCheckedRadioButtonId();
+        int selectedId = choiceRadioGroups.get(index % QUESTIONS_PER_PAGE).getCheckedRadioButtonId();
         RadioButton selectedRadioButton = findViewById(selectedId);
-        int selectedAnswerIndex = choiceRadioGroups.get(index).indexOfChild(selectedRadioButton);
+        int selectedAnswerIndex = choiceRadioGroups.get(index % QUESTIONS_PER_PAGE).indexOfChild(selectedRadioButton);
+        questions.get(index).setSelectedAnswerIndex(selectedAnswerIndex); // Save the selected answer
         int correctAnswerIndex = questions.get(index).getCorrectAnswerIndex();
         return selectedAnswerIndex == correctAnswerIndex;
     }
