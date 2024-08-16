@@ -6,6 +6,7 @@ public class Question {
     private String questionText;
     private List<String> choices;
     private int correctAnswerIndex;
+    private int selectedAnswerIndex = -1; // Default to -1, meaning no answer selected
 
     public Question(String questionText, List<String> choices, int correctAnswerIndex) {
         this.questionText = questionText;
@@ -23,6 +24,14 @@ public class Question {
 
     public int getCorrectAnswerIndex() {
         return correctAnswerIndex;
+    }
+
+    public int getSelectedAnswerIndex() {
+        return selectedAnswerIndex;
+    }
+
+    public void setSelectedAnswerIndex(int selectedAnswerIndex) {
+        this.selectedAnswerIndex = selectedAnswerIndex;
     }
 }
 
